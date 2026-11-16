@@ -540,7 +540,8 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 /* ---------- 响应式断点 ---------- */
 /* 超宽屏：正文居中，目录稳稳落在右侧灰线外侧 */
 @media (min-width:1520px){
-  .toc-panel{left:calc(50% + 498px);right:auto}
+  .toc-stack{left:calc(50% + 498px);right:auto}
+  .particle-stage.is-docked{left:calc(50% + 498px);right:auto}
   .toc-panel.collapsed{transform:translateX(24px);opacity:0}
 }
 
