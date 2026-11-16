@@ -139,17 +139,18 @@
         transform: 'translate(' + pathX(mk.y).toFixed(2) + ',' + mk.y + ') rotate(' + angle + ')'
       });
 
+      var isEn = document.documentElement.lang === 'en';
       if (mk.target) {
         g.setAttribute('data-target', mk.target);
         g.setAttribute('data-action', 'drawer');
         var tip1 = el('title', {});
-        tip1.textContent = '打开：' + mk.label;
+        tip1.textContent = (isEn ? 'Open: ' : '打开：') + mk.label;
         g.appendChild(tip1);
       } else if (mk.secId) {
         g.setAttribute('data-sec', mk.secId);
         g.setAttribute('data-action', 'scroll');
         var tip2 = el('title', {});
-        tip2.textContent = '跳转至 § ' + mk.num;
+        tip2.textContent = (isEn ? 'Jump to § ' : '跳转至 § ') + mk.num;
         g.appendChild(tip2);
       }
 
@@ -363,6 +364,10 @@
   }
 
   function getPanelData(id) {
+    var isEn = document.documentElement.lang === 'en';
+    if (isEn && window.DRAWER_PANELS_EN && window.DRAWER_PANELS_EN[id]) {
+      return window.DRAWER_PANELS_EN[id];
+    }
     if (window.DRAWER_PANELS && window.DRAWER_PANELS[id]) {
       return window.DRAWER_PANELS[id];
     }
@@ -430,7 +435,7 @@
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(function () {
           var orig = copyBtn.textContent;
-          copyBtn.textContent = '已复制';
+          copyBtn.textContent = document.documentElement.lang === 'en' ? 'Copied' : '已复制';
           setTimeout(function () { copyBtn.textContent = orig; }, 1600);
         });
       }
@@ -498,7 +503,9 @@
       savedTheme = localStorage.getItem('neinote_theme');
     } catch (e) { }
 
-    if (savedTheme === 'light') {
+    if (savedTheme === 'dark') {
+      root.removeAttribute('data-theme');
+    } else {
       root.setAttribute('data-theme', 'light');
     }
 
@@ -728,6 +735,61 @@
     scheduleNext();
   }
 
+  /* ---------- 致谢名单展开/收起与 /thanks 直达 ---------- */
+  function setupThanksBox() {
+    var box = document.getElementById('thanks');
+    var trigger = document.getElementById('thanks-trigger');
+    var body = document.getElementById('thanks-body');
+    var actionText = box ? box.querySelector('.thanks-action-text') : null;
+    if (!box || !trigger || !body) return;
+
+    function updateActionText(open) {
+      var isEn = document.documentElement.lang === 'en';
+      if (actionText) {
+        actionText.textContent = open
+          ? (isEn ? 'Hide list' : '收起名单')
+          : (isEn ? 'Show list' : '展开名单');
+      }
+    }
+
+    function setOpen(open, scrollInto) {
+      box.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      body.setAttribute('aria-hidden', open ? 'false' : 'true');
+      updateActionText(open);
+      if (scrollInto) {
+        setTimeout(function () {
+          var top = box.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - 100;
+          window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+        }, 120);
+      }
+    }
+
+    window.addEventListener('neinote:langchange', function () {
+      updateActionText(box.classList.contains('is-open'));
+      buildRail();
+      if (currentId) openDrawer(currentId, false);
+    });
+
+    trigger.addEventListener('click', function () {
+      var next = !box.classList.contains('is-open');
+      setOpen(next, false);
+      if (window.history && history.replaceState) {
+        history.replaceState(null, '', next ? '#thanks' : location.pathname + location.search);
+      }
+    });
+
+    function checkRoute() {
+      var isThanksPath = /\/thanks\/?$/i.test(location.pathname);
+      if (location.hash === '#thanks' || isThanksPath) {
+        setOpen(true, true);
+      }
+    }
+
+    window.addEventListener('hashchange', checkRoute);
+    checkRoute();
+  }
+
   /* ---------- 初始化 ---------- */
   function init() {
     var scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -738,6 +800,7 @@
     setupTheme();
     setupNavAndTOC();
     setupGooeyWordmark();
+    setupThanksBox();
     buildRail();
     setupReveal();
     setupPhoto();

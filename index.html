@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" class="no-js">
+<html lang="zh-Hans" class="no-js" data-theme="light">
 
 <head>
   <meta charset="utf-8">
@@ -7,7 +7,7 @@
   <title>Neinote · 枝络（Twiggo）</title>
   <meta name="description" content="Neinote 与枝络（Twiggo）：本地优先的大纲笔记与悬浮抽屉。核心功能永久免费。隐私政策、服务条款、支付与退款说明与客户支持邮箱均在页内公开。">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0B0D0B">
+  <meta name="theme-color" content="#F7F5EE">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cstyle%3E:root%7Bcolor:%23161614%7D@media(prefers-color-scheme:dark)%7B:root%7Bcolor:%23EDEAE2%7D%7D%3C/style%3E%3Cg stroke='currentColor' stroke-opacity='0.28' stroke-width='1.4'%3E%3Cline x1='20' y1='16' x2='20' y2='82'/%3E%3Cline x1='40' y1='6' x2='40' y2='90'/%3E%3Cline x1='60' y1='10' x2='60' y2='94'/%3E%3Cline x1='80' y1='18' x2='80' y2='84'/%3E%3Cline x1='12' y1='30' x2='88' y2='66'/%3E%3Cline x1='12' y1='48' x2='88' y2='84'/%3E%3Cline x1='12' y1='72' x2='64' y2='96'/%3E%3Cline x1='36' y1='4' x2='88' y2='28'/%3E%3Cline x1='12' y1='34' x2='52' y2='6'/%3E%3Cline x1='12' y1='56' x2='68' y2='16'/%3E%3Cline x1='22' y1='84' x2='88' y2='36'/%3E%3Cline x1='46' y1='94' x2='88' y2='64'/%3E%3C/g%3E%3Cg fill='currentColor' fill-opacity='0.2' stroke='currentColor' stroke-opacity='0.45' stroke-width='1.2'%3E%3Cpolygon points='40,12 56,20 56,47 40,26'/%3E%3Cpolygon points='44,53 60,74 60,88 44,80'/%3E%3Crect x='20' y='47' width='7' height='17'/%3E%3Crect x='60' y='53' width='20' height='26'/%3E%3C/g%3E%3Cpath d='M27,26 H40 L56,47 H40 V74 H27 Z' fill='currentColor' fill-opacity='0.88' stroke='currentColor' stroke-width='1.5'/%3E%3Cpath d='M60,26 H73 V74 H60 L44,53 H60 Z' fill='currentColor' fill-opacity='0.88' stroke='currentColor' stroke-width='1.5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,31 +93,37 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
+        <button class="btn-icon btn-lang-toggle" id="lang-toggle" type="button" aria-label="Switch to English" title="中 / EN">EN</button>
         <a href="#download" data-drawer="download" class="btn-nav-cta">获取「枝络」</a>
       </div>
     </div>
   </nav>
 
-  <!-- ============ 侧边悬浮目录大纲 ============ -->
-  <aside class="toc-panel" id="toc-panel" aria-label="目录">
-    <div class="toc-head">
-      <h3 class="toc-title">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-        目录
-      </h3>
-      <button class="toc-close" id="toc-close" type="button" aria-label="收起目录" title="收起">✕</button>
-    </div>
-    <ul class="toc-list">
-      <li class="toc-item"><a href="#top"><span class="t-num">00</span><span>首页</span></a></li>
-      <li class="toc-item"><a href="#sec1"><span class="t-num">01</span><span>缘起</span></a></li>
-      <li class="toc-item"><a href="#sec2"><span class="t-num">02</span><span>枝络（Twiggo）</span></a></li>
-      <li class="toc-item"><a href="#sec3"><span class="t-num">03</span><span>下载与服务</span></a></li>
-      <li class="toc-item"><a href="#sec4"><span class="t-num">04</span><span>隐私与条款</span></a></li>
-      <li class="toc-item"><a href="#legal"><span class="t-num">§</span><span>底部信息</span></a></li>
-    </ul>
-  </aside>
+  <!-- ============ 右侧说明与悬浮大纲目录 ============ -->
+  <div class="toc-stack" id="toc-stack">
+    <aside class="side-note" aria-label="开发者说明">
+      <p class="side-note-text">独立开发，精力有限，项目与网站仍有诸多不足，欢迎随时<a class="link" href="#contact" data-drawer="contact">反馈建议</a>。</p>
+    </aside>
+    <aside class="toc-panel" id="toc-panel" aria-label="目录">
+      <div class="toc-head">
+        <h3 class="toc-title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          目录
+        </h3>
+        <button class="toc-close" id="toc-close" type="button" aria-label="收起目录" title="收起">✕</button>
+      </div>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#top"><span class="t-num">00</span><span>顶部</span></a></li>
+        <li class="toc-item"><a href="#sec1"><span class="t-num">01</span><span>缘起</span></a></li>
+        <li class="toc-item"><a href="#sec2"><span class="t-num">02</span><span>枝络（Twiggo）</span></a></li>
+        <li class="toc-item"><a href="#sec3"><span class="t-num">03</span><span>下载与服务</span></a></li>
+        <li class="toc-item"><a href="#sec4"><span class="t-num">04</span><span>隐私与条款</span></a></li>
+        <li class="toc-item"><a href="#legal"><span class="t-num">§</span><span>底部</span></a></li>
+      </ul>
+    </aside>
+  </div>
 
   <div id="essay">
     <div class="rule rule-l"></div>
@@ -136,13 +142,15 @@
               <defs>
                 <filter id="gooey-morph" x="-10%" y="-30%" width="120%" height="160%">
                   <feGaussianBlur id="gooey-blur" in="SourceGraphic" stdDeviation="0" result="blur" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                    result="goo" />
                   <feComposite in="SourceGraphic" in2="goo" operator="atop" />
                 </filter>
               </defs>
               <g id="gooey-group">
                 <text id="gooey-t1" x="0" y="56" text-anchor="start" dominant-baseline="central">Capture</text>
-                <text id="gooey-t2" x="0" y="56" text-anchor="start" dominant-baseline="central" opacity="0">Connect</text>
+                <text id="gooey-t2" x="0" y="56" text-anchor="start" dominant-baseline="central"
+                  opacity="0">Connect</text>
               </g>
             </svg>
           </h1>
@@ -176,8 +184,7 @@
 
         <figure class="reveal" id="fig-origin">
           <div class="photo-wrap">
-            <img class="photo" src="asset/pen_paper.jpg" alt="纸与笔有种无法取代的魅力，随意写写画画"
-              loading="lazy">
+            <img class="photo" src="asset/pen_paper.jpg" alt="纸与笔有种无法取代的魅力，随意写写画画" loading="lazy">
           </div>
           <figcaption>FIG.01 — 纸与笔有种无法取代的魅力，随意写写画画，任思绪流淌</figcaption>
         </figure>
@@ -189,8 +196,15 @@
             class="link" href="#wdtp" data-drawer="wdtp">WDTP</a> 与 <a class="link" href="#treesheets"
             data-drawer="treesheets">TreeSheets</a>（排名不分前后，以首字母排序）——它们都曾深刻启发过我。Neinote 完全生长于我最真实的输入与整理体验。</p>
 
-        <p class="reveal">我只有少量 Java、C++、MATLAB 代码经验，前端于我是一片全然陌生的领域。依托生成式 AI 的协同，我开始了一场漫长而执拗的尝试。在此，我想要感谢 Xiaomimo
-          Studio、Kiro、Codex、Claudecode、Trae 等，尤其感谢 Antigravity。本项目 90% 的代码都在 Antigravity IDE 中完成。一次次近乎自虐的推倒重来中，我先后尝试过
+        <p class="reveal">我只有少量 Java、C++、MATLAB 代码经验，前端于我是一片全然陌生的领域。依托生成式 AI 的协同，我开始了一场漫长而执拗的尝试。在此，我想要感谢 <a class="link"
+            href="https://aistudio.xiaomimimo.com" target="_blank" rel="noopener">Xiaomimo Studio</a>、<a class="link"
+            href="https://kiro.dev" target="_blank" rel="noopener">Kiro</a>、<a class="link"
+            href="https://openai.com/codex/" target="_blank" rel="noopener">Codex</a>、<a class="link"
+            href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener">Claudecode</a>、<a class="link"
+            href="https://www.trae.ai" target="_blank" rel="noopener">Trae</a> 等，尤其感谢 <a class="link"
+            href="https://antigravity.google" target="_blank" rel="noopener">Antigravity</a>。本项目 90% 的代码都在 <a
+            class="link" href="https://antigravity.google" target="_blank" rel="noopener">Antigravity IDE</a>
+          中完成。一次次近乎自虐的推倒重来中，我先后尝试过
           <a class="link" href="#flutter" data-drawer="flutter">Flutter</a>、<a class="link" href="#reactvue"
             data-drawer="reactvue">React / Vue 纯前端</a> 以及 <a class="link" href="#tauri" data-drawer="tauri">Tauri</a>
           的组合，前后历经至少 10 次大重构、7 个大版本、十几个分支与上百次迭代。直到第 7 次大重构，才最终确立下现在的形态：<a class="link" href="#wails"
@@ -201,22 +215,118 @@
         <p class="caption reveal">档案 / DOSSIER — 4 个阶段 · 10 次以上重构 · 7 个大版本 · 上百次迭代</p>
         <div class="matrix reveal">
           <div class="cell"><span class="ghost">04</span>
-            <p>个阶段：从原型、纯前端、混合壳，到今天的形态。</p>
+            <p>个阶段</p>
           </div>
           <div class="cell"><span class="ghost">10+</span>
-            <p>次大重构。每一次都以为自己终于找对了方向。</p>
+            <p>次大重构</p>
           </div>
           <div class="cell"><span class="ghost">07</span>
-            <p>个大版本，还不算那些没能活过一周的分支。</p>
+            <p>个大版本</p>
           </div>
           <div class="cell"><span class="ghost">100+</span>
-            <p>次迭代。改动小到不值一提，却构成了全部。</p>
+            <p>次迭代</p>
           </div>
         </div>
 
         <p class="reveal">
           今天回看，这似乎是个无比自然、显而易见的设计，但通往“合理”的道路从来不是一马平川——哪怕行业先驱早已将某种解法摆在眼前，撞过南墙、悬崖勒马、苦苦挣扎，这是我的来时路。我仍不能确认，我所感知到的“合理”是否就是“正确”？我不知道
           Neinote 离最完美、最舒服的终极形态还有多远、多久，但至少在当下，我们相处得十分融洽。它所给予我的便利，已经是我能为自己创造的最大价值。</p>
+
+        <blockquote class="thanks-box reveal" id="thanks">
+          <button type="button" class="thanks-trigger" id="thanks-trigger" aria-expanded="false"
+            aria-controls="thanks-body">
+            <span class="thanks-quote">查看完整的致谢名单。</span>
+            <span class="thanks-action">
+              <span class="thanks-action-text">展开名单</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <path d="M4 6l4 4 4-4" />
+              </svg>
+            </span>
+          </button>
+          <div class="thanks-body" id="thanks-body" aria-hidden="true">
+            <div class="thanks-body-inner">
+              <div class="thanks-group">
+                <h4>AI 协同与开发环境</h4>
+                <p>
+                  <a class="link" href="https://antigravity.google" target="_blank" rel="noopener">Antigravity
+                    IDE</a>（90% 代码完成于此）、
+                  <a class="link" href="https://aistudio.xiaomimimo.com" target="_blank" rel="noopener">Xiaomimo
+                    Studio</a>、
+                  <a class="link" href="https://kiro.dev" target="_blank" rel="noopener">Kiro</a>、
+                  <a class="link" href="https://openai.com/codex/" target="_blank" rel="noopener">Codex</a>、
+                  <a class="link" href="https://www.anthropic.com/claude-code" target="_blank"
+                    rel="noopener">Claudecode</a>、
+                  <a class="link" href="https://www.trae.ai" target="_blank" rel="noopener">Trae</a>、
+                  <a class="link" href="https://bolt.new" target="_blank" rel="noopener">bolt.new</a>
+                </p>
+              </div>
+              <div class="thanks-group">
+                <h4>参考应用（灵感与先行者）</h4>
+                <ul class="thanks-cats">
+                  <li><span class="thanks-tag">#笔记</span><a class="link" href="https://www.notion.so" target="_blank"
+                      rel="noopener">Notion</a>、<a class="link" href="https://obsidian.md" target="_blank"
+                      rel="noopener">Obsidian</a>、<a class="link" href="https://roamresearch.com" target="_blank"
+                      rel="noopener">Roam Research</a>、<a class="link" href="https://logseq.com" target="_blank"
+                      rel="noopener">Logseq</a>、<a class="link" href="https://www.onenote.com" target="_blank"
+                      rel="noopener">OneNote</a>、<a class="link" href="https://b3log.org/siyuan/" target="_blank"
+                      rel="noopener">思源笔记</a></li>
+                  <li><span class="thanks-tag">#碎片笔记</span><a class="link" href="https://flomoapp.com" target="_blank"
+                      rel="noopener">flomo</a>、Sayit</li>
+                  <li><span class="thanks-tag">#知识管理</span><a class="link" href="https://strlen.com/treesheets/"
+                      target="_blank" rel="noopener">TreeSheets</a>、<a class="link"
+                      href="https://www.literatureandlatte.com/scapple/overview" target="_blank"
+                      rel="noopener">Scapple</a>、<a class="link" href="https://github.com/graphif/project-graph"
+                      target="_blank" rel="noopener">Project Graph</a>、Boogunote、<a class="link"
+                      href="https://www.devontechnologies.com/apps/devonthink" target="_blank"
+                      rel="noopener">DEVONthink</a>、<a class="link" href="https://www.wjjsoft.com/mybase.html"
+                      target="_blank" rel="noopener">myBase</a>、<a class="link"
+                      href="https://github.com/TriliumNext/Notes" target="_blank" rel="noopener">Trilium Notes</a>、<a
+                      class="link" href="https://milanote.com" target="_blank" rel="noopener">Milanote</a></li>
+                  <li><span class="thanks-tag">#文章</span>WDTP、<a class="link"
+                      href="https://github.com/suziwen/markdownxiaoshujiang" target="_blank" rel="noopener">小书匠</a>、<a
+                      class="link" href="https://www.literatureandlatte.com/scrivener/overview" target="_blank"
+                      rel="noopener">Scrivener</a>、<a class="link" href="https://pendown.cn" target="_blank"
+                      rel="noopener">笔落笔记</a>、Freewriter、<a class="link" href="https://gingkowriter.com" target="_blank"
+                      rel="noopener">Gingko</a></li>
+                  <li><span class="thanks-tag">#特殊</span><a class="link" href="https://www.texmacs.org" target="_blank"
+                      rel="noopener">TeXmacs</a></li>
+                </ul>
+              </div>
+              <div class="thanks-group">
+                <h4>核心技术栈</h4>
+                <p>
+                  <a class="link" href="https://react.dev" target="_blank" rel="noopener">React 19</a>、
+                  <a class="link" href="https://www.typescriptlang.org" target="_blank" rel="noopener">TypeScript</a>、
+                  <a class="link" href="https://go.dev" target="_blank" rel="noopener">Go</a>、
+                  <a class="link" href="https://github.com/wailsapp/wails" target="_blank" rel="noopener">Wails v3</a>、
+                  <a class="link" href="https://ui.shadcn.com" target="_blank" rel="noopener">shadcn/ui</a>
+                </p>
+              </div>
+              <div class="thanks-group">
+                <h4>托管、网络与结算平台</h4>
+                <p>
+                  <a class="link" href="https://github.com" target="_blank" rel="noopener">GitHub</a>、
+                  <a class="link" href="https://www.cloudflare.com" target="_blank" rel="noopener">Cloudflare</a>、
+                  <a class="link" href="https://www.creem.io" target="_blank" rel="noopener">Creem</a>
+                </p>
+              </div>
+              <div class="thanks-group">
+                <h4>字体</h4>
+                <p>
+                  <a class="link" href="https://github.com/lxgw/LxgwNeoZhiSong" target="_blank"
+                    rel="noopener">霞鹜新致宋（LXGW Neo ZhiSong）</a>、
+                  <a class="link" href="https://github.com/lxgw/LxgwWenKai" target="_blank" rel="noopener">霞鹜文楷（LXGW
+                    WenKai）</a>
+                </p>
+              </div>
+              <div class="thanks-group">
+                <h4>同行者</h4>
+                <p>感谢一路上提出建议、参与测试与给予鼓励的每一位朋友。</p>
+              </div>
+            </div>
+          </div>
+        </blockquote>
       </section>
 
       <!-- ============ § 02 枝络（Twiggo）介绍（重点） ============ -->
@@ -230,30 +340,12 @@
           结合，会发生什么？枝络是像影子一样的悬浮抽屉，也是像大树一样的大纲笔记。它可以容纳一切零散的思维碎片——轻巧、敏捷，存在感低却足够方便，无需切换窗口，鼠标轻滑即出，移出即隐。这就是枝络，让你所有的思绪随着一根根枝桠发散，随着一个个节点积累。
         </p>
 
-        <div class="twiggo-features reveal">
-          <div class="tf-item">
-            <span class="mono tf-tag">01 · INSTANT</span>
-            <h3>轻滑即出，移出即隐</h3>
-            <p>常驻屏幕边缘，默认零存在感；鼠标靠近或快捷键瞬间呼出，不打断当前专注。</p>
+        <figure class="video-showcase reveal">
+          <div class="video-frame">
+            <video src="asset/twiggo-display.mp4" controls autoplay muted loop playsinline preload="metadata"></video>
           </div>
-          <div class="tf-item">
-            <span class="mono tf-tag">02 · OUTLINER</span>
-            <h3>树状大纲，任意拆解</h3>
-            <p>无限层级节点折叠、拖拽与引用，像枝桠一样自然记录稍纵即逝的闪念。</p>
-          </div>
-          <div class="tf-item">
-            <span class="mono tf-tag">03 · LOCAL-FIRST</span>
-            <h3>纯文本 Markdown</h3>
-            <p>所有内容均以本地纯文本保存，无账号门槛、无强制云同步、不收集隐私。</p>
-          </div>
-          <div class="tf-item">
-            <span class="mono tf-tag">04 · DUAL WINDOW</span>
-            <h3>双窗口无缝接力</h3>
-            <p>悬浮窗随时记下灵感，主工作区负责长文整理，共享同一份本地数据。</p>
-          </div>
-        </div>
-
-        <!-- 后续在此添加实机图片 -->
+          <figcaption>FIG.02 — 枝络（Twiggo）实机演示：贴边悬浮呼出与树状大纲记录</figcaption>
+        </figure>
       </section>
 
       <!-- ============ § 03 下载和服务购买说明 ============ -->
@@ -262,8 +354,8 @@
         <h2 class="display reveal">下载与服务</h2>
 
         <p class="reveal">出于种种现实考量，现阶段项目暂不开源，但我郑重承诺：<strong style="font-weight:500">所有核心功能永久免费，且不设任何使用限制。</strong></p>
-        <p class="reveal">如果你喜欢它，欢迎通过购买<a class="link" href="#theme"
-            data-drawer="theme">主题样式与插件包</a>（$9.9 一次性买断，无订阅、后续更新免费获取）来支持开发。对我而言，Neinote 与<a class="link" href="#twiggo"
+        <p class="reveal">如果你喜欢它，欢迎成为 <a class="link" href="#theme" data-drawer="theme">Early Supporter</a>（$9.9
+          一次性买断，附带全套扩展包）来支持开发。对我而言，Neinote 与<a class="link" href="#twiggo"
             data-drawer="twiggo">枝络（Twiggo）</a>的初衷始终纯粹——帮你留住稍纵即逝的闪念，在纷繁日常中理清思绪。</p>
 
         <div class="dl-stack reveal">
@@ -308,23 +400,51 @@
           </div>
         </div>
 
-        <div class="dl-stack reveal" style="margin-top:16px">
-          <a class="dl" href="#theme" data-drawer="theme">
+        <div class="dl-stack dl-addon reveal" style="margin-top:20px">
+          <a class="dl dl-addon-head" href="#theme" data-drawer="theme">
             <span class="left">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--voltage)" stroke-width="1.4"
                 aria-hidden="true">
                 <path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.3 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z" />
               </svg>
-              <span class="os">S1 · 主题样式与插件包</span>
+              <span class="os">S1 · Early Supporter</span>
+              <span class="addon-price">$9.9 买断</span>
             </span>
             <span class="right">
-              $9.9 一次性买断 · 无订阅 · 14 天无理由退款
+              查看详情与 Creem 结算说明
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--voltage)" stroke-width="1.25"
                 aria-hidden="true">
                 <path d="M4 12L12 4M6 4h6v6" />
               </svg>
             </span>
           </a>
+          <div class="dl-addon-grid">
+            <div class="addon-item">
+              <h4>01 / 主题包</h4>
+              <ul class="addon-list">
+                <li>内置 6 套极简主题与基础排版</li>
+                <li>扩展包另含「中国山水」「复古像素」两套完整主题</li>
+                <li>每套完整主题涵盖配色、字体、图标与音效</li>
+              </ul>
+            </div>
+            <div class="addon-item">
+              <h4>02 / 插件包</h4>
+              <ul class="addon-list">
+                <li>内置剪贴板与截图两款基础插件</li>
+                <li>后续拓展 PDF 阅读、浏览器批注等扩展</li>
+                <li>支持接入 AI 对话等更多增强能力</li>
+              </ul>
+            </div>
+            <div class="addon-item">
+              <h4>03 / 授权与更新</h4>
+              <ul class="addon-list">
+                <li>成为 Early Supporter 即附带本扩展包</li>
+                <li>现阶段为早期支持定价，随项目推进逐步调整</li>
+                <li>支持最多 3 台设备激活，持续滚动更新</li>
+                <li>Creem 安全结算，14 天无理由全额退款</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -366,10 +486,12 @@
       </div>
 
       <nav class="footer-links-line" aria-label="合规与支持链接">
+        <a href="#theme" data-drawer="theme" class="footer-link-featured">
+          <span class="featured-dot" aria-hidden="true"></span>
+          <span>Early Supporter 扩展包与支付退款（$9.9）</span>
+        </a>
         <a href="#privacy" data-drawer="privacy">隐私政策</a>
         <a href="#terms" data-drawer="terms">服务条款</a>
-        <a href="#payment" data-drawer="payment">支付与退款</a>
-        <a href="#theme" data-drawer="theme">主题与插件全集 ($9.9)</a>
         <a href="#contact" data-drawer="contact">联系支持</a>
       </nav>
     </div>
@@ -399,6 +521,7 @@
   </aside>
 
   <script src="js/panels-data.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/particle-morph.js"></script>
   <script src="js/main.js"></script>
 </body>

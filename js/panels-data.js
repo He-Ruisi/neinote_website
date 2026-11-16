@@ -136,33 +136,49 @@ window.DRAWER_PANELS = {
       '</ul>'
   },
   theme: {
-    title: '主题样式与插件包',
+    title: 'Early Supporter 扩展包',
     eyebrow: 'DRAWER 15 / 20',
-    html: '<p class="n">付费附加内容 / PAID ADD-ON · 15</p>' +
-      '<p class="lead">核心功能永久免费，仅售卖精致主题与插件包作为额外支持（$9.9 买断）。</p>' +
+    html: '<p class="n">EARLY SUPPORTER · $9.9</p>' +
+      '<p class="lead">核心功能永久免费。成为 Early Supporter 即可一次性买断本扩展包，现阶段为早期支持定价。</p>' +
+      '<h4>包含内容</h4>' +
       '<ul>' +
-      '<li>含亮暗双套精致主题与多组排版预设</li>' +
-      '<li>含导出模板、批量整理与快捷指令插件</li>' +
-      '<li>一次性买断，后续更新免费获得，绝无订阅</li>' +
+      '<li><strong>01 / 主题包</strong>：内置 6 套极简主题与基础排版；扩展包另含「中国山水」与「复古像素」两套完整主题（含配色、字体、图标与音效）。</li>' +
+      '<li><strong>02 / 插件包</strong>：内置剪贴板与截图基础插件，后续拓展 PDF 阅读、浏览器批注、AI 对话等增强扩展。</li>' +
+      '<li><strong>03 / 授权与更新</strong>：支持最多 3 台设备激活；一次性买断无订阅，持续滚动更新。</li>' +
       '</ul>' +
-      '<div class="slot">由 creem.io 处理结算，14 天内可无理由申请全额退款。</div>' +
+      '<h4>支付、交付与退款说明</h4>' +
+      '<ol>' +
+      '<li><strong>安全结算</strong>：由 Creem（creem.io）处理支付，税费按所在地在结算页自动计算。</li>' +
+      '<li><strong>即时交付</strong>：付款后下载链接与许可凭证直接发送至你的邮箱。</li>' +
+      '<li><strong>无忧退款</strong>：购买后 14 天内可无理由申请全额退款；超期设备兼容问题可个案处理。</li>' +
+      '</ol>' +
       '<ul class="links">' +
-      '<li><a href="#payment" data-drawer="payment">支付与退款条款<span class="ext">→</span></a></li>' +
       '<li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>' +
+      '<li><a href="mailto:support_neinote@tcommons.top">联系退款或支持<span class="ext">✉</span></a></li>' +
       '</ul>'
   },
   privacy: {
     title: '隐私政策',
     eyebrow: 'DRAWER 16 / 20',
-    html: '<p class="n">PRIVACY POLICY · 2025-11-14</p>' +
-      '<p class="lead">本地优先，数据仅属于你。</p>' +
-      '<ol>' +
-      '<li><strong>本地存储</strong>：笔记、大纲与设置仅存本地设备，无云端备份或收集。</li>' +
-      '<li><strong>零追踪</strong>：不做行为埋点或用户画像；不出售或共享任何个人数据。</li>' +
-      '<li><strong>订单信息</strong>：购买附加包时仅通过 creem.io 获取订单号与邮箱用于交付与退款，不接触卡号密码。</li>' +
-      '<li><strong>AI 数据</strong>：自带 Key 直连第三方服务商，本地存储密钥，我们不转发不留存。</li>' +
-      '<li><strong>你的权利</strong>：支持随时访问、导出或删除订单相关个人数据，30 天内邮件答复。</li>' +
-      '</ol>' +
+    html: '<p class="n">PRIVACY POLICY · 更新于 2026-11-16</p>' +
+      '<p class="lead">Neinote 与枝络（Twiggo）坚持本地优先原则，你的笔记、大纲与工作区数据仅保存在你自己的设备上。</p>' +
+      '<h4>1. 我们不收集的数据</h4>' +
+      '<p>本软件无需注册账号，不进行行为统计或用户画像，也不会将你的笔记内容上传或存储至任何云端服务器。</p>' +
+      '<h4>2. 购买与支持时收集的信息</h4>' +
+      '<ul>' +
+      '<li><strong>订单与授权记录</strong>：当你通过 <strong>Creem（creem.io）</strong> 购买 Early Supporter 扩展包时，Creem 会处理你的付款并仅向我们提供订单号、授权状态与邮箱地址，用于交付、3 台设备激活与退款服务；我们绝不接触或存储你的银行卡信息。</li>' +
+      '<li><strong>支持邮件</strong>：你发送至 <a class="link" href="mailto:support_neinote@tcommons.top">support_neinote@tcommons.top</a> 的邮件仅用于回复与解决你的问题。</li>' +
+      '</ul>' +
+      '<h4>3. 第三方服务与自带密钥（BYOK）AI</h4>' +
+      '<p>若你启用自带 API 密钥（BYOK）的 AI 功能，密钥仅存储在本地，请求将从你的设备直连所选 AI 服务商并受其隐私政策约束。本官网托管于 GitHub / Cloudflare，并通过公共 CDN 加载静态网页字体。</p>' +
+      '<h4>4. 数据安全与本地备份</h4>' +
+      '<p>由于所有笔记均存放在你的本地设备，你对本地文件的安全与定期备份拥有完全控制权与责任。</p>' +
+      '<h4>5. 未成年人隐私</h4>' +
+      '<p>本软件与网站不面向 13 周岁以下（或当地法定最低同意年龄以下）的儿童，我们不会有意收集未成年人的个人信息。</p>' +
+      '<h4>6. 你的权利与联系方式</h4>' +
+      '<p>你可以随时致信 <a class="link" href="mailto:support_neinote@tcommons.top">support_neinote@tcommons.top</a> 查询、更正、导出或删除订单与邮件支持相关的个人记录，我们将在 30 天内答复。</p>' +
+      '<h4>7. 政策更新</h4>' +
+      '<p>随着产品演进，我们可能会更新本隐私政策，重要变更将在此页面同步更新日期并公示。</p>' +
       '<ul class="links">' +
       '<li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>' +
       '<li><a href="mailto:support_neinote@tcommons.top">联系邮箱<span class="ext">✉</span></a></li>' +
@@ -171,18 +187,28 @@ window.DRAWER_PANELS = {
   terms: {
     title: '服务条款',
     eyebrow: 'DRAWER 17 / 20',
-    html: '<p class="n">TERMS OF SERVICE · 2025-11-14</p>' +
-      '<p class="lead">适用于 Neinote 官网、桌面应用、Twiggo 及付费附加包。</p>' +
-      '<ol>' +
-      '<li><strong>免费承诺</strong>：核心功能永久免费、无限制、无广告。</li>' +
-      '<li><strong>买断与退款</strong>：主题插件包一次性买断非订阅；支持 14 天内无理由全额退款。</li>' +
-      '<li><strong>内容归属</strong>：笔记与数据完全归你所有；软件与界面版权归开发者所有。</li>' +
-      '<li><strong>禁止行为</strong>：禁止反编译源码、倒卖主题包或用于违法用途。</li>' +
-      '<li><strong>AI 扩展约定</strong>：若后续启用自行接入 API（BYOK）功能，密钥仅存本地并直连服务商，严禁用于违法、欺诈或侵权用途。</li>' +
-      '<li><strong>免责声明</strong>：软件按“现状”提供，请务必自行定期备份重要本地数据。</li>' +
-      '</ol>' +
+    html: '<p class="n">TERMS OF SERVICE · 更新于 2026-11-16</p>' +
+      '<p class="lead">本条款适用于 Neinote 官网、桌面应用、枝络（Twiggo）及 Early Supporter 扩展包的使用。</p>' +
+      '<h4>1. 核心永久免费承诺</h4>' +
+      '<p>Neinote 与枝络（Twiggo）的核心功能对个人与商业记录永久免费，不设使用限制，也不含任何广告。</p>' +
+      '<h4>2. Early Supporter 扩展包、授权与退款</h4>' +
+      '<ul>' +
+      '<li><strong>一次性买断</strong>：成为 Early Supporter（现阶段早期支持定价 $9.9，随项目推进逐步调整）即可获得不可转让的扩展包授权，含持续滚动更新及最多 <strong>3 台设备</strong> 激活额度。</li>' +
+      '<li><strong>支付与税费</strong>：结算与所在地适用税费由 <strong>Creem（creem.io）</strong> 自动处理与计算。</li>' +
+      '<li><strong>14 天无理由退款</strong>：购买后 14 天内可随时申请全额无理由退款。</li>' +
+      '</ul>' +
+      '<h4>3. 内容归属与知识产权</h4>' +
+      '<p>你创建的全部笔记、大纲与本地文件 100% 归你所有。Neinote / Twiggo 软件本体、界面设计、主题、图标、音效及源代码的知识产权归开发者（Uno5&amp;）所有。</p>' +
+      '<h4>4. 合理使用与禁止行为</h4>' +
+      '<p>你同意不对软件或付费扩展包进行反编译、逆向工程、二次分发或倒卖，且不得将自带密钥（BYOK）的 AI 功能用于任何违法、欺诈或侵权用途。</p>' +
+      '<h4>5. 第三方服务</h4>' +
+      '<p>第三方服务（包括 Creem 结算、GitHub / Cloudflare 托管以及你自行配置的 AI 接口服务商）均受其各自条款与政策约束。</p>' +
+      '<h4>6. 免责声明与责任限制</h4>' +
+      '<p>软件按“现状”提供，不作任何明示或暗示的担保，请务必定期备份重要的本地数据。在法律允许的最大范围内，开发者就任何索赔承担的累计责任不超过你在过去 12 个月内为扩展包实际支付的金额。</p>' +
+      '<h4>7. 条款变更与联系</h4>' +
+      '<p>随着项目发展，我们可能会修订本条款；继续使用即视为接受更新后的条款。如有疑问，请联系 <a class="link" href="mailto:support_neinote@tcommons.top">support_neinote@tcommons.top</a>。</p>' +
       '<ul class="links">' +
-      '<li><a href="#payment" data-drawer="payment">支付与退款<span class="ext">→</span></a></li>' +
+      '<li><a href="#theme" data-drawer="theme">Early Supporter 与退款说明<span class="ext">→</span></a></li>' +
       '<li><a href="#privacy" data-drawer="privacy">隐私政策<span class="ext">→</span></a></li>' +
       '</ul>'
   },
