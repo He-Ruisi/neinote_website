@@ -1,0 +1,7 @@
+*.exe
+*.zip
+*.dmg
+*.AppImage
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Neinote · 枝络（Twiggo）</title>
+  <meta name="description" content="Neinote 与枝络（Twiggo）：本地优先的大纲笔记与悬浮抽屉。核心功能永久免费。隐私政策、服务条款、支付与退款说明与客户支持邮箱均在页内公开。">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0B0D0B">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230B0D0B'/%3E%3Cpolygon points='40,12 56,21 56,47 40,26' fill='%23EDEAE2' fill-opacity='0.28'/%3E%3Cpolygon points='44,53 60,74 60,88 44,79' fill='%23EDEAE2' fill-opacity='0.28'/%3E%3Crect x='20' y='47' width='7' height='17' fill='%23EDEAE2' fill-opacity='0.22'/%3E%3Crect x='60' y='53' width='20' height='26' fill='%23EDEAE2' fill-opacity='0.22'/%3E%3Cpath d='M27,26 H40 L56,47 H40 V74 H27 Z' fill='%23EDEAE2'/%3E%3Cpath d='M60,26 H73 V74 H60 L44,53 H60 Z' fill='%23B7F34A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============ 网页化顶部导航栏 ============ -->
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <a href="#top" class="brand" aria-label="回到顶部">
+        <svg class="brand-icon" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <!-- 建筑/制图等轴测网格辅助线 -->
+          <g stroke="currentColor" stroke-opacity="0.28" stroke-width="1.4">
+            <line x1="20" y1="16" x2="20" y2="82" />
+            <line x1="40" y1="6" x2="40" y2="90" />
+            <line x1="60" y1="10" x2="60" y2="94" />
+            <line x1="80" y1="18" x2="80" y2="84" />
+            <line x1="12" y1="30" x2="88" y2="66" />
+            <line x1="12" y1="48" x2="88" y2="84" />
+            <line x1="12" y1="72" x2="64" y2="96" />
+            <line x1="36" y1="4" x2="88" y2="28" />
+            <line x1="12" y1="34" x2="52" y2="6" />
+            <line x1="12" y1="56" x2="68" y2="16" />
+            <line x1="22" y1="84" x2="88" y2="36" />
+            <line x1="46" y1="94" x2="88" y2="64" />
+          </g>
+          <!-- 半透明折叠立体面 -->
+          <g fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.2">
+            <polygon points="40,12 56,20 56,47 40,26" />
+            <polygon points="44,53 60,74 60,88 44,80" />
+            <rect x="20" y="47" width="7" height="17" />
+            <rect x="60" y="53" width="20" height="26" />
+          </g>
+          <!-- 立体 N 主体构成 -->
+          <path d="M27,26 H40 L56,47 H40 V74 H27 Z" fill="currentColor" fill-opacity="0.88" stroke="currentColor"
+            stroke-width="1.5" />
+          <path d="M60,26 H73 V74 H60 L44,53 H60 Z" fill="currentColor" fill-opacity="0.88" stroke="currentColor"
+            stroke-width="1.5" />
+        </svg>
+        <span>NEINOTE</span>
+        <span class="brand-badge">V0.9.4</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sec1">缘起</a></li>
+        <li><a href="#sec2">枝络</a></li>
+        <li><a href="#sec3">服务</a></li>
+        <li><a href="#sec4">条款</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-toc-toggle active" id="btn-toc-toggle" type="button" aria-label="切换目录" title="目录">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="15" y2="12"></line>
+            <line x1="3" y1="18" x2="18" y2="18"></line>
+          </svg>
+          <span>目录</span>
+        </button>
+        <button class="btn-icon theme-toggle" id="theme-toggle" type="button" aria-label="切换主题" title="切换亮/暗主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="#download" data-drawer="download" class="btn-nav-cta">获取「枝络」</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ 侧边悬浮目录大纲 ============ -->
+  <aside class="toc-panel" id="toc-panel" aria-label="目录">
+    <div class="toc-head">
+      <h3 class="toc-title">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        目录 / OUTLINE
+      </h3>
+      <button class="toc-close" id="toc-close" type="button" aria-label="收起目录" title="收起">✕</button>
+    </div>
+    <ul class="toc-list">
+      <li class="toc-item"><a href="#top"><span class="t-num">00</span><span>NEINOTE</span></a></li>
+      <li class="toc-item"><a href="#sec1"><span class="t-num">01</span><span>缘起和经历</span></a></li>
+      <li class="toc-item"><a href="#sec2"><span class="t-num">02</span><span>枝络（Twiggo）介绍</span></a></li>
+      <li class="toc-item"><a href="#sec3"><span class="t-num">03</span><span>下载与服务说明</span></a></li>
+      <li class="toc-item"><a href="#sec4"><span class="t-num">04</span><span>隐私条款</span></a></li>
+      <li class="toc-item"><a href="#legal"><span class="t-num">§</span><span>底部信息</span></a></li>
+    </ul>
+  </aside>
+
+  <div id="essay">
+    <div class="rule rule-l"></div>
+    <div class="rule rule-r"></div>
+    <div id="rail-wrap"><svg id="rail" aria-hidden="true" focusable="false"></svg></div>
+    <div class="scroll-mark" aria-hidden="true"></div>
+
+    <main>
+
+      <!-- ============ § 00 ============ -->
+      <header class="hero" id="top">
+        <h1 class="wordmark">NEINOTE</h1>
+        <p class="tagline">让所有的细枝末节，汇聚成生活本身。</p>
+      </header>
+
+      <!-- ============ § 01 缘 ============ -->
+      <section class="sec" id="sec1">
+        <p class="mono sec-label">§ 01 / ORIGIN &amp; JOURNEY</p>
+        <h2 class="display reveal">缘起</h2>
+
+        <p class="reveal">
+          我是 Uno5&amp;，一个普通的独立开发者。Neinote 始于我对各类工具的爱恨交织。我是堪称典型的工具党，热衷于寻找和尝试不同的效率工具。然而在日复一日的工作与记录中，每面对一款工具，我总不免吐槽：“为什么没有
+          XX 功能？为什么不能更进一步？为什么流程不能再轻简一些？”当积攒的别扭与不满终于爆发，我决定不再等待，自己做一款顺手的工具！
+        </p>
+
+        <p class="reveal">
+          虽然关于它的构想早在心中盘旋已久，但直到 2025 年 5 月，我才用 <a class="link" href="#bolt" data-drawer="bolt">bolt.new</a>
+          搭出了第一个原型。老实说，除了同样拥有一个 Markdown 编辑器外，那个粗糙的原型与今天的 Neinote 已大相径庭。但一切，就这么开始了。</p>
+
+        <figure class="reveal" id="fig-origin">
+          <div class="photo-wrap">
+            <img class="photo" src="asset/pen_paper.jpg" alt="纸与笔有种无法取代的魅力，随意写写画画"
+              loading="lazy">
+          </div>
+          <figcaption>FIG.01 — 纸与笔有种无法取代的魅力，随意写写画画，任思绪流淌</figcaption>
+        </figure>
+
+        <p class="reveal" style="margin-top:48px;">你可以在 Neinote 身上看到许多杰出先行者的影子，从 <a class="link" href="#boogunote"
+            data-drawer="boogunote">Boogunote</a>、<a class="link" href="#notion" data-drawer="notion">Notion</a>、<a
+            class="link" href="#roam" data-drawer="roam">Roam Research</a>、<a class="link" href="#obsidian"
+            data-drawer="obsidian">Obsidian</a>，到 <a class="link" href="#sayit" data-drawer="sayit">Sayit</a>、<a
+            class="link" href="#wdtp" data-drawer="wdtp">WDTP</a> 与 <a class="link" href="#treesheets"
+            data-drawer="treesheets">TreeSheets</a>（排名不分前后，以首字母排序）——它们都曾深刻启发过我。Neinote 完全生长于我最真实的输入与整理体验。</p>
+
+        <p class="reveal">我只有少量 Java、C++、MATLAB 代码经验，前端于我是一片全然陌生的领域。依托生成式 AI 的协同，我开始了一场漫长而执拗的尝试。在此，我想要感谢 Xiaomimo
+          Studio、Kiro、Codex、Claudecode、Trae 等，尤其感谢 Antigravity。本项目 90% 的代码都在 Antigravity IDE 中完成。一次次近乎自虐的推倒重来中，我先后尝试过
+          <a class="link" href="#flutter" data-drawer="flutter">Flutter</a>、<a class="link" href="#reactvue"
+            data-drawer="reactvue">React / Vue 纯前端</a> 以及 <a class="link" href="#tauri" data-drawer="tauri">Tauri</a>
+          的组合，前后历经至少 10 次大重构、7 个大版本、十几个分支与上百次迭代。直到第 7 次大重构，才最终确立下现在的形态：<a class="link" href="#wails"
+            data-drawer="wails">React + Go + Wails v3</a> 的底层组合，搭配<a class="link" href="#dualwindow"
+            data-drawer="dualwindow">自动隐藏悬浮 + 主页面双窗口</a>的交互范式。
+        </p>
+
+        <p class="caption reveal">档案 / DOSSIER — 4 个阶段 · 10 次以上重构 · 7 个大版本 · 上百次迭代</p>
+        <div class="matrix reveal">
+          <div class="cell"><span class="ghost">04</span>
+            <p>个阶段：从原型、纯前端、混合壳，到今天的形态。</p>
+          </div>
+          <div class="cell"><span class="ghost">10+</span>
+            <p>次大重构。每一次都以为自己终于找对了方向。</p>
+          </div>
+          <div class="cell"><span class="ghost">07</span>
+            <p>个大版本，还不算那些没能活过一周的分支。</p>
+          </div>
+          <div class="cell"><span class="ghost">100+</span>
+            <p>次迭代。改动小到不值一提，却构成了全部。</p>
+          </div>
+        </div>
+
+        <p class="reveal">
+          今天回看，这似乎是个无比自然、显而易见的设计，但通往“合理”的道路从来不是一马平川——哪怕行业先驱早已将某种解法摆在眼前，撞过南墙、悬崖勒马、苦苦挣扎，这是我的来时路。我仍不能确认，我所感知到的“合理”是否就是“正确”？我不知道
+          Neinote 离最完美、最舒服的终极形态还有多远、多久，但至少在当下，我们相处得十分融洽。它所给予我的便利，已经是我能为自己创造的最大价值。</p>
+      </section>
+
+      <!-- ============ § 02 枝络（Twiggo）介绍（重点） ============ -->
+      <section class="sec" id="sec2">
+        <p class="mono sec-label">§ 02 / TWIGGO · CORE</p>
+        <h2 class="display reveal"><a class="link" href="#twiggo" data-drawer="twiggo"
+            style="text-decoration:none">枝络（Twiggo）</a></h2>
+
+        <p class="reveal">在此，请允许我隆重介绍 Neinote 的核心——<a class="link" href="#twiggo"
+            data-drawer="twiggo">枝络（Twiggo）</a>。如果将 Org-mode 在桌面端与 Markdown
+          结合，会发生什么？枝络是像影子一样的悬浮抽屉，也是像大树一样的大纲笔记。它可以容纳一切零散的思维碎片——轻巧、敏捷，存在感低却足够方便，无需切换窗口，鼠标轻滑即出，移出即隐。这就是枝络，让你所有的思绪随着一根根枝桠发散，随着一个个节点积累。
+        </p>
+
+        <div class="twiggo-features reveal">
+          <div class="tf-item">
+            <span class="mono tf-tag">01 · INSTANT</span>
+            <h3>轻滑即出，移出即隐</h3>
+            <p>常驻屏幕边缘，默认零存在感；鼠标靠近或快捷键瞬间呼出，不打断当前专注。</p>
+          </div>
+          <div class="tf-item">
+            <span class="mono tf-tag">02 · OUTLINER</span>
+            <h3>树状大纲，任意拆解</h3>
+            <p>无限层级节点折叠、拖拽与引用，像枝桠一样自然记录稍纵即逝的闪念。</p>
+          </div>
+          <div class="tf-item">
+            <span class="mono tf-tag">03 · LOCAL-FIRST</span>
+            <h3>纯文本 Markdown</h3>
+            <p>所有内容均以本地纯文本保存，无账号门槛、无强制云同步、不收集隐私。</p>
+          </div>
+          <div class="tf-item">
+            <span class="mono tf-tag">04 · DUAL WINDOW</span>
+            <h3>双窗口无缝接力</h3>
+            <p>悬浮窗随时记下灵感，主工作区负责长文整理，共享同一份本地数据。</p>
+          </div>
+        </div>
+
+        <!-- 后续在此添加实机图片 -->
+      </section>
+
+      <!-- ============ § 03 下载和服务购买说明 ============ -->
+      <section class="sec" id="sec3">
+        <p class="mono sec-label">§ 03 / DOWNLOAD &amp; PRICING</p>
+        <h2 class="display reveal">下载与服务</h2>
+
+        <p class="reveal">出于种种现实考量，现阶段项目暂不开源，但我郑重承诺：<strong style="font-weight:500">所有核心功能永久免费，且不设任何使用限制。</strong></p>
+        <p class="reveal">如果你喜欢它，欢迎通过购买<a class="link" href="#theme"
+            data-drawer="theme">主题样式与插件包</a>（$9.9 一次性买断，无订阅、后续更新免费获取）来支持开发。对我而言，Neinote 与<a class="link" href="#twiggo"
+            data-drawer="twiggo">枝络（Twiggo）</a>的初衷始终纯粹——帮你留住稍纵即逝的闪念，在纷繁日常中理清思绪。</p>
+
+        <div class="dl-stack reveal">
+          <a class="dl" href="#download" data-drawer="download">
+            <span class="left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+                aria-hidden="true">
+                <path d="M3 5.5l7.5-1v7H3zM11.5 4.3L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z" />
+              </svg>
+              <span class="os">W1 · WINDOWS</span>
+            </span>
+            <span class="right">
+              EXE · 约 26 MB · Alpha 2.2.1
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--voltage)" stroke-width="1.25"
+                aria-hidden="true">
+                <path d="M8 2v10M4 8.5l4 4 4-4M2.5 14h11" />
+              </svg>
+            </span>
+          </a>
+          <div class="dl soon" aria-disabled="true">
+            <span class="left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+                aria-hidden="true">
+                <path
+                  d="M16.2 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.5zM14 5.5c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3z" />
+              </svg>
+              <span class="os">A1 · MACOS</span>
+            </span>
+            <span class="right">即将推出 / COMING SOON</span>
+          </div>
+          <div class="dl soon" aria-disabled="true">
+            <span class="left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+                aria-hidden="true">
+                <path
+                  d="M12 2.5c2.2 0 3.2 1.6 3.2 3.6 0 1.6.4 2.4 1.3 3.6 1.2 1.6 2.2 3 2.2 5 0 2-1 3.3-2.2 3.7-.6.2-1.4.3-1.7 1.2-.3.9-1.2 1.9-2.8 1.9s-2.5-1-2.8-1.9c-.3-.9-1.1-1-1.7-1.2-1.2-.4-2.2-1.7-2.2-3.7 0-2 1-3.4 2.2-5 .9-1.2 1.3-2 1.3-3.6 0-2 1-3.6 3.2-3.6z" />
+                <path d="M9.8 11.2c.7.4 1.5.4 2.2 0" />
+              </svg>
+              <span class="os">L1 · LINUX</span>
+            </span>
+            <span class="right">即将推出 / COMING SOON</span>
+          </div>
+        </div>
+
+        <div class="dl-stack reveal" style="margin-top:16px">
+          <a class="dl" href="#theme" data-drawer="theme">
+            <span class="left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+                aria-hidden="true">
+                <path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.3 7.2 17.9l.9-5.4L4.2 8.7l5.4-.8z" />
+              </svg>
+              <span class="os">S1 · 主题样式与插件包</span>
+            </span>
+            <span class="right">
+              $9.9 一次性买断 · 无订阅 · 14 天无理由退款
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--voltage)" stroke-width="1.25"
+                aria-hidden="true">
+                <path d="M4 12L12 4M6 4h6v6" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ============ § 04 隐私条款 ============ -->
+      <section class="sec" id="sec4">
+        <p class="mono sec-label">§ 04 / PRIVACY &amp; TERMS</p>
+        <h2 class="display reveal">隐私与条款</h2>
+
+        <p class="reveal">整个 Neinote 项目都以本地优先，你的数据只掌握在你的手里。后续若接入 AI 功能，也将只支持自行配置 API，保护你的隐私。</p>
+        <p class="reveal">你可以随时阅读完整的<a class="link" href="#privacy" data-drawer="privacy">隐私政策</a>、<a class="link"
+            href="#terms" data-drawer="terms">服务条款</a>与<a class="link" href="#payment"
+            data-drawer="payment">支付与退款说明</a>。 </p>
+        <p class="reveal">如有任何问题，请致信 <a class="link" href="#contact"
+            data-drawer="contact">support_neinote@tcommons.top</a>。
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ============ 极简产品页脚 ============ -->
+  <footer class="site-footer" id="legal">
+    <div class="footer-wrap">
+      <div class="footer-brand-line">
+        <svg class="footer-logo" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <polygon points="40,12 56,20 56,47 40,26" fill="currentColor" fill-opacity="0.24" />
+          <polygon points="44,53 60,74 60,88 44,80" fill="currentColor" fill-opacity="0.24" />
+          <rect x="20" y="47" width="7" height="17" fill="currentColor" fill-opacity="0.2" />
+          <rect x="60" y="53" width="20" height="26" fill="currentColor" fill-opacity="0.2" />
+          <path d="M27,26 H40 L56,47 H40 V74 H27 Z" fill="currentColor" fill-opacity="0.88" />
+          <path d="M60,26 H73 V74 H60 L44,53 H60 Z" fill="currentColor" fill-opacity="0.88" />
+        </svg>
+        <span class="footer-title">Neinote &amp; 枝络（Twiggo）&nbsp;&bull;&nbsp; &copy; 2026 Neinote</span>
+      </div>
+
+      <div class="footer-mail-line">
+        <span>服务邮箱：</span>
+        <a class="footer-mail-link" href="mailto:support_neinote@tcommons.top">support_neinote@tcommons.top</a>
+      </div>
+
+      <nav class="footer-links-line" aria-label="合规与支持链接">
+        <a href="#privacy" data-drawer="privacy">隐私政策</a>
+        <a href="#terms" data-drawer="terms">服务条款</a>
+        <a href="#payment" data-drawer="payment">支付与退款</a>
+        <a href="#theme" data-drawer="theme">主题与插件全集 ($9.9)</a>
+        <a href="#contact" data-drawer="contact">联系支持</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============ 抽屉内容源 ============ -->
+  <div id="panels">
+
+    <!-- 01 -->
+    <section class="panel" id="boogunote" data-title="Boogunote" data-eyebrow="DRAWER 01 / 22">
+      <p class="n">前行者 / PREDECESSOR · 01</p>
+      <p class="lead">把「随手记」做到近乎无感的轻量记录工具。</p>
+      <p>不强求分类与架构，只把入口放到最近处，随后安静退开。Neinote「存在感低但足够方便」的第一原则即源自于此。</p>
+    </section>
+
+    <!-- 02 -->
+    <section class="panel" id="bolt" data-title="bolt.new" data-eyebrow="DRAWER 02 / 22">
+      <p class="n">前行者 / PREDECESSOR · 02</p>
+      <p class="lead">浏览器里的 AI 应用原型环境。</p>
+      <p>2025 年 5 月在此搭出了 Neinote 的第一个粗糙骨架，让我第一次跨越了前端开发门槛。</p>
+      <ul class="links">
+        <li><a href="https://bolt.new" target="_blank" rel="noopener">官网 bolt.new<span class="ext">↗</span></a></li>
+        <li><a href="#download" data-drawer="download">下载 Twiggo<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 03 -->
+    <section class="panel" id="notion" data-title="Notion" data-eyebrow="DRAWER 03 / 22">
+      <p class="n">前行者 / PREDECESSOR · 03</p>
+      <p class="lead">证明了结构可以是自由的，而非僵硬的文件夹。</p>
+      <p>它启示了容器的通用性；而 Neinote 更专注于「录入瞬间」的零阻力，而非复杂的整理体系。</p>
+      <ul class="links">
+        <li><a href="https://www.notion.so" target="_blank" rel="noopener">官网 notion.so<span class="ext">↗</span></a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 04 -->
+    <section class="panel" id="obsidian" data-title="Obsidian" data-eyebrow="DRAWER 04 / 22">
+      <p class="n">前行者 / PREDECESSOR · 04</p>
+      <p class="lead">本地 Markdown 与双向链接的教科书。</p>
+      <p>纯文本文件加优秀编辑器足以构建思考系统。Neinote 的本地优先承诺源于对这一理念的深信。</p>
+      <ul class="links">
+        <li><a href="https://obsidian.md" target="_blank" rel="noopener">官网 obsidian.md<span class="ext">↗</span></a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 05 -->
+    <section class="panel" id="roam" data-title="Roam Research" data-eyebrow="DRAWER 05 / 22">
+      <p class="n">前行者 / PREDECESSOR · 05</p>
+      <p class="lead">网络化思考：让一条想法同时活在多个地方。</p>
+      <p>大纲与块引用教会我：重要的不是归档到唯一位置，而是让零散念头产生关联。</p>
+      <ul class="links">
+        <li><a href="https://roamresearch.com" target="_blank" rel="noopener">官网 roamresearch.com<span
+              class="ext">↗</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 06 -->
+    <section class="panel" id="sayit" data-title="Sayit" data-eyebrow="DRAWER 06 / 22">
+      <p class="n">前行者 / PREDECESSOR · 06</p>
+      <p class="lead">把「想到」和「记下」的距离压到最短。</p>
+      <p>灵感到达时，任何切窗口或填标题都在扼杀它。Twiggo「鼠标轻滑即出，移出即隐」正是对此的回应。</p>
+    </section>
+
+    <!-- 07 -->
+    <section class="panel" id="treesheets" data-title="TreeSheets" data-eyebrow="DRAWER 07 / 22">
+      <p class="n">前行者 / PREDECESSOR · 07</p>
+      <p class="lead">树与表格，本可以是同一种东西。</p>
+      <p>自由层级的极简容器，证明底层结构足够诚实时，无需预设繁琐模式即可承载一切笔记与日程。</p>
+      <ul class="links">
+        <li><a href="https://strlen.com/treesheets/" target="_blank" rel="noopener">官网 strlen.com/treesheets<span
+              class="ext">↗</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 08 -->
+    <section class="panel" id="wdtp" data-title="WDTP" data-eyebrow="DRAWER 08 / 22">
+      <p class="n">前行者 / PREDECESSOR · 08</p>
+      <p class="lead">小而锋利的工具典范。</p>
+      <p>克制而不堆砌功能，没有留存套路。Neinote「核心永久免费、无任何限制」便源自这份克制。</p>
+    </section>
+
+    <!-- 09 -->
+    <section class="panel" id="flutter" data-title="Flutter" data-eyebrow="DRAWER 09 / 22">
+      <p class="n">折腾史 / REWRITES · 09</p>
+      <p class="lead">首次尝试：一套代码跨三端。</p>
+      <p>桌面端的光标细节、输入法兼容与窗口质感达不到预期，最终放弃。</p>
+      <ul class="links">
+        <li><a href="#wails" data-drawer="wails">查看最终选定的方案<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 10 -->
+    <section class="panel" id="reactvue" data-title="React / Vue 纯前端" data-eyebrow="DRAWER 10 / 22">
+      <p class="n">折腾史 / REWRITES · 10</p>
+      <p class="lead">二次尝试：先做界面再说。</p>
+      <p>纯前端难以优雅驾驭系统托盘、全局快捷键与本地文件读写，但奠定了后续组件布局基础。</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="panel" id="tauri" data-title="Tauri" data-eyebrow="DRAWER 11 / 22">
+      <p class="n">折腾史 / REWRITES · 11</p>
+      <p class="lead">三次尝试：轻量级桌面壳。</p>
+      <p>启动迅速、体积小巧，但跨平台分发与细微窗口行为差异让我再度推倒重来。</p>
+      <ul class="links">
+        <li><a href="#dualwindow" data-drawer="dualwindow">了解双窗口交互<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 12 -->
+    <section class="panel" id="wails" data-title="React + Go + Wails v3" data-eyebrow="DRAWER 12 / 22">
+      <p class="n">折腾史 / REWRITES · 12</p>
+      <p class="lead">最终形态：React 表达 + Go 驱动 + Wails v3 胶合。</p>
+      <p>React 负责界面表达，Go 稳健处理文件、托盘与系统交互，Wails v3 顺畅通信。这是一条能独自走到底的务实路线。</p>
+      <ul class="links">
+        <li><a href="#dualwindow" data-drawer="dualwindow">双窗口交互范式<span class="ext">→</span></a></li>
+        <li><a href="#download" data-drawer="download">下载 Windows 版<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 13 -->
+    <section class="panel" id="dualwindow" data-title="自动隐藏悬浮 + 主页面双窗口" data-eyebrow="DRAWER 13 / 22">
+      <p class="n">交互范式 / INTERACTION · 13</p>
+      <p class="lead">两个窗口，两种存在感。</p>
+      <p><strong>悬浮窗（Twiggo）</strong>：贴边隐藏，鼠标滑入即记，移出即隐。</p>
+      <p><strong>主页面</strong>：完整双栏工作区，负责深度梳理与检索。两者共享本地数据，互不等待。</p>
+    </section>
+
+    <!-- 14 -->
+    <section class="panel" id="twiggo" data-title="枝络（Twiggo）" data-eyebrow="DRAWER 14 / 20">
+      <p class="n">产品 / PRODUCT · 14</p>
+      <p class="lead">像影子一样的悬浮抽屉，也是像大树一样的大纲笔记。</p>
+      <ul>
+        <li>无限层级大纲，Markdown 纯文本本地存储</li>
+        <li>贴边自动隐藏与全局快捷键，无需切换窗口</li>
+        <li>无账号门槛、无强制云同步、无信息流推送</li>
+      </ul>
+      <ul class="links">
+        <li><a href="#download" data-drawer="download">下载枝络（Twiggo）<span class="ext">→</span></a></li>
+        <li><a href="#theme" data-drawer="theme">主题样式与插件包<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 15 -->
+    <section class="panel" id="theme" data-title="主题样式与插件包" data-eyebrow="DRAWER 15 / 22">
+      <p class="n">付费附加内容 / PAID ADD-ON · 15</p>
+      <p class="lead">核心功能永久免费，仅售卖精致主题与插件包作为额外支持（$9.9 买断）。</p>
+      <ul>
+        <li>含亮暗双套精致主题与多组排版预设</li>
+        <li>含导出模板、批量整理与快捷指令插件</li>
+        <li>一次性买断，后续更新免费获得，绝无订阅</li>
+      </ul>
+      <div class="slot">由 creem.io 处理结算，14 天内可无理由申请全额退款。</div>
+      <ul class="links">
+        <li><a href="#payment" data-drawer="payment">支付与退款条款<span class="ext">→</span></a></li>
+        <li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 16 -->
+    <section class="panel" id="privacy" data-title="隐私政策" data-eyebrow="DRAWER 16 / 22">
+      <p class="n">PRIVACY POLICY · 2025-11-14</p>
+      <p class="lead">本地优先，数据仅属于你。</p>
+      <ol>
+        <li><strong>本地存储</strong>：笔记、大纲与设置仅存本地设备，无云端备份或收集。</li>
+        <li><strong>零追踪</strong>：不做行为埋点或用户画像；不出售或共享任何个人数据。</li>
+        <li><strong>订单信息</strong>：购买附加包时仅通过 creem.io 获取订单号与邮箱用于交付与退款，不接触卡号密码。</li>
+        <li><strong>AI 数据</strong>：自带 Key 直连第三方服务商，本地存储密钥，我们不转发不留存。</li>
+        <li><strong>你的权利</strong>：支持随时访问、导出或删除订单相关个人数据，30 天内邮件答复。</li>
+      </ol>
+      <ul class="links">
+        <li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>
+        <li><a href="mailto:support_neinote@tcommons.top">联系邮箱<span class="ext">✉</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 17 -->
+    <section class="panel" id="terms" data-title="服务条款" data-eyebrow="DRAWER 17 / 20">
+      <p class="n">TERMS OF SERVICE · 2025-11-14</p>
+      <p class="lead">适用于 Neinote 官网、桌面应用、Twiggo 及付费附加包。</p>
+      <ol>
+        <li><strong>免费承诺</strong>：核心功能永久免费、无限制、无广告。</li>
+        <li><strong>买断与退款</strong>：主题插件包一次性买断非订阅；支持 14 天内无理由全额退款。</li>
+        <li><strong>内容归属</strong>：笔记与数据完全归你所有；软件与界面版权归开发者所有。</li>
+        <li><strong>禁止行为</strong>：禁止反编译源码、倒卖主题包或用于违法用途。</li>
+        <li><strong>AI 扩展约定</strong>：若后续启用自行接入 API（BYOK）功能，密钥仅存本地并直连服务商，严禁用于违法、欺诈或侵权用途。</li>
+        <li><strong>免责声明</strong>：软件按“现状”提供，请务必自行定期备份重要本地数据。</li>
+      </ol>
+      <ul class="links">
+        <li><a href="#payment" data-drawer="payment">支付与退款<span class="ext">→</span></a></li>
+        <li><a href="#privacy" data-drawer="privacy">隐私政策<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 18 -->
+    <section class="panel" id="payment" data-title="支付与退款" data-eyebrow="DRAWER 20 / 22">
+      <p class="n">PAYMENT &amp; REFUNDS · 2025-11-14</p>
+      <p class="lead">由 creem.io 安全处理支付，无任何订阅与隐藏收费。</p>
+      <ol>
+        <li><strong>交付</strong>：付款后下载链接与许可凭证直接发送至你的邮箱。</li>
+        <li><strong>退款</strong>：购买后 14 天内无理由全额退款；超期设备兼容问题可个案处理。</li>
+        <li><strong>税费</strong>：由 creem.io 按所在地在结算页自动计算。</li>
+      </ol>
+      <ul class="links">
+        <li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>
+        <li><a href="mailto:support_neinote@tcommons.top">联系退款<span class="ext">✉</span></a></li>
+      </ul>
+    </section>
+
+    <!-- 21 -->
+    <section class="panel" id="contact" data-title="联系与支持" data-eyebrow="DRAWER 21 / 22">
+      <p class="n">CONTACT &amp; SUPPORT</p>
+      <div class="mail-row">
+        <p class="lead" style="margin:0">邮箱：<a class="link"
+            href="mailto:support_neinote@tcommons.top">support_neinote@tcommons.top</a></p>
+        <button type="button" class="copy-btn dark" data-copy="support_neinote@tcommons.top">复制</button>
+      </div>
+      <p>通常 3 个工作日内回复。来信请简述：系统与软件版本、复现步骤或订单号。</p>
+    </section>
+
+    <!-- 22 -->
+    <section class="panel" id="download" data-title="下载枝络（Twiggo）" data-eyebrow="DRAWER 20 / 20">
+      <p class="n">DOWNLOAD · ALPHA 2.2.1</p>
+      <p class="lead">目前提供 Windows 版安装包（EXE · 约 26 MB），Mac 与 Linux 版筹备中。</p>
+      <ul>
+        <li>要求：Windows 10 (1809)+，约 200 MB 磁盘空间，无需联网</li>
+        <li>数据安全：笔记存本地，卸载应用不会删除你的数据</li>
+      </ul>
+      <div class="slot">下载链接将在本页开放。暂可通过服务邮箱直接索取最新版本。</div>
+      <ul class="links">
+        <li><a href="mailto:support_neinote@tcommons.top">邮件索取版本<span class="ext">✉</span></a></li>
+        <li><a href="#privacy" data-drawer="privacy">隐私政策<span class="ext">→</span></a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div id="backdrop"></div>
+
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+    <div class="drawer-inner">
+      <div class="drawer-head">
+        <div>
+          <p class="mono" id="drawer-eyebrow">DRAWER</p>
+          <h2 id="drawer-title" tabindex="-1">—</h2>
+        </div>
+        <button class="drawer-close" id="drawer-close" type="button" aria-label="关闭抽屉">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.25"
+            aria-hidden="true">
+            <path d="M3 3l10 10M13 3L3 13" />
+          </svg>
+        </button>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
