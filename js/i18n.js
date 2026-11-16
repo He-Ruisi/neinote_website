@@ -367,7 +367,7 @@
     };
   }
 
-  function applyLang(lang) {
+  function applyLang(lang, persist) {
     captureZh();
     currentLang = lang === 'en' ? 'en' : 'zh';
     var q = function (s) { return document.querySelector(s); };
@@ -476,21 +476,63 @@
       });
     }
 
-    try { localStorage.setItem(STORAGE_KEY, currentLang); } catch (e) { }
+    if (persist !== false) {
+      try { localStorage.setItem(STORAGE_KEY, currentLang); } catch (e) { }
+    }
     window.dispatchEvent(new CustomEvent('neinote:langchange', { detail: { lang: currentLang } }));
+  }
+
+  function isMainlandChinaLocal() {
+    var tz = '';
+    try {
+      tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    } catch (e) { }
+    var cnTz = tz === 'Asia/Shanghai' || tz === 'Asia/Chongqing' || tz === 'Asia/Harbin' || tz === 'Asia/Urumqi';
+    var lang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase();
+    var isCnLang = lang === 'zh-cn' || lang === 'zh-hans-cn' || lang === 'zh-hans';
+    return cnTz || isCnLang;
+  }
+
+  function detectCloudflareRegion(onResult) {
+    if (typeof fetch !== 'function') return;
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = controller ? setTimeout(function () { controller.abort(); }, 1500) : 0;
+    fetch('/cdn-cgi/trace', controller ? { signal: controller.signal, cache: 'no-store' } : { cache: 'no-store' })
+      .then(function (res) { return res.ok ? res.text() : ''; })
+      .then(function (txt) {
+        if (timer) clearTimeout(timer);
+        var m = txt && txt.match(/^loc=([A-Z]{2})/m);
+        if (m && m[1]) {
+          onResult(m[1] === 'CN' ? 'zh' : 'en');
+        }
+      })
+      .catch(function () {
+        if (timer) clearTimeout(timer);
+      });
   }
 
   function init() {
     captureZh();
     var saved = null;
     try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { }
-    if (saved === 'en') {
-      applyLang('en');
+    if (saved === 'en' || saved === 'zh') {
+      applyLang(saved, false);
+    } else {
+      var initial = isMainlandChinaLocal() ? 'zh' : 'en';
+      if (initial === 'en') applyLang('en', false);
+      detectCloudflareRegion(function (detected) {
+        var userSaved = null;
+        try { userSaved = localStorage.getItem(STORAGE_KEY); } catch (e) { }
+        if (!userSaved && detected !== currentLang) {
+          applyLang(detected, false);
+        }
+      });
     }
     var btn = document.getElementById('lang-toggle');
     if (btn) {
       btn.addEventListener('click', function () {
-        applyLang(currentLang === 'zh' ? 'en' : 'zh');
+        applyLang(currentLang === 'zh' ? 'en' : 'zh', true);
       });
     }
   }
