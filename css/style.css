@@ -422,39 +422,56 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 .addon-list li{margin-bottom:4px}
 .addon-list li:last-child{margin-bottom:0}
 
+/* ============ Early Supporter 扩展包底栏 ============ */
 .dl-addon-foot{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:16px;
-  padding:16px 22px;
+  gap:20px;
+  padding:18px 24px;
   border-top:1px solid var(--border);
-  background:color-mix(in srgb, var(--surface-2) 65%, var(--surface-1));
+  background:color-mix(in srgb, var(--surface-2) 75%, var(--surface-1));
+  box-sizing:border-box;
 }
-.addon-foot-info{
+.addon-foot-left{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+.addon-foot-title-row{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   flex-wrap:wrap;
+}
+.addon-foot-name{
+  font-family:var(--zhisong);
+  font-size:16px;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:.02em;
 }
 .addon-foot-badge{
   display:inline-block;
   font-family:var(--mono);
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
-  letter-spacing:.04em;
-  padding:3px 9px;
+  letter-spacing:.06em;
+  padding:3px 8px;
   border-radius:4px;
-  background:color-mix(in srgb, var(--voltage) 15%, transparent);
+  background:color-mix(in srgb, var(--voltage) 14%, var(--surface-1));
   border:1px solid color-mix(in srgb, var(--voltage) 45%, var(--border));
   color:var(--voltage);
+  white-space:nowrap;
 }
 .addon-foot-desc{
   font-family:var(--wenkai);
   font-size:13px;
+  line-height:1.5;
   color:var(--ink-muted);
 }
-.addon-foot-action{
+.addon-foot-right{
   flex:0 0 auto;
 }
 .creem-btn{
@@ -469,17 +486,60 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   transform:translateY(1px);
   box-shadow:0 1px 0 0 #151617 !important;
 }
+
+/* ============ 抽屉内扩展包卡片 (Download & Twiggo Drawers) ============ */
+.drawer-addon-card,
 .drawer-creem-box{
-  margin:24px 0 16px;
+  margin:22px 0 16px;
   padding:16px 18px;
-  border-radius:10px;
-  background:var(--surface-2);
-  border:1px solid var(--border);
+  border-radius:12px;
+  background:color-mix(in srgb, var(--surface-2) 90%, var(--surface-1));
+  border:1px solid color-mix(in srgb, var(--voltage) 35%, var(--border));
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:16px;
+  box-sizing:border-box;
+}
+.drawer-addon-head{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  min-width:0;
+}
+.drawer-addon-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
   flex-wrap:wrap;
+}
+.drawer-addon-name{
+  font-family:var(--zhisong);
+  font-size:15px;
+  font-weight:600;
+  color:var(--ink);
+}
+.drawer-addon-badge{
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.05em;
+  padding:2px 7px;
+  border-radius:4px;
+  background:color-mix(in srgb, var(--voltage) 14%, transparent);
+  border:1px solid color-mix(in srgb, var(--voltage) 40%, var(--border));
+  color:var(--voltage);
+  white-space:nowrap;
+}
+.drawer-addon-desc{
+  margin:0;
+  font-family:var(--wenkai);
+  font-size:12.5px;
+  color:var(--ink-muted);
+  line-height:1.5;
+}
+.drawer-addon-action{
+  flex:0 0 auto;
 }
 .drawer-creem-note{
   font-family:var(--wenkai);
@@ -678,10 +738,11 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .addon-item{border-bottom:1px solid var(--border);padding:20px 22px}
   .addon-item:last-child{border-bottom:0}
   .dl-addon-foot{flex-direction:column;align-items:flex-start;gap:14px;padding:16px 18px}
-  .addon-foot-action{width:100%}
-  .addon-foot-action .creem-btn{width:100%;justify-content:center}
-  .drawer-creem-box{flex-direction:column;align-items:flex-start;gap:12px}
-  .drawer-creem-box .creem-btn{width:100%;justify-content:center}
+  .addon-foot-right,.addon-foot-action{width:100%}
+  .addon-foot-right .creem-btn,.addon-foot-action .creem-btn{width:100%;justify-content:center}
+  .drawer-addon-card,.drawer-creem-box{flex-direction:column;align-items:flex-start;gap:14px}
+  .drawer-addon-action{width:100%}
+  .drawer-addon-action .creem-btn,.drawer-creem-box .creem-btn{width:100%;justify-content:center}
   .tf-item:nth-child(n+3){border-bottom:1px solid var(--border)}
   .tf-item:last-child{border-bottom:0}
   .ghost{font-size:22px}

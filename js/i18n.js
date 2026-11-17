@@ -138,12 +138,17 @@
         '<li>Edge auto-hide &amp; global hotkeys without switching windows</li>' +
         '<li>No account required, no forced cloud sync, no feeds</li>' +
         '</ul>' +
-        '<div class="drawer-creem-box">' +
-        '<div class="drawer-creem-note">' +
-        '<strong>Early Supporter Expansion Pack</strong><br>' +
-        '€9.9 one-time purchase · Unlock all themes &amp; upcoming plugins' +
+        '<div class="drawer-addon-card">' +
+        '<div class="drawer-addon-head">' +
+        '<div class="drawer-addon-meta">' +
+        '<span class="drawer-addon-name">Early Supporter Expansion Pack</span>' +
+        '<span class="drawer-addon-badge">€9.9 One-Time</span>' +
         '</div>' +
+        '<p class="drawer-addon-desc">Support Indie Dev · Unlock all themes &amp; upcoming plugins · Up to 3 devices</p>' +
+        '</div>' +
+        '<div class="drawer-addon-action">' +
         '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
+        '</div>' +
         '</div>' +
         '<ul class="links">' +
         '<li><a href="#download" data-drawer="download">Download Twiggo<span class="ext">→</span></a></li>' +
@@ -271,12 +276,17 @@
         '<div style="margin:24px 0 18px">' +
         '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">Download for Windows (EXE · ~26 MB)</a>' +
         '</div>' +
-        '<div class="drawer-creem-box">' +
-        '<div class="drawer-creem-note">' +
-        '<strong>Support Development · Early Supporter</strong><br>' +
-        '€9.9 one-time purchase · 3 devices · Full expansion pack' +
+        '<div class="drawer-addon-card">' +
+        '<div class="drawer-addon-head">' +
+        '<div class="drawer-addon-meta">' +
+        '<span class="drawer-addon-name">Early Supporter Expansion Pack</span>' +
+        '<span class="drawer-addon-badge">€9.9 One-Time</span>' +
         '</div>' +
+        '<p class="drawer-addon-desc">Support Indie Dev · Unlock all themes &amp; upcoming plugins · Up to 3 devices</p>' +
+        '</div>' +
+        '<div class="drawer-addon-action">' +
         '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
+        '</div>' +
         '</div>' +
         '<ul class="links">' +
         '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.2.1-alpha/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">GitHub Releases Mirror<span class="ext">↓</span></a></li>' +
@@ -332,8 +342,9 @@
       '<li>Built-in clipboard &amp; screenshot plugins</li><li>Upcoming: PDF reader, browser annotations &amp; more</li><li>Supports AI chat and extensible workflows</li>',
       '<li>Included automatically when you become an Early Supporter</li><li>Early-stage pricing, adjusted as the project matures</li><li>Activate on up to 3 devices with rolling updates</li><li>Secure Creem checkout · 14-day no-questions-asked refund</li>'
     ],
+    addonFootName: 'Early Supporter Expansion Pack',
     addonFootBadge: '€9.9 One-Time',
-    addonFootDesc: 'Up to 3 devices · Rolling updates · 14-day refund',
+    addonFootDesc: 'Up to 3 devices · Rolling updates · 14-day refund guarantee',
     sec4Title: 'Privacy &amp; Terms',
     sec4P1: 'Neinote is local-first from the ground up—your data stays solely in your hands. Future AI integrations will only support bring-your-own-key (BYOK) configuration to protect your privacy.',
     sec4P2: 'You can read our full <a class="link" href="#privacy" data-drawer="privacy">Privacy Policy</a>, <a class="link" href="#terms" data-drawer="terms">Terms of Service</a>, and <a class="link" href="#payment" data-drawer="payment">Payment &amp; Refund Policy</a> at any time.',
@@ -380,6 +391,7 @@
       s1Right: q('.dl-addon-head .right') ? q('.dl-addon-head .right').innerHTML : '',
       addonTitles: qa('.addon-item h4').map(function (el) { return el.innerHTML; }),
       addonLists: qa('.addon-item .addon-list').map(function (el) { return el.innerHTML; }),
+      addonFootName: q('.addon-foot-name') ? q('.addon-foot-name').textContent : '',
       addonFootBadge: q('.addon-foot-badge') ? q('.addon-foot-badge').textContent : '',
       addonFootDesc: q('.addon-foot-desc') ? q('.addon-foot-desc').textContent : '',
       sec4Title: q('#sec4 h2.display') ? q('#sec4 h2.display').innerHTML : '',
@@ -433,6 +445,7 @@
       if (q('.dl-addon-head .right')) q('.dl-addon-head .right').innerHTML = zhCache.s1Right;
       qa('.addon-item h4').forEach(function (el, i) { if (zhCache.addonTitles[i] != null) el.innerHTML = zhCache.addonTitles[i]; });
       qa('.addon-item .addon-list').forEach(function (el, i) { if (zhCache.addonLists[i] != null) el.innerHTML = zhCache.addonLists[i]; });
+      if (q('.addon-foot-name')) q('.addon-foot-name').textContent = zhCache.addonFootName;
       if (q('.addon-foot-badge')) q('.addon-foot-badge').textContent = zhCache.addonFootBadge;
       if (q('.addon-foot-desc')) q('.addon-foot-desc').textContent = zhCache.addonFootDesc;
       if (q('#sec4 h2.display')) q('#sec4 h2.display').innerHTML = zhCache.sec4Title;
@@ -489,6 +502,7 @@
       }
       qa('.addon-item h4').forEach(function (el, i) { if (EN_PAGE.addonTitles[i]) el.innerHTML = EN_PAGE.addonTitles[i]; });
       qa('.addon-item .addon-list').forEach(function (el, i) { if (EN_PAGE.addonLists[i]) el.innerHTML = EN_PAGE.addonLists[i]; });
+      if (q('.addon-foot-name')) q('.addon-foot-name').textContent = EN_PAGE.addonFootName;
       if (q('.addon-foot-badge')) q('.addon-foot-badge').textContent = EN_PAGE.addonFootBadge;
       if (q('.addon-foot-desc')) q('.addon-foot-desc').textContent = EN_PAGE.addonFootDesc;
       if (q('#sec4 h2.display')) q('#sec4 h2.display').innerHTML = EN_PAGE.sec4Title;
