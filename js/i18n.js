@@ -146,14 +146,21 @@
     theme: {
       title: 'Early Supporter Pack',
       eyebrow: 'DRAWER 15 / 20',
-      html: '<p class="n">EARLY SUPPORTER · $9.9</p>' +
-        '<p class="lead">Core features are free forever. Become an Early Supporter with a $9.9 one-time purchase to unlock the full expansion pack (early-stage pricing).</p>' +
+      html: '<p class="n">EARLY SUPPORTER · €9.9</p>' +
+        '<p class="lead">Core features are free forever. Become an Early Supporter with a €9.9 one-time purchase to unlock the full expansion pack (early-stage pricing).</p>' +
         '<h4>What\'s Included</h4>' +
         '<ul>' +
         '<li><strong>01 / Theme Pack</strong>: 6 built-in minimal themes &amp; typography presets, plus two full expansion themes (Chinese Landscape &amp; Retro Pixel) with colors, fonts, icons, and sound effects.</li>' +
         '<li><strong>02 / Plugin Pack</strong>: Built-in clipboard and screenshot plugins, with upcoming extensions for PDF reading, browser annotations, AI chat, and more.</li>' +
         '<li><strong>03 / License &amp; Updates</strong>: Activate on up to 3 devices; one-time purchase with no subscription and continuous rolling updates.</li>' +
         '</ul>' +
+        '<div class="drawer-creem-box">' +
+        '<div class="drawer-creem-note">' +
+        '<strong>€9.9 One-Time Purchase</strong><br>' +
+        'Up to 3 devices · Rolling updates · 14-day refund guarantee' +
+        '</div>' +
+        '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
+        '</div>' +
         '<h4>Payment, Delivery &amp; Refunds</h4>' +
         '<ol>' +
         '<li><strong>Secure Checkout</strong>: Processed by Creem (creem.io), with local taxes calculated automatically at checkout.</li>' +
@@ -201,7 +208,7 @@
         '<p>Core features of Neinote and Twiggo are free forever for personal and commercial note-taking, with no usage limits and no advertisements.</p>' +
         '<h4>2. Early Supporter Pack, Licensing &amp; Refunds</h4>' +
         '<ul>' +
-        '<li><strong>One-Time Purchase</strong>: Becoming an Early Supporter ($9.9 early-stage pricing, subject to adjustment as the project progresses) grants a non-transferable license for the expansion pack with rolling updates and activation on up to <strong>3 devices</strong>.</li>' +
+        '<li><strong>One-Time Purchase</strong>: Becoming an Early Supporter (€9.9 early-stage pricing, subject to adjustment as the project progresses) grants a non-transferable license for the expansion pack with rolling updates and activation on up to <strong>3 devices</strong>.</li>' +
         '<li><strong>Payment &amp; Taxes</strong>: Checkout and applicable regional taxes are handled by <strong>Creem (creem.io)</strong>.</li>' +
         '<li><strong>14-Day Refund</strong>: You may request a full, no-questions-asked refund within 14 days of purchase.</li>' +
         '</ul>' +
@@ -298,11 +305,11 @@
     fig2Cap: 'FIG.02 — Twiggo live demo: edge-docked floating capture &amp; hierarchical outline',
     sec3Title: 'Download &amp; Services',
     sec3P1: 'For practical reasons the project is not open-source at this stage, yet I make one firm promise: <strong style="font-weight:500">all core features are free forever with zero usage limits.</strong>',
-    sec3P2: 'If you enjoy it, consider becoming an <a class="link" href="#theme" data-drawer="theme">Early Supporter</a> ($9.9 one-time purchase with the full expansion pack included) to support development. The goal of Neinote and <a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a> remains simple: catch fleeting sparks of thought and bring clarity to everyday life.',
+    sec3P2: 'If you enjoy it, consider becoming an <a class="link" href="#theme" data-drawer="theme">Early Supporter</a> (€9.9 one-time purchase with the full expansion pack included) to support development. The goal of Neinote and <a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a> remains simple: catch fleeting sparks of thought and bring clarity to everyday life.',
     dlWinRight: 'EXE · ~26 MB · Alpha 2.2.1',
     dlSoon: 'COMING SOON',
     s1Title: 'S1 · Early Supporter',
-    s1Price: '$9.9 One-Time',
+    s1Price: '€9.9 One-Time',
     s1Right: 'Details &amp; Creem Checkout',
     addonTitles: ['01 / Theme Pack', '02 / Plugin Pack', '03 / License &amp; Updates'],
     addonLists: [
@@ -310,6 +317,8 @@
       '<li>Built-in clipboard &amp; screenshot plugins</li><li>Upcoming: PDF reader, browser annotations &amp; more</li><li>Supports AI chat and extensible workflows</li>',
       '<li>Included automatically when you become an Early Supporter</li><li>Early-stage pricing, adjusted as the project matures</li><li>Activate on up to 3 devices with rolling updates</li><li>Secure Creem checkout · 14-day no-questions-asked refund</li>'
     ],
+    addonFootBadge: '€9.9 One-Time',
+    addonFootDesc: 'Up to 3 devices · Rolling updates · 14-day refund',
     sec4Title: 'Privacy &amp; Terms',
     sec4P1: 'Neinote is local-first from the ground up—your data stays solely in your hands. Future AI integrations will only support bring-your-own-key (BYOK) configuration to protect your privacy.',
     sec4P2: 'You can read our full <a class="link" href="#privacy" data-drawer="privacy">Privacy Policy</a>, <a class="link" href="#terms" data-drawer="terms">Terms of Service</a>, and <a class="link" href="#payment" data-drawer="payment">Payment &amp; Refund Policy</a> at any time.',
@@ -317,7 +326,7 @@
     footerTitle: 'Neinote &amp; Twiggo &nbsp;&bull;&nbsp; &copy; 2026 Neinote',
     footerMailLabel: 'Support Email:',
     footerLinks: [
-      'Early Supporter Pack &amp; Refunds ($9.9)',
+      'Early Supporter Pack &amp; Refunds (€9.9)',
       'Privacy Policy',
       'Terms of Service',
       'Contact Support'
@@ -356,6 +365,8 @@
       s1Right: q('.dl-addon-head .right') ? q('.dl-addon-head .right').innerHTML : '',
       addonTitles: qa('.addon-item h4').map(function (el) { return el.innerHTML; }),
       addonLists: qa('.addon-item .addon-list').map(function (el) { return el.innerHTML; }),
+      addonFootBadge: q('.addon-foot-badge') ? q('.addon-foot-badge').textContent : '',
+      addonFootDesc: q('.addon-foot-desc') ? q('.addon-foot-desc').textContent : '',
       sec4Title: q('#sec4 h2.display') ? q('#sec4 h2.display').innerHTML : '',
       sec4Ps: qa('#sec4 > p.reveal').map(function (el) { return el.innerHTML; }),
       footerTitle: q('.footer-title') ? q('.footer-title').innerHTML : '',
@@ -398,7 +409,7 @@
       if (q('.thanks-group:last-child p')) q('.thanks-group:last-child p').innerHTML = zhCache.thanksCompanions;
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = zhCache.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = zhCache.sec2P1;
-      if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zhCache.fig2Cap;
+      if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zh2Cap = zhCache.fig2Cap;
       if (q('#sec3 h2.display')) q('#sec3 h2.display').innerHTML = zhCache.sec3Title;
       qa('#sec3 > p.reveal').forEach(function (el, i) { if (zhCache.sec3Ps[i] != null) el.innerHTML = zhCache.sec3Ps[i]; });
       qa('#sec3 .dl-stack:first-of-type .dl .right').forEach(function (el, i) { if (zhCache.dlRights[i] != null) el.innerHTML = zhCache.dlRights[i]; });
@@ -407,6 +418,8 @@
       if (q('.dl-addon-head .right')) q('.dl-addon-head .right').innerHTML = zhCache.s1Right;
       qa('.addon-item h4').forEach(function (el, i) { if (zhCache.addonTitles[i] != null) el.innerHTML = zhCache.addonTitles[i]; });
       qa('.addon-item .addon-list').forEach(function (el, i) { if (zhCache.addonLists[i] != null) el.innerHTML = zhCache.addonLists[i]; });
+      if (q('.addon-foot-badge')) q('.addon-foot-badge').textContent = zhCache.addonFootBadge;
+      if (q('.addon-foot-desc')) q('.addon-foot-desc').textContent = zhCache.addonFootDesc;
       if (q('#sec4 h2.display')) q('#sec4 h2.display').innerHTML = zhCache.sec4Title;
       qa('#sec4 > p.reveal').forEach(function (el, i) { if (zhCache.sec4Ps[i] != null) el.innerHTML = zhCache.sec4Ps[i]; });
       if (q('.footer-title')) q('.footer-title').innerHTML = zhCache.footerTitle;
@@ -461,6 +474,8 @@
       }
       qa('.addon-item h4').forEach(function (el, i) { if (EN_PAGE.addonTitles[i]) el.innerHTML = EN_PAGE.addonTitles[i]; });
       qa('.addon-item .addon-list').forEach(function (el, i) { if (EN_PAGE.addonLists[i]) el.innerHTML = EN_PAGE.addonLists[i]; });
+      if (q('.addon-foot-badge')) q('.addon-foot-badge').textContent = EN_PAGE.addonFootBadge;
+      if (q('.addon-foot-desc')) q('.addon-foot-desc').textContent = EN_PAGE.addonFootDesc;
       if (q('#sec4 h2.display')) q('#sec4 h2.display').innerHTML = EN_PAGE.sec4Title;
       var sec4Ps = qa('#sec4 > p.reveal');
       if (sec4Ps[0]) sec4Ps[0].innerHTML = EN_PAGE.sec4P1;

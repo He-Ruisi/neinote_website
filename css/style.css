@@ -422,6 +422,72 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 .addon-list li{margin-bottom:4px}
 .addon-list li:last-child{margin-bottom:0}
 
+.dl-addon-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:16px 22px;
+  border-top:1px solid var(--border);
+  background:color-mix(in srgb, var(--surface-2) 65%, var(--surface-1));
+}
+.addon-foot-info{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.addon-foot-badge{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.04em;
+  padding:3px 9px;
+  border-radius:4px;
+  background:color-mix(in srgb, var(--voltage) 15%, transparent);
+  border:1px solid color-mix(in srgb, var(--voltage) 45%, var(--border));
+  color:var(--voltage);
+}
+.addon-foot-desc{
+  font-family:var(--wenkai);
+  font-size:13px;
+  color:var(--ink-muted);
+}
+.addon-foot-action{
+  flex:0 0 auto;
+}
+.creem-btn{
+  transition:transform .16s ease,box-shadow .16s ease,filter .16s ease;
+}
+.creem-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 0 0 #151617 !important;
+  filter:brightness(1.02);
+}
+.creem-btn:active{
+  transform:translateY(1px);
+  box-shadow:0 1px 0 0 #151617 !important;
+}
+.drawer-creem-box{
+  margin:24px 0 16px;
+  padding:16px 18px;
+  border-radius:10px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.drawer-creem-note{
+  font-family:var(--wenkai);
+  font-size:13px;
+  color:var(--ink-muted);
+  line-height:1.5;
+}
+
 /* ==================== 3. 融入网页基调的极简页脚 (Footer) ==================== */
 .site-footer{
   position:relative;background:var(--canvas);color:var(--ink);
@@ -611,6 +677,11 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .tf-item,.addon-item{border-right:0;padding:28px}
   .addon-item{border-bottom:1px solid var(--border);padding:20px 22px}
   .addon-item:last-child{border-bottom:0}
+  .dl-addon-foot{flex-direction:column;align-items:flex-start;gap:14px;padding:16px 18px}
+  .addon-foot-action{width:100%}
+  .addon-foot-action .creem-btn{width:100%;justify-content:center}
+  .drawer-creem-box{flex-direction:column;align-items:flex-start;gap:12px}
+  .drawer-creem-box .creem-btn{width:100%;justify-content:center}
   .tf-item:nth-child(n+3){border-bottom:1px solid var(--border)}
   .tf-item:last-child{border-bottom:0}
   .ghost{font-size:22px}

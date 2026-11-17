@@ -138,7 +138,7 @@ window.DRAWER_PANELS = {
   theme: {
     title: 'Early Supporter 扩展包',
     eyebrow: 'DRAWER 15 / 20',
-    html: '<p class="n">EARLY SUPPORTER · $9.9</p>' +
+    html: '<p class="n">EARLY SUPPORTER · €9.9</p>' +
       '<p class="lead">核心功能永久免费。成为 Early Supporter 即可一次性买断本扩展包，现阶段为早期支持定价。</p>' +
       '<h4>包含内容</h4>' +
       '<ul>' +
@@ -146,6 +146,13 @@ window.DRAWER_PANELS = {
       '<li><strong>02 / 插件包</strong>：内置剪贴板与截图基础插件，后续拓展 PDF 阅读、浏览器批注、AI 对话等增强扩展。</li>' +
       '<li><strong>03 / 授权与更新</strong>：支持最多 3 台设备激活；一次性买断无订阅，持续滚动更新。</li>' +
       '</ul>' +
+      '<div class="drawer-creem-box">' +
+      '<div class="drawer-creem-note">' +
+      '<strong>€9.9 一次性买断</strong><br>' +
+      '支持最多 3 台设备 · 持续滚动更新 · 14 天退款承诺' +
+      '</div>' +
+      '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
+      '</div>' +
       '<h4>支付、交付与退款说明</h4>' +
       '<ol>' +
       '<li><strong>安全结算</strong>：由 Creem（creem.io）处理支付，税费按所在地在结算页自动计算。</li>' +
@@ -193,7 +200,7 @@ window.DRAWER_PANELS = {
       '<p>Neinote 与枝络（Twiggo）的核心功能对个人与商业记录永久免费，不设使用限制，也不含任何广告。</p>' +
       '<h4>2. Early Supporter 扩展包、授权与退款</h4>' +
       '<ul>' +
-      '<li><strong>一次性买断</strong>：成为 Early Supporter（现阶段早期支持定价 $9.9，随项目推进逐步调整）即可获得不可转让的扩展包授权，含持续滚动更新及最多 <strong>3 台设备</strong> 激活额度。</li>' +
+      '<li><strong>一次性买断</strong>：成为 Early Supporter（现阶段早期支持定价 €9.9，随项目推进逐步调整）即可获得不可转让的扩展包授权，含持续滚动更新及最多 <strong>3 台设备</strong> 激活额度。</li>' +
       '<li><strong>支付与税费</strong>：结算与所在地适用税费由 <strong>Creem（creem.io）</strong> 自动处理与计算。</li>' +
       '<li><strong>14 天无理由退款</strong>：购买后 14 天内可随时申请全额无理由退款。</li>' +
       '</ul>' +
