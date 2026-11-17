@@ -138,6 +138,13 @@
         '<li>Edge auto-hide &amp; global hotkeys without switching windows</li>' +
         '<li>No account required, no forced cloud sync, no feeds</li>' +
         '</ul>' +
+        '<div class="drawer-creem-box">' +
+        '<div class="drawer-creem-note">' +
+        '<strong>Early Supporter Expansion Pack</strong><br>' +
+        '€9.9 one-time purchase · Unlock all themes &amp; upcoming plugins' +
+        '</div>' +
+        '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
+        '</div>' +
         '<ul class="links">' +
         '<li><a href="#download" data-drawer="download">Download Twiggo<span class="ext">→</span></a></li>' +
         '<li><a href="#theme" data-drawer="theme">Early Supporter Pack<span class="ext">→</span></a></li>' +
@@ -264,8 +271,16 @@
         '<div style="margin:24px 0 18px">' +
         '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">Download for Windows (EXE · ~26 MB)</a>' +
         '</div>' +
+        '<div class="drawer-creem-box">' +
+        '<div class="drawer-creem-note">' +
+        '<strong>Support Development · Early Supporter</strong><br>' +
+        '€9.9 one-time purchase · 3 devices · Full expansion pack' +
+        '</div>' +
+        '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
+        '</div>' +
         '<ul class="links">' +
         '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.2.1-alpha/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">GitHub Releases Mirror<span class="ext">↓</span></a></li>' +
+        '<li><a href="#theme" data-drawer="theme">Early Supporter Pack Details<span class="ext">→</span></a></li>' +
         '<li><a href="#privacy" data-drawer="privacy">Privacy Policy<span class="ext">→</span></a></li>' +
         '</ul>'
     }
