@@ -450,6 +450,21 @@
       return;
     }
 
+    /* 点击 Creem 结账按钮（支持抽屉内动态渲染） */
+    var cBtn = ev.target.closest ? ev.target.closest('[data-creem-checkout]') : null;
+    if (cBtn && window.Creem && typeof window.Creem.openCheckout === 'function') {
+      var cUrl = cBtn.getAttribute('data-creem-url') || cBtn.getAttribute('href');
+      if (cUrl) {
+        ev.preventDefault();
+        window.Creem.openCheckout({
+          checkoutUrl: cUrl,
+          theme: cBtn.getAttribute('data-creem-theme') || 'light',
+          locale: cBtn.getAttribute('data-creem-locale') || (document.documentElement.lang === 'en' ? 'en' : 'zh')
+        });
+        return;
+      }
+    }
+
     /* 点击枝干叶子 */
     var leaf = ev.target.closest ? ev.target.closest('.leaf[data-action]') : null;
     if (leaf) {

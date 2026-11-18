@@ -342,9 +342,9 @@
       '<li>Built-in clipboard &amp; screenshot plugins</li><li>Upcoming: PDF reader, browser annotations &amp; more</li><li>Supports AI chat and extensible workflows</li>',
       '<li>Included automatically when you become an Early Supporter</li><li>Early-stage pricing, adjusted as the project matures</li><li>Activate on up to 3 devices with rolling updates</li><li>Secure Creem checkout · 14-day no-questions-asked refund</li>'
     ],
-    addonFootName: 'Early Supporter Expansion Pack',
+    addonFootName: 'Early Supporter Pack',
     addonFootBadge: '€9.9 One-Time',
-    addonFootDesc: 'Up to 3 devices · Rolling updates · 14-day refund guarantee',
+    addonFootDesc: 'All themes &amp; plugins included · Up to 3 devices · 14-day refund',
     sec4Title: 'Privacy &amp; Terms',
     sec4P1: 'Neinote is local-first from the ground up—your data stays solely in your hands. Future AI integrations will only support bring-your-own-key (BYOK) configuration to protect your privacy.',
     sec4P2: 'You can read our full <a class="link" href="#privacy" data-drawer="privacy">Privacy Policy</a>, <a class="link" href="#terms" data-drawer="terms">Terms of Service</a>, and <a class="link" href="#payment" data-drawer="payment">Payment &amp; Refund Policy</a> at any time.',

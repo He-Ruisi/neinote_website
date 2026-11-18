@@ -430,7 +430,7 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   gap:20px;
   padding:18px 24px;
   border-top:1px solid var(--border);
-  background:color-mix(in srgb, var(--surface-2) 75%, var(--surface-1));
+  background:color-mix(in srgb, var(--surface-2) 80%, var(--surface-1));
   box-sizing:border-box;
 }
 .addon-foot-left{
@@ -447,7 +447,7 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 }
 .addon-foot-name{
   font-family:var(--zhisong);
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
   color:var(--ink);
   letter-spacing:.02em;
@@ -458,9 +458,9 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   font-size:11px;
   font-weight:600;
   letter-spacing:.06em;
-  padding:3px 8px;
+  padding:2px 8px;
   border-radius:4px;
-  background:color-mix(in srgb, var(--voltage) 14%, var(--surface-1));
+  background:color-mix(in srgb, var(--voltage) 15%, var(--surface-1));
   border:1px solid color-mix(in srgb, var(--voltage) 45%, var(--border));
   color:var(--voltage);
   white-space:nowrap;
@@ -493,7 +493,7 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   margin:22px 0 16px;
   padding:16px 18px;
   border-radius:12px;
-  background:color-mix(in srgb, var(--surface-2) 90%, var(--surface-1));
+  background:color-mix(in srgb, var(--voltage-dim) 50%, var(--surface-2));
   border:1px solid color-mix(in srgb, var(--voltage) 35%, var(--border));
   display:flex;
   align-items:center;
@@ -518,6 +518,7 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   font-size:15px;
   font-weight:600;
   color:var(--ink);
+  letter-spacing:.02em;
 }
 .drawer-addon-badge{
   font-family:var(--mono);
@@ -526,8 +527,8 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   letter-spacing:.05em;
   padding:2px 7px;
   border-radius:4px;
-  background:color-mix(in srgb, var(--voltage) 14%, transparent);
-  border:1px solid color-mix(in srgb, var(--voltage) 40%, var(--border));
+  background:color-mix(in srgb, var(--voltage) 15%, transparent);
+  border:1px solid color-mix(in srgb, var(--voltage) 45%, var(--border));
   color:var(--voltage);
   white-space:nowrap;
 }
