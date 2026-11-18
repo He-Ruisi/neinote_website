@@ -260,17 +260,9 @@ window.DRAWER_PANELS = {
     title: '下载枝络（Twiggo）',
     eyebrow: 'DRAWER 20 / 20',
     html: '<p class="n">DOWNLOAD · ALPHA 2.2.1</p>' +
-      '<p class="lead">目前提供 Windows 绿色单文件版（EXE · 约 26 MB，无需安装），Mac 与 Linux 版筹备中。</p>' +
-      '<ul>' +
-      '<li><strong>系统要求</strong>：Windows 10 (1809)+ / Windows 11，约 200 MB 磁盘空间，完全离线运行</li>' +
-      '<li><strong>绿色升级</strong>：数据与授权存在用户目录（如 <code>AppData</code> / <code>~/.goote</code>），升级直接替换 <code>.exe</code> 即可保留全部数据</li>' +
-      '</ul>' +
-      '<div style="margin:24px 0 14px">' +
+      '<p class="lead">Windows 绿色单文件版（EXE · 约 26 MB），无需安装、离线可用。Mac 与 Linux 版筹备中。</p>' +
+      '<div style="margin:20px 0 14px">' +
       '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">立即下载 Windows 绿色版（EXE · 约 26 MB）</a>' +
-      '</div>' +
-      '<div class="drawer-notes">' +
-      '<p><strong>WebView2 依赖</strong>：Win11 与现代 Win10 已自带；若极少数精简/老旧系统无法启动，请前往 <a class="link" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" rel="noopener">微软官网安装 WebView2</a>。</p>' +
-      '<p><strong>SmartScreen 提示</strong>：暂未购买商业签名证书，首次运行如遇蓝框拦截，点击<strong>「更多信息」→「仍要运行」</strong>即可。</p>' +
       '</div>' +
       '<div class="drawer-addon-card">' +
       '<div class="drawer-addon-head">' +
@@ -278,12 +270,20 @@ window.DRAWER_PANELS = {
       '<span class="drawer-addon-name">Early Supporter 扩展包</span>' +
       '<span class="drawer-addon-badge">€9.9 一次性买断</span>' +
       '</div>' +
-      '<p class="drawer-addon-desc">支持独立开发 · 包含全套主题与后续增强插件 · 支持 3 台设备激活</p>' +
+      '<p class="drawer-addon-desc">解锁全套主题与增强插件 · 支持 3 台设备 · 14 天退款</p>' +
       '</div>' +
       '<div class="drawer-addon-action">' +
       '<a href="https://www.creem.io/payment/prod_VxpSzIiS2k61pxLgti8j1" data-creem-checkout data-creem-theme="light" class="creem-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:2px solid #151617;background:#FFBE98;color:#151617;box-shadow:0 3px 0 0 #151617;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M22.1102 11C24.1187 11 25.9669 12.0982 26.9281 13.8619L51.2059 58.4106C52.5699 60.9134 55.7048 61.8368 58.2077 60.473C60.7108 59.109 61.6342 55.9742 60.2701 53.4712L41.5466 19.113C39.554 15.4566 42.2004 11 46.3645 11H103.806C107.885 11 110.539 15.2933 108.715 18.9416L65.0579 106.254C63.0356 110.298 57.2654 110.298 55.2431 106.254L11.5863 18.9416C9.76212 15.2933 12.4156 11 16.4946 11H22.1102Z" fill="#151617"/></svg><span>Buy with Creem</span></a>' +
       '</div>' +
       '</div>' +
+      '<details class="drawer-fold">' +
+      '<summary>运行环境与升级说明（WebView2 / SmartScreen / 数据目录）</summary>' +
+      '<div class="drawer-fold-body">' +
+      '<p><strong>系统与 WebView2</strong>：要求 Windows 10 (1809)+ / Win11，依赖微软 Edge WebView2（现代系统已自带）；若极少数精简系统无法启动，请前往 <a class="link" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" rel="noopener">微软官网安装 WebView2</a>。</p>' +
+      '<p><strong>绿色免安装升级</strong>：不打包 NSIS 安装包，笔记与授权存在用户目录（如 <code>AppData</code> / <code>~/.goote</code>），升级直接替换 <code>.exe</code> 即可保留全部数据。</p>' +
+      '<p><strong>SmartScreen 提示</strong>：暂未购买商业签名证书，首次运行遇蓝色拦截弹窗时，点击<strong>「更多信息」→「仍要运行」</strong>即可。</p>' +
+      '</div>' +
+      '</details>' +
       '<ul class="links">' +
       '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.2.1-alpha/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">GitHub Releases 备用下载<span class="ext">↓</span></a></li>' +
       '<li><a href="#theme" data-drawer="theme">Early Supporter 扩展包详情<span class="ext">→</span></a></li>' +
