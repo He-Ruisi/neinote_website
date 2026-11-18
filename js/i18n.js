@@ -329,6 +329,8 @@
     ],
     thanksTags: ['#Notes', '#Quick Notes', '#PKM', '#Long-form', '#Special'],
     thanksCompanions: 'Thank you to everyone who offered suggestions, tested early builds, and encouraged me along the way.',
+    companionTitle: 'To Grandma &amp; Doremi',
+    companionText: 'Finally, a heartfelt thank you to my grandma and my cat, Doremi.<br>Through countless quiet days and late nights of coding, rebuilding, and refining, your steady presence has been the warmest anchor in my everyday life.',
     sec2Title: '<a class="link" href="#twiggo" data-drawer="twiggo" style="text-decoration:none">Twiggo</a>',
     sec2P1: 'Allow me to introduce the heart of Neinote—<a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a>. What happens when desktop Org-mode meets Markdown? Twiggo is both a floating drawer like a shadow and an outliner like a growing tree. Light, nimble, low-presence yet always ready: no window switching needed—glide your mouse in to capture, glide out to hide. Let your thoughts branch out and accumulate node by node.',
     fig2Cap: 'FIG.02 — Twiggo live demo: edge-docked floating capture &amp; hierarchical outline',
@@ -389,6 +391,8 @@
       thanksGroupTitles: qa('.thanks-group h4').map(function (el) { return el.innerHTML; }),
       thanksTags: qa('.thanks-tag').map(function (el) { return el.textContent; }),
       thanksCompanions: q('.thanks-group:last-child p') ? q('.thanks-group:last-child p').innerHTML : '',
+      companionTitle: q('.companion-title') ? q('.companion-title').innerHTML : '',
+      companionText: q('.companion-text') ? q('.companion-text').innerHTML : '',
       sec2Title: q('#sec2 h2.display') ? q('#sec2 h2.display').innerHTML : '',
       sec2P1: q('#sec2 > p.reveal') ? q('#sec2 > p.reveal').innerHTML : '',
       fig2Cap: q('#sec2 .video-showcase figcaption') ? q('#sec2 .video-showcase figcaption').innerHTML : '',
@@ -445,6 +449,8 @@
       qa('.thanks-group h4').forEach(function (el, i) { if (zhCache.thanksGroupTitles[i] != null) el.innerHTML = zhCache.thanksGroupTitles[i]; });
       qa('.thanks-tag').forEach(function (el, i) { if (zhCache.thanksTags[i] != null) el.textContent = zhCache.thanksTags[i]; });
       if (q('.thanks-group:last-child p')) q('.thanks-group:last-child p').innerHTML = zhCache.thanksCompanions;
+      if (q('.companion-title')) q('.companion-title').innerHTML = zhCache.companionTitle;
+      if (q('.companion-text')) q('.companion-text').innerHTML = zhCache.companionText;
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = zhCache.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = zhCache.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zhCache.fig2Cap;
@@ -493,6 +499,8 @@
       qa('.thanks-group h4').forEach(function (el, i) { if (EN_PAGE.thanksGroupTitles[i]) el.innerHTML = EN_PAGE.thanksGroupTitles[i]; });
       qa('.thanks-tag').forEach(function (el, i) { if (EN_PAGE.thanksTags[i]) el.textContent = EN_PAGE.thanksTags[i]; });
       if (q('.thanks-group:last-child p')) q('.thanks-group:last-child p').innerHTML = EN_PAGE.thanksCompanions;
+      if (q('.companion-title')) q('.companion-title').innerHTML = EN_PAGE.companionTitle;
+      if (q('.companion-text')) q('.companion-text').innerHTML = EN_PAGE.companionText;
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = EN_PAGE.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = EN_PAGE.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = EN_PAGE.fig2Cap;

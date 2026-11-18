@@ -321,6 +321,62 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
   background:var(--surface-2);border:1px solid var(--border);color:var(--ink-faint);
 }
 
+/* ============ 致奶奶与猫咪 Doremi 陪伴卡片 ============ */
+.companion-note{
+  margin-top:44px;
+  display:grid;
+  grid-template-columns:210px minmax(0,1fr);
+  gap:28px;
+  align-items:center;
+  padding:22px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:color-mix(in srgb, var(--surface-2) 55%, var(--surface-1));
+}
+.companion-media{
+  width:100%;
+  aspect-ratio:3 / 4;
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+}
+.companion-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 22%;
+  display:block;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.companion-note:hover .companion-media img{
+  transform:scale(1.03);
+}
+.companion-copy{
+  min-width:0;
+}
+.companion-eyebrow{
+  margin:0 0 8px;
+  font-size:11px;
+  letter-spacing:.14em;
+  color:var(--voltage);
+}
+.companion-title{
+  margin:0 0 12px;
+  font-family:var(--zhisong);
+  font-size:20px;
+  font-weight:600;
+  color:var(--ink);
+  letter-spacing:.02em;
+}
+.companion-text{
+  margin:0;
+  font-family:var(--wenkai);
+  font-size:15px;
+  line-height:1.85;
+  color:var(--ink-muted);
+}
+
 /* 推荐表 */
 .table{border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:56px 0 24px}
 .row{
@@ -884,6 +940,8 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .footer-wrap{padding:24px 16px 28px 40px}
   .footer-wrap::before{left:24px}
   .toc-stack{right:12px;left:12px;width:auto;bottom:16px}
+  .companion-note{grid-template-columns:1fr;gap:18px;padding:18px}
+  .companion-media{max-width:240px;aspect-ratio:4 / 5}
 }
 
 @media (prefers-reduced-motion: reduce){
