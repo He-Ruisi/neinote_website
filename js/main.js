@@ -442,6 +442,24 @@
       return;
     }
 
+    /* 点击抽屉内跳转锚点（如跳转到 #sec3 服务区）时自动收起抽屉并平滑滚动 */
+    var closeAnchor = ev.target.closest ? ev.target.closest('#drawer a[data-close-drawer]') : null;
+    if (closeAnchor) {
+      var targetHash = closeAnchor.getAttribute('href');
+      var targetEl = targetHash && targetHash.length > 1 ? document.querySelector(targetHash) : null;
+      if (targetEl) {
+        ev.preventDefault();
+        closeNow();
+        if (window.history && history.replaceState) {
+          history.replaceState(null, '', targetHash);
+        }
+        setTimeout(function () {
+          targetEl.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+        }, 60);
+        return;
+      }
+    }
+
     /* 点击抽屉链接 */
     var a = ev.target.closest ? ev.target.closest('a[data-drawer]') : null;
     if (a) {
