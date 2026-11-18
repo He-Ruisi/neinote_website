@@ -157,6 +157,8 @@ body.toc-collapsed .side-note{
   background:var(--voltage-dim);color:var(--voltage);font-weight:500;
 }
 .toc-item.active .t-num{color:var(--voltage)}
+.toc-item.toc-sub a{padding-left:20px;font-size:11.5px}
+.toc-item.toc-sub .t-num{flex:0 0 26px;font-size:10.5px}
 
 /* ---------- 固定网格线 ---------- */
 #essay{position:relative;max-width:1180px;margin:0 auto;padding-top:var(--header-h);transition:margin .28s cubic-bezier(.16,1,.3,1),max-width .28s cubic-bezier(.16,1,.3,1)}
@@ -210,6 +212,12 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
 .display.wide{width:auto;max-width:100%}
 .sec{position:relative;padding-top:96px}
 .sec-label{margin-bottom:32px;font-size:15px;font-weight:500;letter-spacing:.16em;color:var(--ink-muted)}
+.subsec{position:relative;margin-top:64px;padding-top:48px;border-top:1px dashed var(--border)}
+.subsec-label{margin-bottom:20px;font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--ink-muted)}
+.subdisplay{
+  font-family:var(--zhisong);font-weight:500;font-size:clamp(24px,3.2vw,32px);
+  line-height:1.25;letter-spacing:.01em;margin:0 0 24px;color:var(--ink);
+}
 
 /* ---------- 首屏 ---------- */
 .hero{position:relative;min-height:60vh;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:40px;padding:120px 0 64px}
@@ -394,6 +402,56 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 .dl.soon{opacity:.5;cursor:not-allowed}
 .dl.soon:hover{background:transparent;border-color:var(--border)}
 .dl svg{flex:0 0 auto}
+
+/* ============ Windows 绿色单文件运行须知 ============ */
+.dl-notes{
+  margin-top:18px;
+  padding:18px 22px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:color-mix(in srgb, var(--surface-2) 60%, var(--surface-1));
+}
+.dl-notes-title{
+  margin:0 0 10px;
+  font-family:var(--zhisong);
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.03em;
+  color:var(--ink);
+}
+.dl-notes-list{
+  margin:0;
+  padding-left:18px;
+  font-family:var(--wenkai);
+  font-size:13.5px;
+  line-height:1.75;
+  color:var(--ink-muted);
+}
+.dl-notes-list li{margin-bottom:6px}
+.dl-notes-list li:last-child{margin-bottom:0}
+.dl-notes-list strong{color:var(--ink);font-weight:500}
+.dl-notes-list code, .drawer-notes code{
+  font-family:var(--mono);
+  font-size:12px;
+  padding:1px 5px;
+  border-radius:4px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  color:var(--ink);
+}
+.drawer-notes{
+  margin:14px 0 0;
+  padding:12px 14px;
+  border-radius:8px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  font-size:12.5px;
+  line-height:1.65;
+  color:var(--ink-muted);
+}
+.drawer-notes p{margin:0 0 6px}
+.drawer-notes p:last-child{margin-bottom:0}
+.drawer-notes strong{color:var(--ink);font-weight:500}
 
 /* S1 主题样式与插件包明细卡片 */
 .dl-addon{border-color:color-mix(in srgb, var(--voltage) 38%, var(--border));background:var(--surface-1)}

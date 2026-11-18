@@ -268,13 +268,17 @@
       title: 'Download Twiggo',
       eyebrow: 'DRAWER 20 / 20',
       html: '<p class="n">DOWNLOAD · ALPHA 2.2.1</p>' +
-        '<p class="lead">Windows installer (EXE · ~26 MB) available now. macOS and Linux builds are in preparation.</p>' +
+        '<p class="lead">Windows portable standalone executable (EXE · ~26 MB, no installer required). macOS and Linux builds are in preparation.</p>' +
         '<ul>' +
-        '<li>Requirements: Windows 10 (1809)+, ~200 MB disk space, works offline</li>' +
-        '<li>Data Safety: Notes are stored locally; uninstalling will not delete your data</li>' +
+        '<li><strong>Requirements</strong>: Windows 10 (1809)+ / Windows 11, ~200 MB disk space, works fully offline</li>' +
+        '<li><strong>Portable Upgrades</strong>: Notes and license config are stored in your user directory (e.g. <code>AppData</code> / <code>~/.goote</code>). Simply replace the <code>.exe</code> to upgrade without losing data</li>' +
         '</ul>' +
-        '<div style="margin:24px 0 18px">' +
-        '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">Download for Windows (EXE · ~26 MB)</a>' +
+        '<div style="margin:24px 0 14px">' +
+        '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">Download Windows Portable (EXE · ~26 MB)</a>' +
+        '</div>' +
+        '<div class="drawer-notes">' +
+        '<p><strong>WebView2 Runtime</strong>: Included in Win11 and modern Win10. If a stripped/older Win10 fails to launch, please install <a class="link" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" rel="noopener">Microsoft Edge WebView2</a>.</p>' +
+        '<p><strong>SmartScreen Notice</strong>: Without a commercial code-signing certificate yet, Windows may show a blue protection dialog—click <strong>"More info" → "Run anyway"</strong>.</p>' +
         '</div>' +
         '<div class="drawer-addon-card">' +
         '<div class="drawer-addon-head">' +
@@ -333,6 +337,11 @@
     sec3P2: 'If you enjoy it, consider becoming an <a class="link" href="#theme" data-drawer="theme">Early Supporter</a> (€9.9 one-time purchase with the full expansion pack included) to support development. The goal of Neinote and <a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a> remains simple: catch fleeting sparks of thought and bring clarity to everyday life.',
     dlWinRight: 'EXE · ~26 MB · Alpha 2.2.1',
     dlSoon: 'COMING SOON',
+    dlNotesTitle: 'Windows Portable Executable Notes',
+    dlNotesList:
+      '<li><strong>WebView2 Runtime</strong>: Relies on Microsoft Edge WebView2 (pre-installed on Win11 &amp; modern Win10). If a stripped or older Win10 fails to launch, please install <a class="link" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" rel="noopener">Edge WebView2 Runtime</a>.</li>' +
+      '<li><strong>Portable &amp; Safe Upgrades</strong>: Distributed as a standalone executable (no NSIS installer). Notes and license config reside in your user directory (e.g. <code>AppData</code> / <code>~/.goote</code>)—simply replace the <code>.exe</code> to upgrade without losing data.</li>' +
+      '<li><strong>SmartScreen Notice</strong>: Without a commercial code-signing certificate yet, Windows may show a blue protection dialog on first launch—click <strong>"More info" → "Run anyway"</strong>.</li>',
     s1Title: 'S1 · Early Supporter',
     s1Price: '€9.9 One-Time',
     s1Right: 'Details &amp; Creem Checkout',
@@ -383,9 +392,11 @@
       sec2Title: q('#sec2 h2.display') ? q('#sec2 h2.display').innerHTML : '',
       sec2P1: q('#sec2 > p.reveal') ? q('#sec2 > p.reveal').innerHTML : '',
       fig2Cap: q('#sec2 .video-showcase figcaption') ? q('#sec2 .video-showcase figcaption').innerHTML : '',
-      sec3Title: q('#sec3 h2.display') ? q('#sec3 h2.display').innerHTML : '',
+      sec3Title: q('#sec3 .subdisplay') ? q('#sec3 .subdisplay').innerHTML : '',
       sec3Ps: qa('#sec3 > p.reveal').map(function (el) { return el.innerHTML; }),
       dlRights: qa('#sec3 .dl-stack:first-of-type .dl .right').map(function (el) { return el.innerHTML; }),
+      dlNotesTitle: q('.dl-notes-title') ? q('.dl-notes-title').textContent : '',
+      dlNotesList: q('.dl-notes-list') ? q('.dl-notes-list').innerHTML : '',
       s1Title: q('.dl-addon-head .os') ? q('.dl-addon-head .os').textContent : '',
       s1Price: q('.dl-addon-head .addon-price') ? q('.dl-addon-head .addon-price').textContent : '',
       s1Right: q('.dl-addon-head .right') ? q('.dl-addon-head .right').innerHTML : '',
@@ -436,10 +447,12 @@
       if (q('.thanks-group:last-child p')) q('.thanks-group:last-child p').innerHTML = zhCache.thanksCompanions;
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = zhCache.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = zhCache.sec2P1;
-      if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zh2Cap = zhCache.fig2Cap;
-      if (q('#sec3 h2.display')) q('#sec3 h2.display').innerHTML = zhCache.sec3Title;
+      if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zhCache.fig2Cap;
+      if (q('#sec3 .subdisplay')) q('#sec3 .subdisplay').innerHTML = zhCache.sec3Title;
       qa('#sec3 > p.reveal').forEach(function (el, i) { if (zhCache.sec3Ps[i] != null) el.innerHTML = zhCache.sec3Ps[i]; });
       qa('#sec3 .dl-stack:first-of-type .dl .right').forEach(function (el, i) { if (zhCache.dlRights[i] != null) el.innerHTML = zhCache.dlRights[i]; });
+      if (q('.dl-notes-title')) q('.dl-notes-title').textContent = zhCache.dlNotesTitle;
+      if (q('.dl-notes-list')) q('.dl-notes-list').innerHTML = zhCache.dlNotesList;
       if (q('.dl-addon-head .os')) q('.dl-addon-head .os').textContent = zhCache.s1Title;
       if (q('.dl-addon-head .addon-price')) q('.dl-addon-head .addon-price').textContent = zhCache.s1Price;
       if (q('.dl-addon-head .right')) q('.dl-addon-head .right').innerHTML = zhCache.s1Right;
@@ -483,7 +496,7 @@
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = EN_PAGE.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = EN_PAGE.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = EN_PAGE.fig2Cap;
-      if (q('#sec3 h2.display')) q('#sec3 h2.display').innerHTML = EN_PAGE.sec3Title;
+      if (q('#sec3 .subdisplay')) q('#sec3 .subdisplay').innerHTML = EN_PAGE.sec3Title;
       var sec3Ps = qa('#sec3 > p.reveal');
       if (sec3Ps[0]) sec3Ps[0].innerHTML = EN_PAGE.sec3P1;
       if (sec3Ps[1]) sec3Ps[1].innerHTML = EN_PAGE.sec3P2;
@@ -494,6 +507,8 @@
       }
       if (dlRights[1]) dlRights[1].textContent = EN_PAGE.dlSoon;
       if (dlRights[2]) dlRights[2].textContent = EN_PAGE.dlSoon;
+      if (q('.dl-notes-title')) q('.dl-notes-title').textContent = EN_PAGE.dlNotesTitle;
+      if (q('.dl-notes-list')) q('.dl-notes-list').innerHTML = EN_PAGE.dlNotesList;
       if (q('.dl-addon-head .os')) q('.dl-addon-head .os').textContent = EN_PAGE.s1Title;
       if (q('.dl-addon-head .addon-price')) q('.dl-addon-head .addon-price').textContent = EN_PAGE.s1Price;
       if (q('.dl-addon-head .right')) {

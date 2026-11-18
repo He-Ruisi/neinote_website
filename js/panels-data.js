@@ -260,13 +260,17 @@ window.DRAWER_PANELS = {
     title: '下载枝络（Twiggo）',
     eyebrow: 'DRAWER 20 / 20',
     html: '<p class="n">DOWNLOAD · ALPHA 2.2.1</p>' +
-      '<p class="lead">目前提供 Windows 版安装包（EXE · 约 26 MB），Mac 与 Linux 版筹备中。</p>' +
+      '<p class="lead">目前提供 Windows 绿色单文件版（EXE · 约 26 MB，无需安装），Mac 与 Linux 版筹备中。</p>' +
       '<ul>' +
-      '<li>要求：Windows 10 (1809)+，约 200 MB 磁盘空间，无需联网</li>' +
-      '<li>数据安全：笔记存本地，卸载应用不会删除你的数据</li>' +
+      '<li><strong>系统要求</strong>：Windows 10 (1809)+ / Windows 11，约 200 MB 磁盘空间，完全离线运行</li>' +
+      '<li><strong>绿色升级</strong>：数据与授权存在用户目录（如 <code>AppData</code> / <code>~/.goote</code>），升级直接替换 <code>.exe</code> 即可保留全部数据</li>' +
       '</ul>' +
-      '<div style="margin:24px 0 18px">' +
-      '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">立即下载 Windows 版（EXE · 约 26 MB）</a>' +
+      '<div style="margin:24px 0 14px">' +
+      '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">立即下载 Windows 绿色版（EXE · 约 26 MB）</a>' +
+      '</div>' +
+      '<div class="drawer-notes">' +
+      '<p><strong>WebView2 依赖</strong>：Win11 与现代 Win10 已自带；若极少数精简/老旧系统无法启动，请前往 <a class="link" href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank" rel="noopener">微软官网安装 WebView2</a>。</p>' +
+      '<p><strong>SmartScreen 提示</strong>：暂未购买商业签名证书，首次运行如遇蓝框拦截，点击<strong>「更多信息」→「仍要运行」</strong>即可。</p>' +
       '</div>' +
       '<div class="drawer-addon-card">' +
       '<div class="drawer-addon-head">' +
