@@ -334,6 +334,21 @@
     sec2Title: '<a class="link" href="#twiggo" data-drawer="twiggo" style="text-decoration:none">Twiggo</a>',
     sec2P1: 'Allow me to introduce the heart of Neinote—<a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a>. What happens when desktop Org-mode meets Markdown? Twiggo is both a floating drawer like a shadow and an outliner like a growing tree. Light, nimble, low-presence yet always ready: no window switching needed—glide your mouse in to capture, glide out to hide. Let your thoughts branch out and accumulate node by node.',
     fig2Cap: 'FIG.02 — Twiggo live demo: edge-docked floating capture &amp; hierarchical outline',
+    galleryEyebrow: 'SCREENSHOTS · REAL INTERFACE',
+    galleryTitle: 'Real Interface Snapshots',
+    galleryTags: ['01 · Export', '02 · Filter', '03 · Network', '04 · Style'],
+    galleryCardTitles: [
+      'Seal & Signature',
+      'Multi-Dimensional Matrix',
+      'Mentions & Daily Links',
+      'Dark Mode & Retro Themes'
+    ],
+    galleryCardDescs: [
+      'Custom plant seals, author signatures, and epigraphs for distinct document exports.',
+      'Instantly filter by progress (Todo/Done), priority (Star/Urgent), or thought notes.',
+      'Type @ to link daily notes or reference nodes on the fly—networked thoughts with ease.',
+      'Toggle seamlessly between Modern clean UI and Retro 8-bit styles with subtle dot paper.'
+    ],
     sec3Title: 'Download &amp; Services',
     sec3P1: 'For practical reasons the project is not open-source at this stage, yet I make one firm promise: <strong style="font-weight:500">all core features are free forever with zero usage limits.</strong>',
     sec3P2: 'If you enjoy it, consider becoming an <a class="link" href="#theme" data-drawer="theme">Early Supporter</a> (€9.9 one-time purchase with the full expansion pack included) to support development. The goal of Neinote and <a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a> remains simple: catch fleeting sparks of thought and bring clarity to everyday life.',
@@ -396,6 +411,11 @@
       sec2Title: q('#sec2 h2.display') ? q('#sec2 h2.display').innerHTML : '',
       sec2P1: q('#sec2 > p.reveal') ? q('#sec2 > p.reveal').innerHTML : '',
       fig2Cap: q('#sec2 .video-showcase figcaption') ? q('#sec2 .video-showcase figcaption').innerHTML : '',
+      galleryEyebrow: q('.gallery-eyebrow') ? q('.gallery-eyebrow').textContent : '',
+      galleryTitle: q('.gallery-title') ? q('.gallery-title').textContent : '',
+      galleryTags: qa('.gallery-tag').map(function (el) { return el.textContent; }),
+      galleryCardTitles: qa('.gallery-card-title').map(function (el) { return el.textContent; }),
+      galleryCardDescs: qa('.gallery-card-desc').map(function (el) { return el.textContent; }),
       sec3Title: q('#sec3 .subdisplay') ? q('#sec3 .subdisplay').innerHTML : '',
       sec3Ps: qa('#sec3 > p.reveal').map(function (el) { return el.innerHTML; }),
       dlRights: qa('#sec3 .dl-stack:first-of-type .dl .right').map(function (el) { return el.innerHTML; }),
@@ -454,6 +474,11 @@
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = zhCache.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = zhCache.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zhCache.fig2Cap;
+      if (q('.gallery-eyebrow')) q('.gallery-eyebrow').textContent = zhCache.galleryEyebrow;
+      if (q('.gallery-title')) q('.gallery-title').textContent = zhCache.galleryTitle;
+      qa('.gallery-tag').forEach(function (el, i) { if (zhCache.galleryTags[i] != null) el.textContent = zhCache.galleryTags[i]; });
+      qa('.gallery-card-title').forEach(function (el, i) { if (zhCache.galleryCardTitles[i] != null) el.textContent = zhCache.galleryCardTitles[i]; });
+      qa('.gallery-card-desc').forEach(function (el, i) { if (zhCache.galleryCardDescs[i] != null) el.textContent = zhCache.galleryCardDescs[i]; });
       if (q('#sec3 .subdisplay')) q('#sec3 .subdisplay').innerHTML = zhCache.sec3Title;
       qa('#sec3 > p.reveal').forEach(function (el, i) { if (zhCache.sec3Ps[i] != null) el.innerHTML = zhCache.sec3Ps[i]; });
       qa('#sec3 .dl-stack:first-of-type .dl .right').forEach(function (el, i) { if (zhCache.dlRights[i] != null) el.innerHTML = zhCache.dlRights[i]; });
@@ -504,6 +529,11 @@
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = EN_PAGE.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = EN_PAGE.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = EN_PAGE.fig2Cap;
+      if (q('.gallery-eyebrow')) q('.gallery-eyebrow').textContent = EN_PAGE.galleryEyebrow;
+      if (q('.gallery-title')) q('.gallery-title').textContent = EN_PAGE.galleryTitle;
+      qa('.gallery-tag').forEach(function (el, i) { if (EN_PAGE.galleryTags[i]) el.textContent = EN_PAGE.galleryTags[i]; });
+      qa('.gallery-card-title').forEach(function (el, i) { if (EN_PAGE.galleryCardTitles[i]) el.textContent = EN_PAGE.galleryCardTitles[i]; });
+      qa('.gallery-card-desc').forEach(function (el, i) { if (EN_PAGE.galleryCardDescs[i]) el.textContent = EN_PAGE.galleryCardDescs[i]; });
       if (q('#sec3 .subdisplay')) q('#sec3 .subdisplay').innerHTML = EN_PAGE.sec3Title;
       var sec3Ps = qa('#sec3 > p.reveal');
       if (sec3Ps[0]) sec3Ps[0].innerHTML = EN_PAGE.sec3P1;
