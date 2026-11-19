@@ -267,10 +267,10 @@
     download: {
       title: 'Download Twiggo',
       eyebrow: 'DRAWER 20 / 20',
-      html: '<p class="n">DOWNLOAD · ALPHA 2.2.1</p>' +
-        '<p class="lead">Windows standalone portable executable (EXE · ~26 MB), offline-ready. macOS &amp; Linux coming soon.</p>' +
+      html: '<p class="n">DOWNLOAD · V2.23.0</p>' +
+        '<p class="lead">Windows standalone portable executable (EXE · ~27 MB), offline-ready. macOS &amp; Linux coming soon.</p>' +
         '<div style="margin:20px 0 14px">' +
-        '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">Download Windows Portable (EXE · ~26 MB)</a>' +
+        '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-v2.23.0.exe" download="twiggo-v2.23.0.exe" rel="noopener">Download Windows Portable (EXE · ~27 MB)</a>' +
         '</div>' +
         '<div class="drawer-addon-card">' +
         '<div class="drawer-addon-head">' +
@@ -293,7 +293,7 @@
         '</div>' +
         '</details>' +
         '<ul class="links">' +
-        '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.2.1-alpha/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">GitHub Releases Mirror<span class="ext">↓</span></a></li>' +
+        '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.23.0/twiggo-v2.23.0.exe" download="twiggo-v2.23.0.exe" rel="noopener">GitHub Releases Mirror<span class="ext">↓</span></a></li>' +
         '<li><a href="#theme" data-drawer="theme">Early Supporter Pack Details<span class="ext">→</span></a></li>' +
         '<li><a href="#privacy" data-drawer="privacy">Privacy Policy<span class="ext">→</span></a></li>' +
         '</ul>'
@@ -352,7 +352,7 @@
     sec3Title: 'Download &amp; Services',
     sec3P1: 'For practical reasons the project is not open-source at this stage, yet I make one firm promise: <strong style="font-weight:500">all core features are free forever with zero usage limits.</strong>',
     sec3P2: 'If you enjoy it, consider becoming an <a class="link" href="#theme" data-drawer="theme">Early Supporter</a> (€9.9 one-time purchase with the full expansion pack included) to support development. The goal of Neinote and <a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a> remains simple: catch fleeting sparks of thought and bring clarity to everyday life.',
-    dlWinRight: 'EXE · ~26 MB · Alpha 2.2.1',
+    dlWinRight: 'EXE · ~27 MB · v2.23.0',
     dlSoon: 'COMING SOON',
     dlNotesTitle: 'Windows Portable Executable Notes',
     dlNotesList:

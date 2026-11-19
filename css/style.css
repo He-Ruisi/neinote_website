@@ -39,6 +39,24 @@ body.locked{overflow:hidden}
 img{max-width:100%;display:block}
 ::selection{background:var(--voltage);color:var(--canvas)}
 
+/* ============ Bayer 拜耳点阵抖动光标拖尾 ============ */
+#dither-cursor-canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  pointer-events:none;
+  z-index:9998;
+  image-rendering:pixelated;
+}
+@media (prefers-reduced-motion: reduce){
+  #dither-cursor-canvas{display:none!important}
+}
+@media (hover: none), (pointer: coarse){
+  #dither-cursor-canvas{display:none!important}
+}
+
 /* ==================== 1. 顶部网页化导航栏 ==================== */
 .site-nav{
   position:fixed;top:0;left:0;right:0;height:var(--header-h);z-index:50;

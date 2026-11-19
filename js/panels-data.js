@@ -259,10 +259,10 @@ window.DRAWER_PANELS = {
   download: {
     title: '下载枝络（Twiggo）',
     eyebrow: 'DRAWER 20 / 20',
-    html: '<p class="n">DOWNLOAD · ALPHA 2.2.1</p>' +
-      '<p class="lead">Windows 绿色单文件版（EXE · 约 26 MB），无需安装、离线可用。Mac 与 Linux 版筹备中。</p>' +
+    html: '<p class="n">DOWNLOAD · V2.23.0</p>' +
+      '<p class="lead">Windows 绿色单文件版（EXE · 约 27 MB），无需安装、离线可用。Mac 与 Linux 版筹备中。</p>' +
       '<div style="margin:20px 0 14px">' +
-      '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">立即下载 Windows 绿色版（EXE · 约 26 MB）</a>' +
+      '<a class="btn-nav-cta" style="width:100%;height:44px;font-size:12px" href="https://download.tcommons.top/twiggo-v2.23.0.exe" download="twiggo-v2.23.0.exe" rel="noopener">立即下载 Windows 绿色版（EXE · 约 27 MB）</a>' +
       '</div>' +
       '<div class="drawer-addon-card">' +
       '<div class="drawer-addon-head">' +
@@ -285,7 +285,7 @@ window.DRAWER_PANELS = {
       '</div>' +
       '</details>' +
       '<ul class="links">' +
-      '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.2.1-alpha/twiggo-alpha-2.2.1.exe" download="twiggo-alpha-2.2.1.exe" rel="noopener">GitHub Releases 备用下载<span class="ext">↓</span></a></li>' +
+      '<li><a href="https://github.com/He-Ruisi/neinote_website/releases/download/v2.23.0/twiggo-v2.23.0.exe" download="twiggo-v2.23.0.exe" rel="noopener">GitHub Releases 备用下载<span class="ext">↓</span></a></li>' +
       '<li><a href="#theme" data-drawer="theme">Early Supporter 扩展包详情<span class="ext">→</span></a></li>' +
       '<li><a href="#privacy" data-drawer="privacy">隐私政策<span class="ext">→</span></a></li>' +
       '</ul>'
