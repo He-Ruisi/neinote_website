@@ -1,14 +1,14 @@
 {
-  "version": "2.23.0",
+  "version": "2.24.0",
   "releaseDate": "2026-11-19",
-  "downloadUrl": "https://download.tcommons.top/twiggo-v2.23.0.exe",
+  "downloadUrl": "https://download.tcommons.top/twiggo-v2.24.0.exe",
   "changelog": [
-    "枝络 (Twiggo) v2.23.0 正式发布",
+    "枝络 (Twiggo) v2.24.0 正式发布",
     "新增更新检查与版本日志弹窗",
     "优化伴生悬浮抽屉弹出与贴边吸附性能",
     "提升本地数据存储安全性与数据完整性保障"
   ],
   "size": 28701696,
-  "sha256": "e8090fb08bb305fc85269b9f961c4458ac3804a26f4f9db6259287a44b354563",
-  "tag": "v2.23.0"
+  "sha256": "8d8c6dad34a5f4517ccdde2e7ffc0d9bb835aa2cb39891483b338951823a2b97",
+  "tag": "v2.24.0"
 }

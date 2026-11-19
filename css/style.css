@@ -523,6 +523,66 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
   margin:0;
 }
 
+/* ============ 枝络核心四大支柱 (Pillars) ============ */
+.twiggo-pillars{
+  margin:24px 0 36px;
+}
+.pillars-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+.pillar-card{
+  padding:20px 18px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--surface-1);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:border-color .18s ease, transform .18s ease, background .18s ease;
+}
+.pillar-card:hover{
+  border-color:color-mix(in srgb, var(--voltage) 45%, var(--border));
+  background:color-mix(in srgb, var(--voltage) 3%, var(--surface-1));
+  transform:translateY(-2px);
+}
+.pillar-icon-wrap{
+  width:42px;
+  height:42px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  color:var(--voltage);
+  flex-shrink:0;
+}
+.pillar-num{
+  display:block;
+  font-size:10.5px;
+  letter-spacing:.08em;
+  color:var(--ink-faint);
+  margin-bottom:4px;
+}
+.pillar-title{
+  margin:0 0 6px;
+  font-family:var(--zhisong);
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.02em;
+  color:var(--ink);
+  line-height:1.35;
+}
+.pillar-desc{
+  margin:0;
+  font-family:var(--wenkai);
+  font-size:12px;
+  line-height:1.65;
+  color:var(--ink-muted);
+}
+
 .twiggo-features{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);margin:40px 0 0;background:var(--surface-1)}
 .tf-item{padding:32px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 .tf-item:nth-child(2n){border-right:0}
@@ -784,20 +844,39 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 }
 .dl-addon-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--border);
 }
 .addon-item{
-  padding:20px 22px;border-right:1px solid var(--border);
+  padding:22px 24px;border-right:1px solid var(--border);
+  background:var(--surface-1);
 }
 .addon-item:last-child{border-right:0}
 .addon-item h4{
-  font-family:var(--zhisong);font-size:15px;font-weight:500;color:var(--ink);margin:0 0 10px;
+  font-family:var(--zhisong);font-size:15px;font-weight:600;color:var(--ink);margin:0 0 10px;
 }
 .addon-list{
   margin:0;padding-left:16px;
-  font-family:var(--wenkai);font-size:14px;line-height:1.75;color:var(--ink-muted);
+  font-family:var(--wenkai);font-size:13.5px;line-height:1.75;color:var(--ink-muted);
 }
-.addon-list li{margin-bottom:4px}
+.addon-list li{margin-bottom:5px}
 .addon-list li:last-child{margin-bottom:0}
+
+/* ============ 扩展包大号结算按钮 ============ */
+.addon-foot-btn-large{
+  padding:13px 26px !important;
+  font-size:14.5px !important;
+  border-radius:12px !important;
+  box-shadow:0 4px 0 0 #151617 !important;
+  transition:transform .12s ease, box-shadow .12s ease !important;
+}
+.addon-foot-btn-large:hover{
+  transform:translateY(-1px);
+  box-shadow:0 5px 0 0 #151617 !important;
+}
+.addon-foot-btn-large:active{
+  transform:translateY(2px);
+  box-shadow:0 2px 0 0 #151617 !important;
+}
 
 /* ============ 扩展包主题预览展示 ============ */
 .addon-preview-wrap{
@@ -1231,6 +1310,7 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .twiggo-features,.dl-addon-grid,.dl-sub-grid{grid-template-columns:1fr}
   .dl-compact:first-child{border-right:0;border-bottom:1px solid var(--border)}
   .gallery-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .pillars-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .twiggo-gallery{padding:24px 20px}
   .addon-preview-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .addon-preview-wrap{padding:20px 16px}
@@ -1276,6 +1356,7 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .companion-media{max-width:240px;aspect-ratio:4 / 5}
   .twiggo-gallery{padding:18px 14px;margin:32px 0 0}
   .gallery-grid{gap:10px}
+  .pillars-grid{grid-template-columns:1fr;gap:10px}
   .gallery-card figcaption{padding:10px 10px 12px}
   .gallery-card-title{font-size:13.5px}
   .gallery-card-desc{font-size:11px;line-height:1.5}
