@@ -417,8 +417,11 @@ function updateWebsiteFiles(releaseInfo) {
       /(EXE\s*·\s*约\s*)\d+\s*MB(\s*·\s*)(?:Alpha|Beta|v)?\s*[0-9\.\-]+/i,
       `$1${releaseInfo.sizeMb} MB$2${releaseInfo.displayVer}`
     );
+    // 强制刷新静态资源缓存防呆版本戳，避免浏览器与 CDN 强缓存旧 panels-data.js
+    indexHtml = indexHtml.replace(/(\.css|\.js)\?v=[0-9\.\-]+/gi, `$1?v=${releaseInfo.version}`);
+
     if (!isDryRun) fs.writeFileSync(indexPath, indexHtml, 'utf-8');
-    success(`已更新: index.html (EXE · ${zhSizeStr} · ${releaseInfo.displayVer})`);
+    success(`已更新: index.html (EXE · ${zhSizeStr} · ${releaseInfo.displayVer}，缓存版本戳 ?v=${releaseInfo.version})`);
   }
 
   // 2. 更新 js/panels-data.js (中文面板)
@@ -447,9 +450,11 @@ function updateWebsiteFiles(releaseInfo) {
     success(`已更新: js/panels-data.js`);
   }
 
-  // 3. 更新 js/i18n.js (英文国际化)
-  if (fs.existsSync(i18nPath)) {
-    let i18n = fs.readFileSync(i18nPath, 'utf-8');
+  // 3. 更新 js/i18n-en.js 或 js/i18n.js (英文国际化数据)
+  const i18nEnPath = path.join(ROOT_DIR, 'js/i18n-en.js');
+  const targetI18nFile = fs.existsSync(i18nEnPath) ? i18nEnPath : i18nPath;
+  if (fs.existsSync(targetI18nFile)) {
+    let i18n = fs.readFileSync(targetI18nFile, 'utf-8');
 
     i18n = i18n.replace(/DOWNLOAD\s*·\s*(?:ALPHA|BETA|V)?[0-9\.\-\s]+/gi, `DOWNLOAD · ${releaseInfo.displayVer.toUpperCase()}`);
 
@@ -470,8 +475,8 @@ function updateWebsiteFiles(releaseInfo) {
       `dlWinRight: 'EXE · ${enSizeStr} · ${releaseInfo.displayVer}'`
     );
 
-    if (!isDryRun) fs.writeFileSync(i18nPath, i18n, 'utf-8');
-    success(`已更新: js/i18n.js`);
+    if (!isDryRun) fs.writeFileSync(targetI18nFile, i18n, 'utf-8');
+    success(`已更新: ${path.relative(ROOT_DIR, targetI18nFile)}`);
   }
 }
 
