@@ -562,53 +562,148 @@ figure.bleed{width:100%;max-width:100%}
 figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:var(--ink-faint);margin-top:12px}
 
 /* 下载行 */
-.dl-stack{border:1px solid var(--border);margin:40px 0 24px}
-.dl{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:12px 20px;
+.dl-stack{border:1px solid var(--border);margin:28px 0 20px;background:var(--surface-1);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.dl-stack:hover{border-color:color-mix(in srgb, var(--voltage) 35%, var(--border))}
+.dl{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:12px 20px;
   border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:border-color .16s,background .16s}
 .dl:last-child{border-bottom:0}
 .dl:hover{border-color:var(--border-strong);background:var(--surface-2)}
 .dl .left{display:flex;align-items:center;gap:14px}
 .dl .os{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink)}
 .dl .right{display:flex;align-items:center;gap:14px;font-family:var(--sans);font-size:12px;color:var(--ink-faint);letter-spacing:.04em;text-align:right}
-.dl.soon{opacity:.5;cursor:not-allowed}
+.dl.soon{opacity:.45;cursor:not-allowed}
 .dl.soon:hover{background:transparent;border-color:var(--border)}
 .dl svg{flex:0 0 auto}
 
-/* ============ Windows 绿色单文件运行须知 ============ */
-.dl-notes{
-  margin-top:18px;
-  padding:18px 22px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:color-mix(in srgb, var(--surface-2) 60%, var(--surface-1));
+/* ============ Windows 主下载卡强化与内嵌折叠 ============ */
+.dl-win-card{
+  background:color-mix(in srgb, var(--surface-2) 45%, var(--surface-1));
+  border-bottom:1px solid var(--border);
 }
-.dl-notes-title{
-  margin:0 0 10px;
-  font-family:var(--zhisong);
-  font-size:14px;
+.dl-hero{
+  min-height:72px;
+  padding:16px 24px;
+  border-bottom:0;
+}
+.dl-hero:hover{
+  background:color-mix(in srgb, var(--voltage) 10%, var(--surface-2));
+}
+.dl-hero .os{
+  font-size:13.5px;
   font-weight:600;
-  letter-spacing:.03em;
+  letter-spacing:.12em;
+}
+.dl-hero .right{
+  font-size:12.5px;
+  color:var(--ink-muted);
+}
+.dl-badge-portable{
+  font-family:var(--wenkai);
+  font-size:11.5px;
+  padding:2px 8px;
+  border-radius:999px;
+  background:color-mix(in srgb, var(--voltage) 15%, transparent);
+  border:1px solid color-mix(in srgb, var(--voltage) 35%, transparent);
   color:var(--ink);
+  margin-left:6px;
+}
+.dl-arrow-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  background:var(--voltage-dim);
+  border:1px solid color-mix(in srgb, var(--voltage) 45%, transparent);
+  transition:transform .16s ease,background .16s ease;
+}
+.dl-hero:hover .dl-arrow-btn{
+  transform:translateY(2px);
+  background:color-mix(in srgb, var(--voltage) 30%, transparent);
+}
+
+/* Windows 内部折叠说明 */
+.dl-win-fold{
+  border-top:1px dashed var(--border);
+  background:transparent;
+}
+.dl-win-fold summary.dl-notes-title{
+  list-style:none;
+  cursor:pointer;
+  padding:9px 24px;
+  margin:0;
+  font-family:var(--wenkai);
+  font-size:12.5px;
+  color:var(--ink-faint);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  user-select:none;
+  transition:color .15s,background .15s;
+}
+.dl-win-fold summary::-webkit-details-marker{display:none}
+.dl-win-fold summary:hover{
+  color:var(--ink);
+  background:color-mix(in srgb, var(--surface-1) 30%, transparent);
+}
+.dl-win-fold summary::after{
+  content:"+ 展开运行说明";
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--ink-faint);
+}
+.dl-win-fold[open] summary::after{
+  content:"− 收起运行说明";
+  color:var(--voltage);
+}
+.dl-fold-content{
+  padding:10px 24px 16px;
+  border-top:1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  background:color-mix(in srgb, var(--surface-2) 30%, transparent);
 }
 .dl-notes-list{
   margin:0;
   padding-left:18px;
   font-family:var(--wenkai);
-  font-size:13.5px;
-  line-height:1.75;
+  font-size:12.5px;
+  line-height:1.7;
   color:var(--ink-muted);
 }
-.dl-notes-list li{margin-bottom:6px}
+.dl-notes-list li{margin-bottom:5px}
 .dl-notes-list li:last-child{margin-bottom:0}
 .dl-notes-list strong{color:var(--ink);font-weight:500}
 .dl-notes-list code, .drawer-notes code{
   font-family:var(--mono);
-  font-size:12px;
+  font-size:11.5px;
   padding:1px 5px;
   border-radius:4px;
   background:var(--surface-2);
   border:1px solid var(--border);
   color:var(--ink);
+}
+
+/* 次要操作系统紧凑双列 */
+.dl-sub-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:var(--surface-1);
+}
+.dl-compact{
+  min-height:42px;
+  padding:8px 20px;
+  border-bottom:0;
+}
+.dl-compact:first-child{
+  border-right:1px solid var(--border);
+}
+.dl-compact .os{
+  font-size:11px;
+  letter-spacing:.1em;
+}
+.dl-compact .right{
+  font-size:11px;
+  letter-spacing:.02em;
 }
 .drawer-notes{
   margin:14px 0 0;
@@ -1133,7 +1228,8 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .matrix .cell{padding:12px 14px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
   .matrix .cell:nth-child(2n){border-right:0}
   .matrix .cell:nth-child(n+3){border-bottom:0}
-  .twiggo-features,.dl-addon-grid{grid-template-columns:1fr}
+  .twiggo-features,.dl-addon-grid,.dl-sub-grid{grid-template-columns:1fr}
+  .dl-compact:first-child{border-right:0;border-bottom:1px solid var(--border)}
   .gallery-grid{grid-template-columns:repeat(2,1fr);gap:14px}
   .twiggo-gallery{padding:24px 20px}
   .addon-preview-grid{grid-template-columns:repeat(2,1fr);gap:12px}

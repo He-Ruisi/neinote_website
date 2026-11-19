@@ -427,59 +427,69 @@
               data-drawer="twiggo">枝络（Twiggo）</a>的初衷始终纯粹——帮你留住稍纵即逝的闪念，在纷繁日常中理清思绪。</p>
 
           <div class="dl-stack reveal">
-            <a class="dl" href="#download" data-drawer="download">
-              <span class="left">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
-                  aria-hidden="true">
-                  <path d="M3 5.5l7.5-1v7H3zM11.5 4.3L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z" />
-                </svg>
-                <span class="os">W1 · WINDOWS</span>
-              </span>
-              <span class="right">
-                EXE · 约 27 MB · v2.23.0
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--voltage)" stroke-width="1.25"
-                  aria-hidden="true">
-                  <path d="M8 2v10M4 8.5l4 4 4-4M2.5 14h11" />
-                </svg>
-              </span>
-            </a>
-            <div class="dl soon" aria-disabled="true">
-              <span class="left">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
-                  aria-hidden="true">
-                  <path
-                    d="M16.2 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.5zM14 5.5c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3z" />
-                </svg>
-                <span class="os">A1 · MACOS</span>
-              </span>
-              <span class="right">即将推出 / COMING SOON</span>
+            <!-- Windows 主力下载卡片（含内嵌折叠运行说明） -->
+            <div class="dl-win-card">
+              <a class="dl dl-hero" href="#download" data-drawer="download">
+                <span class="left">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"
+                    aria-hidden="true">
+                    <path d="M3 5.5l7.5-1v7H3zM11.5 4.3L21 3v8.5h-9.5zM3 12.5h7.5v7L3 18.5zM11.5 12.5H21V21l-9.5-1.3z" />
+                  </svg>
+                  <span class="os">W1 · WINDOWS</span>
+                  <span class="dl-badge-portable">绿色免安装</span>
+                </span>
+                <span class="right">
+                  <span>EXE · 约 27 MB · v2.23.0</span>
+                  <span class="dl-arrow-btn" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--voltage)" stroke-width="1.5">
+                      <path d="M8 2v10M4 8.5l4 4 4-4M2.5 14h11" />
+                    </svg>
+                  </span>
+                </span>
+              </a>
+              <details class="dl-win-fold">
+                <summary class="dl-notes-title">Windows 绿色版运行说明（WebView2 / 免安装升级 / 拦截提示）</summary>
+                <div class="dl-fold-content">
+                  <ul class="dl-notes-list">
+                    <li><strong>WebView2 运行时</strong>：程序依赖系统 Microsoft Edge WebView2 运行时（Windows 11 与现代 Windows 10
+                      已自带）；极少数精简版或老旧 Win10 若双击提示缺失无法启动，请前往 <a class="link"
+                        href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank"
+                        rel="noopener">微软官网安装 WebView2</a>。</li>
+                    <li><strong>绿色免安装与安全升级</strong>：不打包 NSIS 安装程序，提供纯单文件绿色运行。所有笔记数据与授权配置均独立存储在用户目录（如 <code>AppData</code> /
+                      <code>~/.goote</code>），升级时直接替换 <code>.exe</code> 即可保留全部数据与授权。</li>
+                    <li><strong>SmartScreen 拦截提示</strong>：因暂未购买商业代码签名证书，首次双击可能弹出「Windows
+                      已保护你的电脑」蓝色提示框，点击<strong>「更多信息」→「仍要运行」</strong>即可正常启动。</li>
+                  </ul>
+                </div>
+              </details>
             </div>
-            <div class="dl soon" aria-disabled="true">
-              <span class="left">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
-                  aria-hidden="true">
-                  <path
-                    d="M12 2.5c2.2 0 3.2 1.6 3.2 3.6 0 1.6.4 2.4 1.3 3.6 1.2 1.6 2.2 3 2.2 5 0 2-1 3.3-2.2 3.7-.6.2-1.4.3-1.7 1.2-.3.9-1.2 1.9-2.8 1.9s-2.5-1-2.8-1.9c-.3-.9-1.1-1-1.7-1.2-1.2-.4-2.2-1.7-2.2-3.7 0-2 1-3.4 2.2-5 .9-1.2 1.3-2 1.3-3.6 0-2 1-3.6 3.2-3.6z" />
-                  <path d="M9.8 11.2c.7.4 1.5.4 2.2 0" />
-                </svg>
-                <span class="os">L1 · LINUX</span>
-              </span>
-              <span class="right">即将推出 / COMING SOON</span>
-            </div>
-          </div>
 
-          <div class="dl-notes reveal">
-            <h4 class="dl-notes-title">Windows 绿色单文件版运行说明</h4>
-            <ul class="dl-notes-list">
-              <li><strong>WebView2 运行时</strong>：程序依赖系统 Microsoft Edge WebView2 运行时（Windows 11 与现代 Windows 10
-                已自带）；极少数精简版或老旧 Win10 若双击提示缺失无法启动，请前往 <a class="link"
-                  href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/" target="_blank"
-                  rel="noopener">微软官网安装 WebView2</a>。</li>
-              <li><strong>绿色免安装与安全升级</strong>：不打包 NSIS 安装程序，提供纯单文件绿色运行。所有笔记数据与授权配置均独立存储在用户目录（如 <code>AppData</code> /
-                <code>~/.goote</code>），升级时直接替换 <code>.exe</code> 即可保留全部数据与授权。</li>
-              <li><strong>SmartScreen 拦截提示</strong>：因暂未购买商业代码签名证书，首次双击可能弹出「Windows
-                已保护你的电脑」蓝色提示框，点击<strong>「更多信息」→「仍要运行」</strong>即可正常启动。</li>
-            </ul>
+            <!-- macOS 与 Linux 次要平台紧凑双列 -->
+            <div class="dl-sub-grid">
+              <div class="dl dl-compact soon" aria-disabled="true">
+                <span class="left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+                    aria-hidden="true">
+                    <path
+                      d="M16.2 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.5zM14 5.5c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3z" />
+                  </svg>
+                  <span class="os">A1 · MACOS</span>
+                </span>
+                <span class="right">即将推出 / COMING SOON</span>
+              </div>
+              <div class="dl dl-compact soon" aria-disabled="true">
+                <span class="left">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"
+                    aria-hidden="true">
+                    <path
+                      d="M12 2.5c2.2 0 3.2 1.6 3.2 3.6 0 1.6.4 2.4 1.3 3.6 1.2 1.6 2.2 3 2.2 5 0 2-1 3.3-2.2 3.7-.6.2-1.4.3-1.7 1.2-.3.9-1.2 1.9-2.8 1.9s-2.5-1-2.8-1.9c-.3-.9-1.1-1-1.7-1.2-1.2-.4-2.2-1.7-2.2-3.7 0-2 1-3.4 2.2-5 .9-1.2 1.3-2 1.3-3.6 0-2 1-3.6 3.2-3.6z" />
+                    <path d="M9.8 11.2c.7.4 1.5.4 2.2 0" />
+                  </svg>
+                  <span class="os">L1 · LINUX</span>
+                </span>
+                <span class="right">即将推出 / COMING SOON</span>
+              </div>
+            </div>
           </div>
 
           <div class="dl-stack dl-addon reveal" style="margin-top:20px">
