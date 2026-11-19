@@ -686,6 +686,108 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 .addon-list li{margin-bottom:4px}
 .addon-list li:last-child{margin-bottom:0}
 
+/* ============ 扩展包主题预览展示 ============ */
+.addon-preview-wrap{
+  padding:24px 22px 26px;
+  border-top:1px solid var(--border);
+  background:color-mix(in srgb, var(--surface-1) 85%, var(--canvas));
+}
+.addon-preview-head{
+  margin-bottom:18px;
+}
+.preview-eyebrow{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:.12em;
+  color:var(--voltage);
+  margin-bottom:4px;
+}
+.preview-title{
+  font-family:var(--zhisong);
+  font-size:18px;
+  font-weight:500;
+  color:var(--ink);
+  margin:0 0 6px;
+}
+.preview-subtitle{
+  font-family:var(--wenkai);
+  font-size:13px;
+  line-height:1.6;
+  color:var(--ink-muted);
+  margin:0;
+}
+.addon-preview-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+.addon-preview-card{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  background:var(--canvas);
+  border:1px solid var(--border);
+  border-radius:6px;
+  overflow:hidden;
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.addon-preview-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--voltage);
+  box-shadow:0 10px 24px -8px rgba(0,0,0,.15);
+}
+.preview-thumb-link{
+  display:block;
+  background:#141517;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:9 / 16;
+}
+.preview-thumb-link img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  transition:transform .36s cubic-bezier(.16,1,.3,1);
+}
+.addon-preview-card:hover .preview-thumb-link img{
+  transform:scale(1.035);
+}
+.addon-preview-card figcaption{
+  margin:0;
+  padding:12px 12px 14px;
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  background:var(--surface-1);
+}
+.preview-tag{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:.06em;
+  color:var(--voltage);
+  margin-bottom:3px;
+}
+.preview-card-title{
+  font-family:var(--zhisong);
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.35;
+  margin-bottom:4px;
+}
+.preview-card-desc{
+  font-family:var(--wenkai);
+  font-size:11.5px;
+  line-height:1.55;
+  color:var(--ink-muted);
+  margin:0;
+}
+
 /* ============ Early Supporter 扩展包底栏 ============ */
 .dl-addon-foot{
   display:flex;
@@ -1016,6 +1118,8 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .twiggo-features,.dl-addon-grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:repeat(2,1fr);gap:14px}
   .twiggo-gallery{padding:24px 20px}
+  .addon-preview-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .addon-preview-wrap{padding:20px 16px}
   .tf-item,.addon-item{border-right:0;padding:28px}
   .addon-item{border-bottom:1px solid var(--border);padding:20px 22px}
   .addon-item:last-child{border-bottom:0}
@@ -1061,6 +1165,11 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
   .gallery-card figcaption{padding:10px 10px 12px}
   .gallery-card-title{font-size:13.5px}
   .gallery-card-desc{font-size:11px;line-height:1.5}
+  .addon-preview-wrap{padding:16px 12px}
+  .addon-preview-grid{gap:10px}
+  .addon-preview-card figcaption{padding:10px 8px 10px}
+  .preview-card-title{font-size:13px}
+  .preview-card-desc{font-size:10.5px;line-height:1.5}
 }
 
 @media (prefers-reduced-motion: reduce){

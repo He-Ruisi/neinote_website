@@ -371,6 +371,22 @@
     addonFootName: 'Early Supporter Pack',
     addonFootBadge: '€9.9 One-Time',
     addonFootDesc: 'All themes &amp; plugins included · Up to 3 devices · 14-day refund',
+    previewEyebrow: 'THEME PREVIEW · RETRO 8-BIT',
+    previewTitle: 'Retro Theme Pack Live Preview',
+    previewSubtitle: 'Live look at the "Retro 8-Bit" theme: pixel seals, amber dark highlights, gold matrix filters, and 8-Bit Pro customization.',
+    previewTags: ['01 · Pixel Light', '02 · Retro Dark', '03 · Pixel Matrix', '04 · Style Pro'],
+    previewCardTitles: [
+      'Pixel Seal & Shadow',
+      'Amber Gold Outline',
+      'Gold Matrix Filter',
+      '8-Bit Pro Customization'
+    ],
+    previewCardDescs: [
+      '8-bit avatar matrix, retro pixel typography, and vintage extruded button borders.',
+      'High-contrast warm amber palette for immersive, eye-friendly night outliner capture.',
+      'Pixelated Todo, Star, and Idea filter popup with subtle retro city backdrop.',
+      'Deep customization for custom Palettes and pixel Backdrop scenery.'
+    ],
     sec4Title: 'Privacy &amp; Terms',
     sec4P1: 'Neinote is local-first from the ground up—your data stays solely in your hands. Future AI integrations will only support bring-your-own-key (BYOK) configuration to protect your privacy.',
     sec4P2: 'You can read our full <a class="link" href="#privacy" data-drawer="privacy">Privacy Policy</a>, <a class="link" href="#terms" data-drawer="terms">Terms of Service</a>, and <a class="link" href="#payment" data-drawer="payment">Payment &amp; Refund Policy</a> at any time.',
@@ -429,6 +445,12 @@
       addonFootName: q('.addon-foot-name') ? q('.addon-foot-name').textContent : '',
       addonFootBadge: q('.addon-foot-badge') ? q('.addon-foot-badge').textContent : '',
       addonFootDesc: q('.addon-foot-desc') ? q('.addon-foot-desc').textContent : '',
+      previewEyebrow: q('.preview-eyebrow') ? q('.preview-eyebrow').textContent : '',
+      previewTitle: q('.preview-title') ? q('.preview-title').textContent : '',
+      previewSubtitle: q('.preview-subtitle') ? q('.preview-subtitle').textContent : '',
+      previewTags: qa('.preview-tag').map(function (el) { return el.textContent; }),
+      previewCardTitles: qa('.preview-card-title').map(function (el) { return el.textContent; }),
+      previewCardDescs: qa('.preview-card-desc').map(function (el) { return el.textContent; }),
       sec4Title: q('#sec4 h2.display') ? q('#sec4 h2.display').innerHTML : '',
       sec4Ps: qa('#sec4 > p.reveal').map(function (el) { return el.innerHTML; }),
       footerTitle: q('.footer-title') ? q('.footer-title').innerHTML : '',
@@ -492,6 +514,12 @@
       if (q('.addon-foot-name')) q('.addon-foot-name').textContent = zhCache.addonFootName;
       if (q('.addon-foot-badge')) q('.addon-foot-badge').textContent = zhCache.addonFootBadge;
       if (q('.addon-foot-desc')) q('.addon-foot-desc').textContent = zhCache.addonFootDesc;
+      if (q('.preview-eyebrow')) q('.preview-eyebrow').textContent = zhCache.previewEyebrow;
+      if (q('.preview-title')) q('.preview-title').textContent = zhCache.previewTitle;
+      if (q('.preview-subtitle')) q('.preview-subtitle').textContent = zhCache.previewSubtitle;
+      qa('.preview-tag').forEach(function (el, i) { if (zhCache.previewTags[i] != null) el.textContent = zhCache.previewTags[i]; });
+      qa('.preview-card-title').forEach(function (el, i) { if (zhCache.previewCardTitles[i] != null) el.textContent = zhCache.previewCardTitles[i]; });
+      qa('.preview-card-desc').forEach(function (el, i) { if (zhCache.previewCardDescs[i] != null) el.textContent = zhCache.previewCardDescs[i]; });
       if (q('#sec4 h2.display')) q('#sec4 h2.display').innerHTML = zhCache.sec4Title;
       qa('#sec4 > p.reveal').forEach(function (el, i) { if (zhCache.sec4Ps[i] != null) el.innerHTML = zhCache.sec4Ps[i]; });
       if (q('.footer-title')) q('.footer-title').innerHTML = zhCache.footerTitle;
@@ -558,6 +586,12 @@
       if (q('.addon-foot-name')) q('.addon-foot-name').textContent = EN_PAGE.addonFootName;
       if (q('.addon-foot-badge')) q('.addon-foot-badge').textContent = EN_PAGE.addonFootBadge;
       if (q('.addon-foot-desc')) q('.addon-foot-desc').textContent = EN_PAGE.addonFootDesc;
+      if (q('.preview-eyebrow')) q('.preview-eyebrow').textContent = EN_PAGE.previewEyebrow;
+      if (q('.preview-title')) q('.preview-title').textContent = EN_PAGE.previewTitle;
+      if (q('.preview-subtitle')) q('.preview-subtitle').textContent = EN_PAGE.previewSubtitle;
+      qa('.preview-tag').forEach(function (el, i) { if (EN_PAGE.previewTags[i]) el.textContent = EN_PAGE.previewTags[i]; });
+      qa('.preview-card-title').forEach(function (el, i) { if (EN_PAGE.previewCardTitles[i]) el.textContent = EN_PAGE.previewCardTitles[i]; });
+      qa('.preview-card-desc').forEach(function (el, i) { if (EN_PAGE.previewCardDescs[i]) el.textContent = EN_PAGE.previewCardDescs[i]; });
       if (q('#sec4 h2.display')) q('#sec4 h2.display').innerHTML = EN_PAGE.sec4Title;
       var sec4Ps = qa('#sec4 > p.reveal');
       if (sec4Ps[0]) sec4Ps[0].innerHTML = EN_PAGE.sec4P1;
