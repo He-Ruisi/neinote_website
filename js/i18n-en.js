@@ -299,7 +299,7 @@
 
   /* ---------- 页面英文文案映射 ---------- */
   window.EN_PAGE = {
-    title: 'Neinote · Twiggo',
+    title: 'Twiggo · Neinote',
     navLinks: ['Origin', 'Twiggo', 'Services', 'Terms'],
     tocBtn: 'Outline',
     ctaBtn: 'Get Twiggo',
