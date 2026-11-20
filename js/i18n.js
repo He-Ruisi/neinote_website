@@ -36,6 +36,9 @@
       sec2Title: q('#sec2 h2.display') ? q('#sec2 h2.display').innerHTML : '',
       sec2P1: q('#sec2 > p.reveal') ? q('#sec2 > p.reveal').innerHTML : '',
       fig2Cap: q('#sec2 .video-showcase figcaption') ? q('#sec2 .video-showcase figcaption').innerHTML : '',
+      pillarNums: qa('.pillar-num').map(function (el) { return el.textContent; }),
+      pillarTitles: qa('.pillar-title').map(function (el) { return el.textContent; }),
+      pillarDescs: qa('.pillar-desc').map(function (el) { return el.textContent; }),
       galleryEyebrow: q('.gallery-eyebrow') ? q('.gallery-eyebrow').textContent : '',
       galleryTitle: q('.gallery-title') ? q('.gallery-title').textContent : '',
       galleryTags: qa('.gallery-tag').map(function (el) { return el.textContent; }),
@@ -105,6 +108,9 @@
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = zhCache.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = zhCache.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = zhCache.fig2Cap;
+      qa('.pillar-num').forEach(function (el, i) { if (zhCache.pillarNums[i] != null) el.textContent = zhCache.pillarNums[i]; });
+      qa('.pillar-title').forEach(function (el, i) { if (zhCache.pillarTitles[i] != null) el.textContent = zhCache.pillarTitles[i]; });
+      qa('.pillar-desc').forEach(function (el, i) { if (zhCache.pillarDescs[i] != null) el.textContent = zhCache.pillarDescs[i]; });
       if (q('.gallery-eyebrow')) q('.gallery-eyebrow').textContent = zhCache.galleryEyebrow;
       if (q('.gallery-title')) q('.gallery-title').textContent = zhCache.galleryTitle;
       qa('.gallery-tag').forEach(function (el, i) { if (zhCache.galleryTags[i] != null) el.textContent = zhCache.galleryTags[i]; });
@@ -166,6 +172,9 @@
       if (q('#sec2 h2.display')) q('#sec2 h2.display').innerHTML = EN_PAGE.sec2Title;
       if (q('#sec2 > p.reveal')) q('#sec2 > p.reveal').innerHTML = EN_PAGE.sec2P1;
       if (q('#sec2 .video-showcase figcaption')) q('#sec2 .video-showcase figcaption').innerHTML = EN_PAGE.fig2Cap;
+      qa('.pillar-num').forEach(function (el, i) { if (EN_PAGE.pillarNums && EN_PAGE.pillarNums[i]) el.textContent = EN_PAGE.pillarNums[i]; });
+      qa('.pillar-title').forEach(function (el, i) { if (EN_PAGE.pillarTitles && EN_PAGE.pillarTitles[i]) el.textContent = EN_PAGE.pillarTitles[i]; });
+      qa('.pillar-desc').forEach(function (el, i) { if (EN_PAGE.pillarDescs && EN_PAGE.pillarDescs[i]) el.textContent = EN_PAGE.pillarDescs[i]; });
       if (q('.gallery-eyebrow')) q('.gallery-eyebrow').textContent = EN_PAGE.galleryEyebrow;
       if (q('.gallery-title')) q('.gallery-title').textContent = EN_PAGE.galleryTitle;
       qa('.gallery-tag').forEach(function (el, i) { if (EN_PAGE.galleryTags[i]) el.textContent = EN_PAGE.galleryTags[i]; });

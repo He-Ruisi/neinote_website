@@ -331,6 +331,24 @@
     sec2Title: '<a class="link" href="#twiggo" data-drawer="twiggo" style="text-decoration:none">Twiggo</a>',
     sec2P1: 'Allow me to introduce the heart of Neinote—<a class="link" href="#twiggo" data-drawer="twiggo">Twiggo</a>. What happens when desktop Org-mode meets Markdown? Twiggo is both a floating drawer like a shadow and an outliner like a growing tree. Light, nimble, low-presence yet always ready: no window switching needed—glide your mouse in to capture, glide out to hide. Let your thoughts branch out and accumulate node by node.',
     fig2Cap: 'FIG.02 — Twiggo live demo: edge-docked floating capture &amp; hierarchical outline',
+    pillarNums: [
+      '01 · INTERACTION',
+      '02 · STRUCTURE',
+      '03 · PRIVACY',
+      '04 · FREEDOM'
+    ],
+    pillarTitles: [
+      'Quick Capture · Auto Hide',
+      'Tree Outliner · Node Growth',
+      'Local-First · Free Export',
+      'Core Free · Pay-Once Pack'
+    ],
+    pillarDescs: [
+      'Edge-docked floating drawer: glide in to write, glide out to hide with zero distraction.',
+      'Infinite-depth outliner: branching thoughts with bi-links and multi-state filter.',
+      'Strictly local and offline-ready: full data ownership and free export.',
+      'Core features free forever with zero limits; expansion pack is one-time purchase.'
+    ],
     galleryEyebrow: 'SCREENSHOTS · REAL INTERFACE',
     galleryTitle: 'Real Interface Snapshots',
     galleryTags: ['01 · Export', '02 · Filter', '03 · Network', '04 · Style'],

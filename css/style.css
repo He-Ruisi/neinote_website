@@ -73,7 +73,23 @@ img{max-width:100%;display:block}
 }
 .brand{
   display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);
-  font-family:var(--zhisong);font-size:22px;letter-spacing:.1em;font-weight:500;
+  font-family:var(--zhisong);font-size:22px;letter-spacing:.06em;font-weight:500;
+}
+.brand-name-wrap{
+  display:inline-flex;align-items:center;gap:8px;
+}
+.brand-title{
+  font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.02em;color:var(--ink);line-height:1;
+}
+.brand-tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;font-weight:600;
+  padding:2px 6px;border-radius:4px;
+  background:var(--surface-2);border:1px solid var(--border);
+  color:var(--ink-faint);line-height:1.2;
+  transition:color .16s,border-color .16s,background .16s;
+}
+.brand:hover .brand-tag{
+  color:var(--voltage);border-color:color-mix(in srgb, var(--voltage) 45%, var(--border));background:var(--voltage-dim);
 }
 .brand-icon{width:34px;height:34px;flex:0 0 34px;overflow:visible;transition:transform .24s cubic-bezier(.34,1.56,.64,1)}
 .brand:hover .brand-icon{transform:scale(1.06)}
@@ -111,12 +127,21 @@ img{max-width:100%;display:block}
 .btn-toc-toggle.active{border-color:var(--voltage);color:var(--voltage);background:var(--voltage-dim)}
 
 .btn-nav-cta{
-  height:38px;padding:0 18px;border-radius:6px;background:var(--ink);color:var(--canvas);
-  font-family:var(--mono);font-size:16px;letter-spacing:.08em;font-weight:500;
+  height:36px;padding:0 16px;border-radius:6px;background:var(--ink);color:var(--canvas);
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;font-weight:600;
   display:inline-flex;align-items:center;justify-content:center;gap:6px;
-  text-decoration:none;transition:opacity .16s,transform .16s;
+  text-decoration:none;border:1px solid transparent;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
+  transition:all .18s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+.btn-nav-cta:hover{
+  background:var(--voltage);color:#151617;border-color:var(--voltage);
+  transform:translateY(-1px);
+  box-shadow:0 4px 14px color-mix(in srgb, var(--voltage) 40%, transparent);
+}
+.btn-nav-cta:active{
+  transform:translateY(0);box-shadow:0 1px 2px rgba(0,0,0,.1);
+}
 
 /* ==================== 2. 悬浮大纲目录 (TOC) & 开发者说明 ==================== */
 .toc-stack{
@@ -533,13 +558,13 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
   gap:16px;
 }
 .pillar-card{
-  padding:20px 18px;
-  border-radius:10px;
+  padding:16px 14px;
+  border-radius:8px;
   border:1px solid var(--border);
   background:var(--surface-1);
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px;
   transition:border-color .18s ease, transform .18s ease, background .18s ease;
 }
 .pillar-card:hover{
@@ -548,9 +573,9 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
   transform:translateY(-2px);
 }
 .pillar-icon-wrap{
-  width:42px;
-  height:42px;
-  border-radius:8px;
+  width:36px;
+  height:36px;
+  border-radius:6px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -561,15 +586,15 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
 }
 .pillar-num{
   display:block;
-  font-size:10.5px;
+  font-size:10px;
   letter-spacing:.08em;
   color:var(--ink-faint);
-  margin-bottom:4px;
+  margin-bottom:3px;
 }
 .pillar-title{
-  margin:0 0 6px;
+  margin:0 0 5px;
   font-family:var(--zhisong);
-  font-size:15px;
+  font-size:14px;
   font-weight:600;
   letter-spacing:.02em;
   color:var(--ink);
@@ -578,9 +603,9 @@ a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:1px so
 .pillar-desc{
   margin:0;
   font-family:var(--wenkai);
-  font-size:12px;
-  line-height:1.65;
-  color:var(--ink-muted);
+  font-size:11px;
+  line-height:1.55;
+  color:var(--ink-faint);
 }
 
 .twiggo-features{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--border);margin:40px 0 0;background:var(--surface-1)}
@@ -949,11 +974,10 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 }
 .addon-preview-card figcaption{
   margin:0;
-  padding:12px 12px 14px;
+  padding:9px 12px 10px;
   border-top:1px solid var(--border);
   display:flex;
   flex-direction:column;
-  flex:1;
   background:var(--surface-1);
 }
 .preview-tag{
@@ -966,17 +990,10 @@ figcaption{font-family:var(--zhisong);font-size:13px;letter-spacing:.06em;color:
 }
 .preview-card-title{
   font-family:var(--zhisong);
-  font-size:14px;
+  font-size:13.5px;
   font-weight:500;
   color:var(--ink);
   line-height:1.35;
-  margin-bottom:4px;
-}
-.preview-card-desc{
-  font-family:var(--wenkai);
-  font-size:11.5px;
-  line-height:1.55;
-  color:var(--ink-muted);
   margin:0;
 }
 
