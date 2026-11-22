@@ -477,11 +477,18 @@
 
     function syncDockTop() {
       if (!isDocked || !tocPanel) return;
+      var hostH = host.offsetHeight || 184;
+      var minTop = 74;
+      var maxTop = window.innerHeight - hostH - 16;
       if (document.body.classList.contains('toc-collapsed')) {
-        host.style.top = 'calc(var(--header-h) + 36px)';
+        host.style.top = Math.max(minTop, Math.min(maxTop, 80)) + 'px';
       } else {
         var tocRect = tocPanel.getBoundingClientRect();
-        host.style.top = Math.round(tocRect.bottom + 14) + 'px';
+        var targetTop = Math.round(tocRect.bottom + 12);
+        if (targetTop > maxTop) {
+          targetTop = Math.max(minTop, maxTop);
+        }
+        host.style.top = targetTop + 'px';
       }
     }
 
