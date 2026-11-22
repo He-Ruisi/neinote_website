@@ -173,7 +173,7 @@ window.DRAWER_PANELS = {
       '</ol>' +
       '<ul class="links">' +
       '<li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>' +
-      '<li><a href="mailto:support_neinote@tcommon.top">联系退款或支持<span class="ext">✉</span></a></li>' +
+      '<li><a href="mailto:support@tcommon.top">联系退款或支持<span class="ext">✉</span></a></li>' +
       '</ul>'
   },
   privacy: {
@@ -186,7 +186,7 @@ window.DRAWER_PANELS = {
       '<h4>2. 购买与支持时收集的信息</h4>' +
       '<ul>' +
       '<li><strong>订单与授权记录</strong>：当你通过 <strong>Creem（creem.io）</strong> 购买 Early Supporter 扩展包时，Creem 会处理你的付款并仅向我们提供订单号、授权状态与邮箱地址，用于交付、3 台设备激活与退款服务；我们绝不接触或存储你的银行卡信息。</li>' +
-      '<li><strong>支持邮件</strong>：你发送至 <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a> 的邮件仅用于回复与解决你的问题。</li>' +
+      '<li><strong>支持邮件</strong>：你发送至 <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a> 的邮件仅用于回复与解决你的问题。</li>' +
       '</ul>' +
       '<h4>3. 第三方服务与自带密钥（BYOK）AI</h4>' +
       '<p>若你启用自带 API 密钥（BYOK）的 AI 功能，密钥仅存储在本地，请求将从你的设备直连所选 AI 服务商并受其隐私政策约束。本官网托管于 GitHub / Cloudflare，并通过公共 CDN 加载静态网页字体。</p>' +
@@ -195,12 +195,12 @@ window.DRAWER_PANELS = {
       '<h4>5. 未成年人隐私</h4>' +
       '<p>本软件与网站不面向 13 周岁以下（或当地法定最低同意年龄以下）的儿童，我们不会有意收集未成年人的个人信息。</p>' +
       '<h4>6. 你的权利与联系方式</h4>' +
-      '<p>你可以随时致信 <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a> 查询、更正、导出或删除订单与邮件支持相关的个人记录，我们将在 30 天内答复。</p>' +
+      '<p>你可以随时致信 <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a> 查询、更正、导出或删除订单与邮件支持相关的个人记录，我们将在 30 天内答复。</p>' +
       '<h4>7. 政策更新</h4>' +
       '<p>随着产品演进，我们可能会更新本隐私政策，重要变更将在此页面同步更新日期并公示。</p>' +
       '<ul class="links">' +
       '<li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>' +
-      '<li><a href="mailto:support_neinote@tcommon.top">联系邮箱<span class="ext">✉</span></a></li>' +
+      '<li><a href="mailto:support@tcommon.top">联系邮箱<span class="ext">✉</span></a></li>' +
       '</ul>'
   },
   terms: {
@@ -225,7 +225,7 @@ window.DRAWER_PANELS = {
       '<h4>6. 免责声明与责任限制</h4>' +
       '<p>软件按“现状”提供，不作任何明示或暗示的担保，请务必定期备份重要的本地数据。在法律允许的最大范围内，开发者就任何索赔承担的累计责任不超过你在过去 12 个月内为扩展包实际支付的金额。</p>' +
       '<h4>7. 条款变更与联系</h4>' +
-      '<p>随着项目发展，我们可能会修订本条款；继续使用即视为接受更新后的条款。如有疑问，请联系 <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a>。</p>' +
+      '<p>随着项目发展，我们可能会修订本条款；继续使用即视为接受更新后的条款。如有疑问，请联系 <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a>。</p>' +
       '<ul class="links">' +
       '<li><a href="#theme" data-drawer="theme">Early Supporter 与退款说明<span class="ext">→</span></a></li>' +
       '<li><a href="#privacy" data-drawer="privacy">隐私政策<span class="ext">→</span></a></li>' +
@@ -243,7 +243,7 @@ window.DRAWER_PANELS = {
       '</ol>' +
       '<ul class="links">' +
       '<li><a href="#terms" data-drawer="terms">服务条款<span class="ext">→</span></a></li>' +
-      '<li><a href="mailto:support_neinote@tcommon.top">联系退款<span class="ext">✉</span></a></li>' +
+      '<li><a href="mailto:support@tcommon.top">联系退款<span class="ext">✉</span></a></li>' +
       '</ul>'
   },
   contact: {
@@ -251,8 +251,8 @@ window.DRAWER_PANELS = {
     eyebrow: 'DRAWER 19 / 20',
     html: '<p class="n">CONTACT &amp; SUPPORT</p>' +
       '<div class="mail-row">' +
-      '<p class="lead" style="margin:0">邮箱：<a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a></p>' +
-      '<button type="button" class="copy-btn dark" data-copy="support_neinote@tcommon.top">复制</button>' +
+      '<p class="lead" style="margin:0">邮箱：<a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a></p>' +
+      '<button type="button" class="copy-btn dark" data-copy="support@tcommon.top">复制</button>' +
       '</div>' +
       '<p>通常 3 个工作日内回复。来信请简述：系统与软件版本、复现步骤或订单号。</p>'
   },

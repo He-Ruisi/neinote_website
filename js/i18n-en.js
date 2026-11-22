@@ -178,7 +178,7 @@
         '</ol>' +
         '<ul class="links">' +
         '<li><a href="#terms" data-drawer="terms">Terms of Service<span class="ext">→</span></a></li>' +
-        '<li><a href="mailto:support_neinote@tcommon.top">Contact for Refund or Support<span class="ext">✉</span></a></li>' +
+        '<li><a href="mailto:support@tcommon.top">Contact for Refund or Support<span class="ext">✉</span></a></li>' +
         '</ul>'
     },
     privacy: {
@@ -191,7 +191,7 @@
         '<h4>2. Information Collected for Purchases &amp; Support</h4>' +
         '<ul>' +
         '<li><strong>Order &amp; License Records</strong>: When you purchase the Early Supporter pack via <strong>Creem (creem.io)</strong>, Creem processes your payment and shares only your order ID, license status, and email address with us for delivery, 3-device activation, and refund support. We never access or store your card details.</li>' +
-        '<li><strong>Support Emails</strong>: Messages sent to <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a> are used solely to respond to your inquiry.</li>' +
+        '<li><strong>Support Emails</strong>: Messages sent to <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a> are used solely to respond to your inquiry.</li>' +
         '</ul>' +
         '<h4>3. Third-Party Services &amp; BYOK AI</h4>' +
         '<p>If you enable Bring-Your-Own-Key (BYOK) AI features, your API key is stored locally and requests are sent directly from your device to your chosen AI provider under that provider\'s privacy policy. This website is hosted on GitHub / Cloudflare and loads static web fonts via public CDNs.</p>' +
@@ -200,12 +200,12 @@
         '<h4>5. Children\'s Privacy</h4>' +
         '<p>Our software and website are not directed to children under 13 (or the minimum age required by applicable law), and we do not knowingly collect personal data from children.</p>' +
         '<h4>6. Your Rights &amp; Contact</h4>' +
-        '<p>You may request access to, correction of, export of, or deletion of your order or support email records at any time by contacting <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a>. We respond within 30 days.</p>' +
+        '<p>You may request access to, correction of, export of, or deletion of your order or support email records at any time by contacting <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a>. We respond within 30 days.</p>' +
         '<h4>7. Changes to This Policy</h4>' +
         '<p>We may update this Privacy Policy as the product evolves; material updates will be reflected here with a revised date.</p>' +
         '<ul class="links">' +
         '<li><a href="#terms" data-drawer="terms">Terms of Service<span class="ext">→</span></a></li>' +
-        '<li><a href="mailto:support_neinote@tcommon.top">Support Email<span class="ext">✉</span></a></li>' +
+        '<li><a href="mailto:support@tcommon.top">Support Email<span class="ext">✉</span></a></li>' +
         '</ul>'
     },
     terms: {
@@ -230,7 +230,7 @@
         '<h4>6. Disclaimer &amp; Limitation of Liability</h4>' +
         '<p>The software is provided "as is" without warranties of any kind. Please back up important local data regularly. To the maximum extent permitted by law, total liability for any claim is limited to the amount you paid for the expansion pack in the preceding 12 months.</p>' +
         '<h4>7. Updates &amp; Contact</h4>' +
-        '<p>We may revise these Terms as Neinote evolves. Continued use constitutes acceptance of the updated Terms. Questions may be sent to <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a>.</p>' +
+        '<p>We may revise these Terms as Neinote evolves. Continued use constitutes acceptance of the updated Terms. Questions may be sent to <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a>.</p>' +
         '<ul class="links">' +
         '<li><a href="#theme" data-drawer="theme">Early Supporter &amp; Refunds<span class="ext">→</span></a></li>' +
         '<li><a href="#privacy" data-drawer="privacy">Privacy Policy<span class="ext">→</span></a></li>' +
@@ -248,7 +248,7 @@
         '</ol>' +
         '<ul class="links">' +
         '<li><a href="#terms" data-drawer="terms">Terms of Service<span class="ext">→</span></a></li>' +
-        '<li><a href="mailto:support_neinote@tcommon.top">Request a Refund<span class="ext">✉</span></a></li>' +
+        '<li><a href="mailto:support@tcommon.top">Request a Refund<span class="ext">✉</span></a></li>' +
         '</ul>'
     },
     contact: {
@@ -256,8 +256,8 @@
       eyebrow: 'DRAWER 19 / 20',
       html: '<p class="n">CONTACT &amp; SUPPORT</p>' +
         '<div class="mail-row">' +
-        '<p class="lead" style="margin:0">Email: <a class="link" href="mailto:support_neinote@tcommon.top">support_neinote@tcommon.top</a></p>' +
-        '<button type="button" class="copy-btn dark" data-copy="support_neinote@tcommon.top">Copy</button>' +
+        '<p class="lead" style="margin:0">Email: <a class="link" href="mailto:support@tcommon.top">support@tcommon.top</a></p>' +
+        '<button type="button" class="copy-btn dark" data-copy="support@tcommon.top">Copy</button>' +
         '</div>' +
         '<p>Usually replies within 3 business days. Please include your OS, app version, repro steps, or order ID.</p>'
     },
@@ -405,7 +405,7 @@
     sec4Title: 'Privacy &amp; Terms',
     sec4P1: 'Neinote is local-first from the ground up—your data stays solely in your hands. Future AI integrations will only support bring-your-own-key (BYOK) configuration to protect your privacy.',
     sec4P2: 'You can read our full <a class="link" href="#privacy" data-drawer="privacy">Privacy Policy</a>, <a class="link" href="#terms" data-drawer="terms">Terms of Service</a>, and <a class="link" href="#payment" data-drawer="payment">Payment &amp; Refund Policy</a> at any time.',
-    sec4P3: 'Questions or feedback? Reach out at <a class="link" href="#contact" data-drawer="contact">support_neinote@tcommon.top</a>.',
+    sec4P3: 'Questions or feedback? Reach out at <a class="link" href="#contact" data-drawer="contact">support@tcommon.top</a>.',
     footerTitle: 'Neinote &amp; Twiggo &nbsp;&bull;&nbsp; &copy; 2026 Neinote',
     footerMailLabel: 'Support Email:',
     footerLinks: [
