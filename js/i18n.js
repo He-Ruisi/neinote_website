@@ -23,6 +23,8 @@
       sideNote: q('.side-note-text') ? q('.side-note-text').innerHTML : '',
       tocItems: qa('.toc-item a span:last-child').map(function (el) { return el.textContent; }),
       tagline: q('.tagline') ? q('.tagline').textContent : '',
+      heroProductDesc: q('.hero-product-desc') ? q('.hero-product-desc').textContent : '',
+      heroProductAction: q('.hero-product-action span') ? q('.hero-product-action span').textContent : '',
       sec1Title: q('#sec1 h2.display') ? q('#sec1 h2.display').innerHTML : '',
       sec1Ps: qa('#sec1 > p.reveal').map(function (el) { return el.innerHTML; }),
       fig1Cap: q('#fig-origin figcaption') ? q('#fig-origin figcaption').innerHTML : '',
@@ -95,6 +97,8 @@
       if (q('.side-note-text')) q('.side-note-text').innerHTML = zhCache.sideNote;
       qa('.toc-item a span:last-child').forEach(function (el, i) { if (zhCache.tocItems[i] != null) el.textContent = zhCache.tocItems[i]; });
       if (q('.tagline')) q('.tagline').textContent = zhCache.tagline;
+      if (q('.hero-product-desc')) q('.hero-product-desc').textContent = zhCache.heroProductDesc;
+      if (q('.hero-product-action span')) q('.hero-product-action span').textContent = zhCache.heroProductAction;
       if (q('#sec1 h2.display')) q('#sec1 h2.display').innerHTML = zhCache.sec1Title;
       qa('#sec1 > p.reveal').forEach(function (el, i) { if (zhCache.sec1Ps[i] != null) el.innerHTML = zhCache.sec1Ps[i]; });
       if (q('#fig-origin figcaption')) q('#fig-origin figcaption').innerHTML = zhCache.fig1Cap;
@@ -153,6 +157,8 @@
       if (q('.side-note-text')) q('.side-note-text').innerHTML = EN_PAGE.sideNote;
       qa('.toc-item a span:last-child').forEach(function (el, i) { if (EN_PAGE.tocItems[i]) el.textContent = EN_PAGE.tocItems[i]; });
       if (q('.tagline')) q('.tagline').textContent = EN_PAGE.tagline;
+      if (q('.hero-product-desc')) q('.hero-product-desc').textContent = EN_PAGE.heroProductDesc;
+      if (q('.hero-product-action span')) q('.hero-product-action span').textContent = EN_PAGE.heroProductAction;
       if (q('#sec1 h2.display')) q('#sec1 h2.display').textContent = EN_PAGE.sec1Title;
       var sec1Ps = qa('#sec1 > p.reveal');
       if (sec1Ps[0]) sec1Ps[0].innerHTML = EN_PAGE.sec1P1;

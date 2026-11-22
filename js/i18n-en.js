@@ -306,6 +306,8 @@
     sideNote: 'Solo developer with limited time &amp; energy—the app and site still have rough edges. <a class="link" href="#contact" data-drawer="contact">Feedback</a> is always welcome.',
     tocItems: ['Top', 'Origin', 'Twiggo', 'Download & Services', 'Privacy & Terms', 'Footer'],
     tagline: 'Gathering every little detail into life itself.',
+    heroProductDesc: 'Auto-Hide Floating Drawer & Outliner',
+    heroProductAction: 'Watch Live Demo',
     sec1Title: 'Origin',
     sec1P1: 'I\'m Uno5&amp;, an ordinary indie developer. Neinote began with my love-hate relationship with productivity tools. As a quintessential tool enthusiast, I\'m always trying new apps—yet day after day I kept muttering: "Why is this missing? Why can\'t it go one step further? Why isn\'t the flow simpler?" When that accumulated friction finally boiled over, I decided to stop waiting and build one myself.',
     sec1P2: 'Though the idea had lingered for years, it wasn\'t until May 2025 that I built the first rough prototype on <a class="link" href="#bolt" data-drawer="bolt">bolt.new</a>. Truthfully, aside from having a Markdown editor, that crude prototype bears little resemblance to Neinote today—but that\'s how it all began.',
