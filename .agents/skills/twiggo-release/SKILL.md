@@ -20,7 +20,7 @@ description: 查看并发布 Neinote_ReX 构建目录下的最新 Twiggo 版本�
     ▼
 [契约清单] 生成客户端自动更新描述文件 latest.json
     │
-    ├───▶ [高速分发] 同步上传至 Cloudflare R2 (https://download.tcommons.top/...)
+    ├───▶ [高速分发] 同步上传至 Cloudflare R2 (https://download.tcommon.top/...)
     │
     ├───▶ [归档镜像] 创建 GitHub Release 并上传 Asset 附件
     │
@@ -66,7 +66,7 @@ R2_ACCOUNT_ID=你的Cloudflare_Account_ID
 R2_ACCESS_KEY_ID=你的R2_Token_Access_Key
 R2_SECRET_ACCESS_KEY=你的R2_Token_Secret_Key
 R2_BUCKET_NAME=twiggo-packs
-R2_PUBLIC_DOMAIN=https://download.tcommons.top
+R2_PUBLIC_DOMAIN=https://download.tcommon.top
 
 # GitHub Release 配置
 GITHUB_TOKEN=你的GitHub_Personal_Access_Token
@@ -86,7 +86,7 @@ RELEASE_DIR=D:\Project\Neinote_ReX\release
 - **校验和计算**：自动生成 SHA256 哈希值，记录到更新日志并供用户校验完整性。
 
 ### 2. 双通道云端分发
-- **主通道（国内高速 CDN）**：直接通过标准 AWS Signature V4 签名上传至 Cloudflare R2 存储桶，通过绑定域名 `https://download.tcommons.top/` 全球加速。
+- **主通道（国内高速 CDN）**：直接通过标准 AWS Signature V4 签名上传至 Cloudflare R2 存储桶，通过绑定域名 `https://download.tcommon.top/` 全球加速。
 - **备用通道（GitHub Release）**：调用 GitHub REST API 创建 Tag 和 Release 页面，并将 EXE 文件上传至 Release Asset，作为国际用户备用节点。
 
 ### 3. 官网三件套精准同步
@@ -108,7 +108,7 @@ RELEASE_DIR=D:\Project\Neinote_ReX\release
 为确保分发流程的稳固与用户体验，建议同步落实以下四项补充规范：
 
 1. **客户端自动检查更新接口 (latest.json)**
-   - 脚本已自动在 R2 根目录下生成并上传 `latest.json`（地址形如 `https://download.tcommons.top/latest.json`）。
+   - 脚本已自动在 R2 根目录下生成并上传 `latest.json`（地址形如 `https://download.tcommon.top/latest.json`）。
    - 客户端（Neinote_ReX）启动或定时向该地址发起 GET 请求，即可获取最新版本号、更新日志及下载地址，实现应用内平滑升级提醒。
 
 2. **Cloudflare CDN 缓存净化机制 (Purge Cache)**

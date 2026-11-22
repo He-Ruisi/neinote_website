@@ -64,7 +64,7 @@ const R2_ACCOUNT_ID = env.R2_ACCOUNT_ID;
 const R2_ACCESS_KEY_ID = env.R2_ACCESS_KEY_ID;
 const R2_SECRET_ACCESS_KEY = env.R2_SECRET_ACCESS_KEY;
 const R2_BUCKET_NAME = env.R2_BUCKET_NAME || 'neinote';
-const R2_PUBLIC_DOMAIN = (env.R2_PUBLIC_DOMAIN || 'https://download.tcommons.top').replace(/\/$/, '');
+const R2_PUBLIC_DOMAIN = (env.R2_PUBLIC_DOMAIN || 'https://download.tcommon.top').replace(/\/$/, '');
 const GITHUB_TOKEN = env.GITHUB_TOKEN;
 const GITHUB_REPO = env.GITHUB_REPO || 'He-Ruisi/neinote_website';
 
@@ -217,7 +217,7 @@ function generateVersionJson(releaseInfo) {
     tag: releaseInfo.tagVer
   };
 
-  // 写入官网根目录（供 https://neinote.tcommons.top/version.json 直接访问）
+  // 写入官网根目录（供 https://neinote.tcommon.top/version.json 直接访问）
   const websiteVersionPath = path.join(ROOT_DIR, 'version.json');
   const releaseVersionPath = path.join(RELEASE_DIR, 'version.json');
 
