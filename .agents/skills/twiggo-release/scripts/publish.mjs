@@ -436,7 +436,7 @@ function updateWebsiteFiles(releaseInfo) {
 
     // 更新 R2 按钮链接与体积
     panels = panels.replace(
-      /href="https:\/\/download\.tcommons\.top\/[^"]*"\s+download="[^"]*"\s+rel="noopener">立即下载 Windows 绿色版（EXE\s*·\s*约\s*\d+\s*MB）/gi,
+      /href="https:\/\/download\.tcommons?\.top\/[^"]*"\s+download="[^"]*"\s+rel="noopener">立即下载 Windows 绿色版（EXE\s*·\s*约\s*\d+\s*MB）/gi,
       `href="${r2Url}" download="${releaseInfo.fileName}" rel="noopener">立即下载 Windows 绿色版（EXE · ${zhSizeStr}）`
     );
 
@@ -461,7 +461,7 @@ function updateWebsiteFiles(releaseInfo) {
     i18n = i18n.replace(/portable executable \(EXE\s*·\s*~\d+\s*MB\)/gi, `portable executable (EXE · ${enSizeStr})`);
 
     i18n = i18n.replace(
-      /href="https:\/\/download\.tcommons\.top\/[^"]*"\s+download="[^"]*"\s+rel="noopener">Download Windows Portable \(EXE\s*·\s*~\d+\s*MB\)/gi,
+      /href="https:\/\/download\.tcommons?\.top\/[^"]*"\s+download="[^"]*"\s+rel="noopener">Download Windows Portable \(EXE\s*·\s*~\d+\s*MB\)/gi,
       `href="${r2Url}" download="${releaseInfo.fileName}" rel="noopener">Download Windows Portable (EXE · ${enSizeStr})`
     );
 
