@@ -1,6 +1,6 @@
 {
   "version": "2.30.0",
-  "releaseDate": "2026-11-20",
+  "releaseDate": "2026-11-23",
   "downloadUrl": "https://download.tcommon.top/twiggo-v2.30.0.exe",
   "changelog": [
     "枝络 (Twiggo) v2.30.0 正式发布",
@@ -9,6 +9,6 @@
     "提升本地数据存储安全性与数据完整性保障"
   ],
   "size": 28821504,
-  "sha256": "84fe804ea40a2b9fb6a964ac08a7e399de9a116c58f00ef0186d670ca566226f",
+  "sha256": "d3868faed396ed27c4e289565031735538ac827e8ad2e23a365b8bfb4f41e8c7",
   "tag": "v2.30.0"
 }
