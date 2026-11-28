@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>开发故事 · Neinote &amp; Twiggo</title>
+  <meta name="description" content="Neinote 与枝络（Twiggo）的开发缘起、技术演进轨迹与致谢名单。">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M27,26 H40 L56,47 H40 V74 H27 Z' fill='%23121212'/%3E%3Cpath d='M60,26 H73 V74 H60 L44,53 H60 Z' fill='%23121212'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fontsapi.zeoseven.com/22/main/result.css">
+  <link rel="stylesheet" href="css/nyt-home.css?v=2.30.2">
+  <style>
+    .nyt-article {
+      max-inline-size: 740px;
+      margin-inline: auto;
+      padding-block: 48px 64px;
+    }
+
+    .nyt-article-head {
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      border-bottom: 3px double var(--nyt-rule-strong);
+    }
+
+    .nyt-article-title {
+      margin: 10px 0 12px;
+      font-family: var(--nyt-serif);
+      font-size: clamp(32px, 4.5vw, 46px);
+      line-height: 1.15;
+      color: var(--nyt-ink);
+    }
+
+    .nyt-article-sub {
+      margin: 0;
+      font-family: var(--nyt-serif);
+      font-size: 18px;
+      color: var(--nyt-muted);
+    }
+
+    .nyt-article p {
+      margin: 0 0 20px;
+      font-size: 17px;
+      line-height: 1.82;
+      color: var(--nyt-ink-soft);
+    }
+
+    .nyt-figure {
+      margin: 32px 0;
+      border: 1.5px solid var(--nyt-ink);
+      background: var(--nyt-paper);
+    }
+
+    .nyt-figure img {
+      inline-size: 100%;
+      block-size: auto;
+    }
+
+    .nyt-figure figcaption {
+      padding: 10px 14px;
+      font-family: var(--nyt-mono);
+      font-size: 12px;
+      color: var(--nyt-muted);
+      border-top: 1px solid var(--nyt-rule);
+    }
+
+    .nyt-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1.5px solid var(--nyt-ink);
+      margin: 28px 0 32px;
+      background: var(--nyt-paper);
+    }
+
+    .nyt-stat-cell {
+      padding: 18px 14px;
+      text-align: center;
+      border-right: 1px solid var(--nyt-rule);
+    }
+
+    .nyt-stat-cell:last-child {
+      border-right: none;
+    }
+
+    .nyt-stat-num {
+      display: block;
+      font-family: var(--nyt-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--nyt-red);
+      line-height: 1.2;
+    }
+
+    .nyt-stat-label {
+      font-family: var(--nyt-mono);
+      font-size: 12px;
+      color: var(--nyt-muted);
+    }
+
+    .nyt-thanks-sec {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 4px solid var(--nyt-ink);
+    }
+
+    .nyt-thanks-sec h2 {
+      margin: 0 0 18px;
+      font-family: var(--nyt-serif);
+      font-size: 26px;
+      color: var(--nyt-ink);
+    }
+
+    .nyt-thanks-group {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--nyt-rule);
+    }
+
+    .nyt-thanks-group h3 {
+      margin: 0 0 6px;
+      font-family: var(--nyt-mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--nyt-red);
+    }
+
+    .nyt-thanks-group p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .nyt-companion {
+      margin-top: 36px;
+      padding: 20px;
+      border: 1.5px solid var(--nyt-ink);
+      border-left: 4px solid var(--nyt-red);
+      background: var(--nyt-paper);
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nyt-companion img {
+      inline-size: 112px;
+      block-size: 112px;
+      object-fit: cover;
+      border: 1px solid var(--nyt-ink);
+    }
+
+    @media (max-width: 640px) {
+      .nyt-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nyt-stat-cell:nth-child(2) {
+        border-right: none;
+      }
+
+      .nyt-stat-cell:nth-child(1),
+      .nyt-stat-cell:nth-child(2) {
+        border-bottom: 1px solid var(--nyt-rule);
+      }
+
+      .nyt-companion {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nyt-header">
+    <div class="nyt-header-inner">
+      <a href="index.html" class="nyt-brand" aria-label="返回新版首页">
+        <svg class="nyt-brand-icon" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <path d="M27,26 H40 L56,47 H40 V74 H27 Z" fill="currentColor" />
+          <path d="M60,26 H73 V74 H60 L44,53 H60 Z" fill="currentColor" />
+        </svg>
+        <span class="nyt-brand-name">Twiggo</span>
+        <span class="nyt-brand-sub">STORY · BLOG</span>
+      </a>
+
+      <nav class="nyt-nav" aria-label="故事页导航">
+        <a href="index.html" class="nyt-nav-btn" style="text-decoration:none">Home</a>
+        <a href="legacy.html" class="nyt-nav-legacy">返回旧版官网</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="nyt-main">
+    <article class="nyt-article">
+      <header class="nyt-article-head">
+        <p class="nyt-kicker">COMPANY · ORIGIN &amp; JOURNEY</p>
+        <h1 class="nyt-article-title">缘起与开发轨迹</h1>
+        <p class="nyt-article-sub">一个工具党独立开发者的十次重构，与「枝络（Twiggo）」的诞生。</p>
+      </header>
+
+      <p>
+        我是 Uno5&amp;，一个普通的独立开发者。Neinote 始于我对各类工具的爱恨交织。我是堪称典型的工具党，热衷于寻找和尝试不同的效率工具。然而在日复一日的工作与记录中，每面对一款工具，我总不免吐槽：“为什么没有 XX 功能？为什么不能更进一步？为什么流程不能再轻简一些？”当积攒的别扭与不满终于爆发，我决定不再等待，自己做一款顺手的工具！
+      </p>
+
+      <p>
+        虽然关于它的构想早在心中盘旋已久，但直到 2025 年 5 月，我才用 bolt.new 搭出了第一个原型。老实说，除了同样拥有一个 Markdown 编辑器外，那个粗糙的原型与今天的 Neinote 已大相径庭。但一切，就这么开始了。
+      </p>
+
+      <figure class="nyt-figure">
+        <img src="asset/pen_paper.jpg" alt="纸与笔有种无法取代的魅力，随意写写画画" loading="lazy">
+        <figcaption>FIG.01 — 纸与笔有种无法取代的魅力，随意写写画画，任思绪流淌</figcaption>
+      </figure>
+
+      <p>
+        你可以在 Neinote 身上看到许多杰出先行者的影子，从 Boogunote、Notion、Roam Research、Obsidian，到 Sayit、WDTP 与 TreeSheets——它们都曾深刻启发过我。Neinote 完全生长于我最真实的输入与整理体验。
+      </p>
+
+      <p>
+        我只有少量 Java、C++、MATLAB 代码经验，前端于我是一片全然陌生的领域。依托生成式 AI 的协同，我先后尝试过 Flutter、React / Vue 纯前端以及 Tauri 的组合，前后历经至少 10 次大重构、7 个大版本、十几个分支与上百次迭代。直到第 7 次大重构，才最终确立下现在的形态：React + Go + Wails v3 的底层组合，搭配「自动隐藏悬浮 + 主页面双窗口」的交互范式。
+      </p>
+
+      <div class="nyt-stats" aria-label="项目演进数据">
+        <div class="nyt-stat-cell"><span class="nyt-stat-num">04</span><span class="nyt-stat-label">个阶段</span></div>
+        <div class="nyt-stat-cell"><span class="nyt-stat-num">10+</span><span class="nyt-stat-label">次大重构</span></div>
+        <div class="nyt-stat-cell"><span class="nyt-stat-num">07</span><span class="nyt-stat-label">个大版本</span></div>
+        <div class="nyt-stat-cell"><span class="nyt-stat-num">100+</span><span class="nyt-stat-label">次迭代</span></div>
+      </div>
+
+      <p>
+        今天回看，这似乎是个无比自然的设计，但通往“合理”的道路从来不是一马平川。我不知道 Neinote 离最完美、最舒服的终极形态还有多远，但至少在当下，我们相处得十分融洽。它所给予我的便利，已经是我能为自己创造的最大价值。
+      </p>
+
+      <section style="margin: 40px 0 36px; padding-top: 28px; border-top: 2px solid var(--nyt-ink);">
+        <p class="nyt-kicker" style="margin-bottom:8px;">TWIGGO · CORE</p>
+        <h2 style="margin:0 0 16px;font-family:var(--nyt-serif);font-size:28px;color:var(--nyt-ink);">枝络（Twiggo）</h2>
+        <p>
+          在此，请允许我隆重介绍 Neinote 的核心——枝络（Twiggo）。如果将 Org-mode 在桌面端与 Markdown 结合，会发生什么？枝络是像影子一样的悬浮抽屉，也是像大树一样的大纲笔记。它可以容纳一切零散的思维碎片——轻巧、敏捷，存在感低却足够方便，无需切换窗口，鼠标轻滑即出，移出即隐。这就是枝络，让你所有的思绪随着一根根枝桠发散，随着一个个节点积累。
+        </p>
+      </section>
+
+      <div class="nyt-companion">
+        <img src="asset/doremi.jpg" alt="陪伴开发岁月的猫咪 Doremi" loading="lazy">
+        <div>
+          <p class="nyt-kicker" style="margin-bottom:6px">WITH GRATITUDE · COMPANIONS</p>
+          <h3 style="margin:0 0 8px;font-family:var(--nyt-serif)">致敬爱的，挚爱的，亲爱的</h3>
+          <p style="margin:0;font-size:15px">由衷地感谢我的奶奶，世界最伟大的女人！感谢一直陪伴我的猫咪 Doremi。最后，我想感谢我自己！</p>
+        </div>
+      </div>
+
+      <p style="margin-top:32px;padding-top:20px;border-top:2px solid var(--nyt-ink);font-family:var(--nyt-sans);font-size:15px;">
+        <a href="credits.html" style="color:var(--nyt-red);font-weight:600;text-decoration:underline;text-underline-offset:4px;">查看完整致谢名单（AI 协同、灵感先行者与技术栈） →</a>
+      </p>
+    </article>
+
+    <footer class="nyt-footer">
+      <p class="nyt-copyright" style="margin-top:0;border-top:none;padding-top:0">
+        &copy; 2026 Neinote &middot; Twiggo &mdash; <a href="index.html">返回新版首页</a> &middot; <a href="credits.html">致谢名单</a> &middot; <a href="legacy.html">访问旧版官网</a>
+      </p>
+    </footer>
+  </main>
+</body>
+
+</html>

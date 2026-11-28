@@ -1,0 +1,908 @@
+:root {
+  --nyt-bg: #ffffff;
+  --nyt-paper: #faf9f6;
+  --nyt-ink: #121212;
+  --nyt-ink-soft: #363636;
+  --nyt-muted: #595959;
+  --nyt-faint: #888888;
+  --nyt-red: #c41200;
+  --nyt-red-dark: #980d00;
+  --nyt-accent-2: #c41200;
+  --nyt-accent-3: #121212;
+  --nyt-rule: #d8d8d8;
+  --nyt-rule-strong: #121212;
+  --nyt-serif: 'Georgia', 'LXGW Neo ZhiSong', 'Noto Serif SC', 'Times New Roman', serif;
+  --nyt-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --nyt-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --nyt-max-w: 1180px;
+}
+
+/* 主题二：中国青绿山水画（复刻画卷：上层泥金赭黄 → 下层江水浅青绿，高亮石青蓝与石绿） */
+[data-nyt-theme="shanshui"] {
+  --nyt-bg: #e7d7b4;
+  --nyt-paper: rgba(244, 238, 222, 0.78);
+  --nyt-ink: #162b22;       /* 亭台墨绿，保证渐变背景上的高对比度 */
+  --nyt-ink-soft: #203b30;
+  --nyt-muted: #38594b;
+  --nyt-faint: #59786a;
+  --nyt-red: #1d52ac;       /* 山峦高亮石青蓝 */
+  --nyt-red-dark: #153e85;
+  --nyt-accent-2: #1a7a49;  /* 山坡高亮石绿 */
+  --nyt-accent-3: #1d52ac;
+  --nyt-rule: rgba(22, 43, 34, 0.22);
+  --nyt-rule-strong: #162b22;
+}
+
+[data-nyt-theme="shanshui"] body {
+  background: linear-gradient(180deg, #e5d2a7 0%, #f0e6cb 34%, #cfeadb 68%, #a6dec5 100%);
+  background-attachment: fixed;
+}
+
+[data-nyt-theme="shanshui"] .nyt-header {
+  background: rgba(232, 214, 174, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+[data-nyt-theme="shanshui"] .nyt-wordmark .gooey-svg text,
+[data-nyt-theme="shanshui"] .nyt-wordmark-fallback {
+  fill: #1a7a49;
+  color: #1a7a49;
+}
+
+[data-nyt-theme="shanshui"] .nyt-download-btn:not(.is-soon) {
+  background-color: #1d52ac;
+  border-color: #1d52ac;
+}
+
+[data-nyt-theme="shanshui"] .nyt-download-btn:not(.is-soon):hover {
+  background-color: #1a7a49;
+  border-color: #1a7a49;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--nyt-bg);
+  color: var(--nyt-ink);
+  font-family: var(--nyt-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ==================== 1. 顶部极简导航栏（加粗底线） ==================== */
+.nyt-header {
+  border-bottom: 2px solid var(--nyt-rule-strong);
+  background: var(--nyt-bg);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nyt-header-inner {
+  max-width: var(--nyt-max-w);
+  margin-inline: auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nyt-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--nyt-ink);
+}
+
+.nyt-brand-icon {
+  inline-size: 28px;
+  block-size: 28px;
+  flex-shrink: 0;
+}
+
+.nyt-brand-name {
+  font-family: var(--nyt-serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.nyt-brand-sub {
+  font-family: var(--nyt-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nyt-red);
+  font-weight: 500;
+  border-left: 1.5px solid var(--nyt-rule-strong);
+  padding-left: 10px;
+}
+
+.nyt-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.nyt-nav-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font-family: var(--nyt-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nyt-ink-soft);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.16s ease, border-color 0.16s ease;
+}
+
+.nyt-nav-btn:hover,
+.nyt-nav-btn:focus-visible {
+  color: var(--nyt-red);
+  border-bottom-color: var(--nyt-red);
+  outline: none;
+}
+
+.nyt-lang-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--nyt-rule);
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-family: var(--nyt-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--nyt-ink-soft);
+  cursor: pointer;
+  transition: border-color 0.16s ease, color 0.16s ease;
+}
+
+.nyt-lang-btn:hover,
+.nyt-lang-btn:focus-visible {
+  border-color: var(--nyt-ink);
+  color: var(--nyt-ink);
+  outline: none;
+}
+
+.nyt-nav-legacy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-family: var(--nyt-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--nyt-ink);
+  border: 1.5px solid var(--nyt-ink);
+  border-radius: 2px;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.nyt-nav-legacy:hover,
+.nyt-nav-legacy:focus-visible {
+  background-color: var(--nyt-ink);
+  color: var(--nyt-bg);
+  outline: none;
+}
+
+/* ==================== 2. 首屏左右分栏（Dynalist 布局 × NYT 杂志风格） ==================== */
+.nyt-main {
+  max-width: var(--nyt-max-w);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.nyt-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  padding-block: clamp(56px, 8vh, 96px);
+}
+
+.nyt-hero-copy {
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* NYT 红色栏目眉题 */
+.nyt-kicker {
+  margin: 0 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--nyt-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nyt-red);
+}
+
+.nyt-kicker::before {
+  content: '';
+  display: inline-block;
+  inline-size: 18px;
+  block-size: 2px;
+  background-color: var(--nyt-red);
+}
+
+/* 保留原版 Capture-Connect-Convey 液态切换视觉效果 */
+.nyt-wordmark {
+  margin: 0;
+  inline-size: 100%;
+  max-inline-size: 460px;
+  font-family: var(--nyt-serif);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--nyt-ink);
+  position: relative;
+}
+
+.nyt-wordmark-fallback {
+  display: block;
+  font-size: clamp(40px, 5vw, 62px);
+  letter-spacing: -0.02em;
+}
+
+.nyt-wordmark .gooey-svg {
+  display: none;
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+}
+
+.nyt-wordmark.is-gooey .nyt-wordmark-fallback {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.nyt-wordmark.is-gooey .gooey-svg {
+  display: block;
+}
+
+.nyt-wordmark .gooey-svg text {
+  font-family: var(--nyt-serif);
+  font-size: 74px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  fill: var(--nyt-ink);
+}
+
+.nyt-slogan {
+  margin: 18px 0 30px;
+  padding-top: 16px;
+  border-top: 2px solid var(--nyt-ink);
+  font-family: var(--nyt-serif);
+  font-size: clamp(19px, 2.1vw, 24px);
+  line-height: 1.5;
+  color: var(--nyt-ink-soft);
+  max-inline-size: 26ch;
+}
+
+/* 醒目的大 Download 双按钮（Alpha / Beta） */
+.nyt-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.nyt-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.nyt-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-inline-size: 204px;
+  padding: 15px 26px;
+  background-color: var(--nyt-ink);
+  color: var(--nyt-bg);
+  border: 2px solid var(--nyt-ink);
+  border-radius: 2px;
+  font-family: var(--nyt-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+}
+
+.nyt-download-btn:hover,
+.nyt-download-btn:focus-visible {
+  background-color: var(--nyt-red);
+  border-color: var(--nyt-red);
+  color: var(--nyt-bg);
+  outline: none;
+}
+
+.nyt-download-btn:active {
+  transform: translateY(1px);
+}
+
+.nyt-download-btn.is-beta {
+  min-inline-size: 184px;
+  background-color: var(--nyt-bg);
+  color: var(--nyt-ink);
+  border: 2px solid var(--nyt-ink);
+}
+
+.nyt-download-btn.is-beta.is-soon {
+  border-color: var(--nyt-rule);
+  color: var(--nyt-faint);
+  background-color: var(--nyt-paper);
+  cursor: default;
+}
+
+.nyt-download-btn.is-beta.is-soon:hover {
+  border-color: var(--nyt-rule);
+  color: var(--nyt-faint);
+  background-color: var(--nyt-paper);
+  transform: none;
+}
+
+.nyt-download-meta {
+  margin: 0;
+  font-family: var(--nyt-mono);
+  font-size: 12px;
+  color: var(--nyt-muted);
+  letter-spacing: 0.02em;
+}
+
+.nyt-ver-accent {
+  color: var(--nyt-red);
+  font-weight: 600;
+}
+
+.nyt-download-meta a {
+  color: var(--nyt-ink);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+
+.nyt-download-meta a:hover {
+  color: var(--nyt-red);
+}
+
+.nyt-sub-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.nyt-sub-link {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--nyt-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--nyt-accent-3, var(--nyt-ink-soft));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.nyt-sub-link:hover,
+.nyt-sub-link:focus-visible {
+  color: var(--nyt-red);
+  outline: none;
+}
+
+.nyt-sub-sep {
+  color: var(--nyt-faint);
+  font-size: 12px;
+}
+
+.nyt-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px;
+  font-size: 14px;
+}
+
+.nyt-compare-table th,
+.nyt-compare-table td {
+  padding: 10px 12px;
+  border: 1px solid var(--nyt-rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.nyt-compare-table th {
+  background: var(--nyt-paper);
+  font-family: var(--nyt-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nyt-ink);
+  border-bottom: 2px solid var(--nyt-ink);
+}
+
+/* 右侧视频窗口 */
+.nyt-hero-media {
+  min-inline-size: 0;
+}
+
+.nyt-window-frame {
+  background: var(--nyt-paper);
+  border: 1.5px solid var(--nyt-ink);
+  border-radius: 4px;
+  box-shadow: 0 22px 48px -18px rgba(0, 0, 0, 0.16), 0 4px 12px -4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.nyt-window-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  background: #f3f2ee;
+  border-bottom: 1.5px solid var(--nyt-ink);
+}
+
+.nyt-window-dot {
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background: #c8c5bc;
+}
+
+.nyt-window-dot.is-red {
+  background: var(--nyt-red);
+}
+
+.nyt-window-title {
+  margin-inline-start: auto;
+  font-family: var(--nyt-mono);
+  font-size: 11px;
+  color: var(--nyt-muted);
+  letter-spacing: 0.04em;
+}
+
+.nyt-video {
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #121212;
+}
+
+/* ==================== 3. 下方杂志版式索引与页脚（加粗双线 + 分栏线 + 红色标注） ==================== */
+.nyt-footer {
+  position: relative;
+  margin-top: 20px;
+  padding-top: 44px;
+  padding-bottom: 56px;
+  border-top: 4px solid var(--nyt-rule-strong);
+}
+
+/* 纽约时报标志性的粗+细双道报头分割线 */
+.nyt-footer::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--nyt-rule-strong);
+}
+
+.nyt-directory {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 32px 0;
+}
+
+.nyt-dir-col {
+  padding-inline: 22px;
+  border-right: 1px solid var(--nyt-rule);
+}
+
+.nyt-dir-col:first-child {
+  padding-inline-start: 0;
+}
+
+.nyt-dir-col:last-child {
+  padding-inline-end: 0;
+  border-right: none;
+}
+
+.nyt-dir-col h2 {
+  margin: 0 0 14px;
+  padding-top: 10px;
+  border-top: 2.5px solid var(--nyt-rule-strong);
+  font-family: var(--nyt-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nyt-ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nyt-dir-badge {
+  font-family: var(--nyt-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--nyt-accent-2, var(--nyt-red));
+}
+
+.nyt-dir-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nyt-dir-link {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: var(--nyt-sans);
+  font-size: 14px;
+  color: var(--nyt-muted);
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.nyt-dir-link:hover,
+.nyt-dir-link:focus-visible {
+  color: var(--nyt-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  outline: none;
+}
+
+.nyt-dir-link.is-highlight {
+  color: var(--nyt-red);
+  font-weight: 600;
+}
+
+.nyt-dir-link.is-placeholder {
+  color: var(--nyt-faint);
+  cursor: default;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.nyt-dir-link.is-placeholder:hover {
+  color: var(--nyt-faint);
+  text-decoration: none;
+}
+
+.nyt-copyright {
+  margin: 44px 0 0;
+  padding-top: 22px;
+  border-top: 2px solid var(--nyt-rule-strong);
+  text-align: center;
+  font-family: var(--nyt-serif);
+  font-size: 13px;
+  color: var(--nyt-muted);
+}
+
+/* ==================== 4. 原生 <dialog> 报纸风阅读抽屉 ==================== */
+dialog.nyt-dialog {
+  margin: auto;
+  padding: 0;
+  inline-size: min(680px, calc(100% - 32px));
+  max-block-size: min(86dvh, 820px);
+  border: 1.5px solid var(--nyt-rule-strong);
+  border-top: 5px solid var(--nyt-rule-strong);
+  border-radius: 2px;
+  background: var(--nyt-bg);
+  color: var(--nyt-ink);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+}
+
+dialog.nyt-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+dialog.nyt-dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog.nyt-dialog::backdrop {
+  background: rgba(18, 18, 18, 0.48);
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.nyt-dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 26px 16px;
+  border-bottom: 2px solid var(--nyt-rule-strong);
+  background: var(--nyt-paper);
+}
+
+.nyt-dialog-eyebrow {
+  margin: 0 0 4px;
+  font-family: var(--nyt-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nyt-red);
+}
+
+.nyt-dialog-title {
+  margin: 0;
+  font-family: var(--nyt-serif);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.nyt-dialog-close {
+  appearance: none;
+  background: transparent;
+  border: 1.5px solid var(--nyt-rule-strong);
+  border-radius: 2px;
+  inline-size: 32px;
+  block-size: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nyt-ink);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nyt-dialog-close:hover,
+.nyt-dialog-close:focus-visible {
+  border-color: var(--nyt-red);
+  background: var(--nyt-red);
+  color: var(--nyt-bg);
+  outline: none;
+}
+
+.nyt-dialog-body {
+  padding: 22px 26px 28px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--nyt-ink-soft);
+}
+
+.nyt-dialog-body h3 {
+  margin: 22px 0 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--nyt-rule);
+  font-family: var(--nyt-serif);
+  font-size: 18px;
+  color: var(--nyt-ink);
+}
+
+.nyt-dialog-body h3:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.nyt-dialog-body p {
+  margin: 0 0 12px;
+}
+
+.nyt-dialog-body ul,
+.nyt-dialog-body ol {
+  margin: 0 0 16px;
+  padding-left: 20px;
+}
+
+.nyt-dialog-body li {
+  margin-bottom: 6px;
+}
+
+.nyt-dialog-lead {
+  font-family: var(--nyt-serif);
+  font-size: 17px;
+  color: var(--nyt-ink);
+  border-left: 3px solid var(--nyt-red);
+  padding-left: 14px;
+  margin-bottom: 18px !important;
+}
+
+.nyt-shots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 16px 0 20px;
+}
+
+.nyt-shot-card {
+  margin: 0;
+  border: 1px solid var(--nyt-rule-strong);
+  background: var(--nyt-paper);
+}
+
+.nyt-shot-card img {
+  inline-size: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.nyt-shot-card figcaption {
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--nyt-muted);
+  border-top: 1px solid var(--nyt-rule);
+}
+
+.nyt-pricing-box {
+  border: 1.5px solid var(--nyt-ink);
+  border-left: 4px solid var(--nyt-red);
+  background: var(--nyt-paper);
+  padding: 18px 20px;
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nyt-pricing-box strong {
+  display: block;
+  font-family: var(--nyt-serif);
+  font-size: 18px;
+  color: var(--nyt-ink);
+}
+
+.nyt-pricing-box .nyt-price-red {
+  color: var(--nyt-red);
+}
+
+.nyt-pricing-box span {
+  font-size: 13px;
+  color: var(--nyt-muted);
+}
+
+.nyt-dialog-links {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-top: 20px !important;
+  padding-top: 14px;
+  border-top: 2px solid var(--nyt-rule-strong);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.nyt-dialog-links a,
+.nyt-dialog-links button {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--nyt-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nyt-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ==================== 5. 响应式适配 ==================== */
+@media (max-width: 960px) {
+  .nyt-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-block: 44px 56px;
+  }
+
+  .nyt-directory {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 18px;
+  }
+
+  .nyt-dir-col {
+    padding-inline: 0;
+    border-right: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .nyt-header-inner,
+  .nyt-main {
+    padding-inline: 20px;
+  }
+
+  .nyt-brand-sub {
+    display: none;
+  }
+
+  .nyt-nav {
+    gap: 12px;
+  }
+
+  .nyt-download-btn {
+    inline-size: 100%;
+  }
+
+  .nyt-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nyt-shots-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
